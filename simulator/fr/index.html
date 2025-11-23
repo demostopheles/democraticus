@@ -1,0 +1,15 @@
+<!DOCTYPE html><html lang="fr"><head><meta charset="UTF-8"><title>Simulateur Double Bind – Democraticus</title><style>/* stesso CSS */</style></head><body>
+<h1>Simulateur du Double Bind Électoral</h1><p>Choisissez quoi faire aux prochaines élections. Découvrez où le système vous mène vraiment.</p><p><strong>Jouez 10 tours et voyez le pourcentage de trahisons.</strong></p>
+<button onclick="gioca()">LANCER LA SIMULATION</button><div id="output"></div>
+<script>
+const scenari=[{scelta:"Vous votez le parti qui promet le changement",result:"Il gagne. Puis s’allie avec les lobbies. Impôts +10%, services -20%. Votre vote a légitimé la trahison."},
+{scelta:"Vous votez le parti au pouvoir actuel",result:"Il gagne quand même. Rien ne change, mais vous vous sentez responsable car « au moins vous avez voté »."},
+{scelta:"Vous vous abstenez",result:"Participation 38%. Les élus habituels décident pour tous. Les lois empirent. On vous dit « c’est votre faute de ne pas avoir voté »."}];
+let partite=0,tradimenti=0;
+function gioca(){partite++;const scelta=Math.floor(Math.random()*3);tradimenti+=scelta<2?1:0;const perc=(tradimenti/partite*100).toFixed(1);
+document.getElementById("output").innerHTML=`<h2>Tour ${partite}</h2><p>Vous avez choisi : <strong>${scenari[scelta].scelta}</strong></p><p class="esito">${scenari[scelta].result}</p>
+<p>Trahisons subies : <strong>${tradimenti} sur ${partite}</strong> (${perc}%)</p>
+<button onclick="gioca()" style="background:#00aa00">Rejouer</button> <button onclick="reset()" style="background:#666">Réinitialiser</button>
+${partite>=10?`<div class="conclusione"><strong>Conclusion après 10 tours :</strong> le système est conçu pour vous faire perdre à chaque fois. Taux moyen de trahison : ${perc}%. La seule issue est l’Assemblée Civique tirée au sort.</div>`:''}`;}
+function reset(){partite=0;tradimenti=0;document.getElementById("output").innerHTML='';}
+</script></body></html>
