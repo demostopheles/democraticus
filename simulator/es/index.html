@@ -1,15 +1,40 @@
-<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"><title>Simulador Doble Vínculo – Democraticus</title><style>/* stesso CSS di sopra */</style></head><body>
-<h1>Simulador del Doble Vínculo Electoral</h1><p>Elige qué hacer en las próximas elecciones. Descubre adónde te lleva realmente el sistema.</p><p><strong>Juega 10 rondas y ve el porcentaje de traiciones.</strong></p>
-<button onclick="gioca()">INICIAR SIMULACIÓN</button><div id="output"></div>
+<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"><title>Simulador Doble Vínculo – Democraticus</title><style>
+body{font-family:Arial;background:#000;color:#fff;text-align:center;padding:20px}
+h1{color:#ff4444;font-size:2.5em}
+p{font-size:1.2em;line-height:1.4}
+button{padding:15px 30px;font-size:18px;background:#ff4444;color:white;border:none;cursor:pointer;margin:10px;border-radius:5px;transition:.3s}
+button:hover{background:#cc0000;transform:scale(1.05)}
+#output{margin-top:30px;padding:20px;background:#222;border-radius:10px;max-width:600px;margin:30px auto;text-align:left}
+.esito{color:#ff4444;font-weight:bold}
+.conclusione{font-style:italic;color:#ccc;margin-top:20px}
+</style></head><body>
+<h1>Simulador del Doble Vínculo Electoral</h1>
+<p>Elige qué hacer en las próximas elecciones. Descubre adónde te lleva realmente el sistema.</p>
+<p><strong>Juega 10 rondas y ve el porcentaje de traiciones.</strong></p>
+<button onclick="gioca()">INICIAR SIMULACIÓN</button>
+<div id="output"></div>
 <script>
-const scenari=[{scelta:"Votas al partido que promete cambio",result:"Gana. Luego se alía con los lobbies. Impuestos +10%, servicios -20%. Tu voto legitimó la traición."},
-{scelta:"Votas al partido del poder actual",result:"Gana igual. Nada cambia, pero te sientes responsable porque «al menos votaste»."},
-{scelta:"Te abstienes",result:"Participación 38%. Los de siempre deciden por todos. Las leyes empeoran. Te dicen que «es tu culpa por no votar»."}];
+const scenari=[
+  {scelta:"Votas al partido que promete cambio",result:"Gana. Luego se alía con los lobbies. Impuestos +10%, servicios -20%. Tu voto legitimó la traición."},
+  {scelta:"Votas al partido del poder actual",result:"Gana igual. Nada cambia, pero te sientes responsable porque «al menos votaste»."},
+  {scelta:"Te abstienes",result:"Participación 38%. Los de siempre deciden por todos. Las leyes empeoran. Te dicen que «es tu culpa por no votar»."}
+];
 let partite=0,tradimenti=0;
-function gioca(){partite++;const scelta=Math.floor(Math.random()*3);tradimenti+=scelta<2?1:0;const perc=(tradimenti/partite*100).toFixed(1);
-document.getElementById("output").innerHTML=`<h2>Ronda ${partite}</h2><p>Has elegido: <strong>${scenari[scelta].scelta}</strong></p><p class="esito">${scenari[scelta].result}</p>
-<p>Traiciones hasta ahora: <strong>${tradimenti} de ${partite}</strong> (${perc}%)</p>
-<button onclick="gioca()" style="background:#00aa00">Jugar otra vez</button> <button onclick="reset()" style="background:#666">Reiniciar</button>
-${partite>=10?`<div class="conclusione"><strong>Conclusión tras 10 rondas:</strong> el sistema está construido para que pierdas siempre. Media de traición: ${perc}%. La única salida es la Asamblea Cívica por sorteo.</div>`:''}`;}
+function gioca(){
+  partite++;
+  const scelta=Math.floor(Math.random()*3);
+  tradimenti+=scelta<2?1:0;
+  const perc=(tradimenti/partite*100).toFixed(1);
+  document.getElementById("output").innerHTML=`
+    <h2>Ronda ${partite}</h2>
+    <p>Has elegido: <strong>${scenari[scelta].scelta}</strong></p>
+    <p class="esito">${scenari[scelta].result}</p>
+    <p>Traiciones: <strong>${tradimenti} de ${partite}</strong> (${perc}%)</p>
+    <button onclick="gioca()" style="background:#00aa00">Jugar otra vez</button>
+    <button onclick="reset()" style="background:#666">Reiniciar</button>
+    ${partite>=10?`<div class="conclusione"><strong>Conclusión:</strong> el sistema está hecho para que pierdas siempre. Media: ${perc}%. La única salida → Asamblea Cívica por sorteo.</div>`:''}
+  `;
+}
 function reset(){partite=0;tradimenti=0;document.getElementById("output").innerHTML='';}
-</script></body></html>
+</script>
+</body></html>
