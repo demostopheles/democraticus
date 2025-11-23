@@ -1,15 +1,40 @@
-<!DOCTYPE html><html lang="de"><head><meta charset="UTF-8"><title>Doppelbind-Simulator – Democraticus</title><style>/* stesso CSS */</style></head><body>
-<h1>Simulator des Wahl-Doppelbindes</h1><p>Wählen Sie, was Sie bei der nächsten Wahl tun. Entdecken Sie, wohin das System Sie wirklich führt.</p><p><strong>Spielen Sie 10 Runden und sehen Sie den Verrat-Prozentsatz.</strong></p>
-<button onclick="gioca()">SIMULATION STARTEN</button><div id="output"></div>
+<!DOCTYPE html><html lang="de"><head><meta charset="UTF-8"><title>Doppelbindung-Simulator – Democraticus</title><style>
+body{font-family:Arial;background:#000;color:#fff;text-align:center;padding:20px}
+h1{color:#ff4444;font-size:2.5em}
+p{font-size:1.2em;line-height:1.4}
+button{padding:15px 30px;font-size:18px;background:#ff4444;color:white;border:none;cursor:pointer;margin:10px;border-radius:5px;transition:.3s}
+button:hover{background:#cc0000;transform:scale(1.05)}
+#output{margin-top:30px;padding:20px;background:#222;border-radius:10px;max-width:600px;margin:30px auto;text-align:left}
+.esito{color:#ff4444;font-weight:bold}
+.conclusione{font-style:italic;color:#ccc;margin-top:20px}
+</style></head><body>
+<h1>Simulator der Wahl-Doppelbindung</h1>
+<p>Wählen Sie, was Sie bei der nächsten Wahl tun. Entdecken Sie, wohin das System Sie wirklich führt.</p>
+<p><strong>Spielen Sie 10 Runden und sehen Sie den Verrat-Prozentsatz.</strong></p>
+<button onclick="gioca()">SIMULATION STARTEN</button>
+<div id="output"></div>
 <script>
-const scenari=[{scelta:"Sie wählen die Partei, die Veränderung verspricht",result:"Sie gewinnt. Dann verbündet sie sich mit Lobbies. Steuern +10%, Leistungen -20%. Ihre Stimme hat den Verrat legitimiert."},
-{scelta:"Sie wählen die aktuelle Machtpartei",result:"Sie gewinnt sowieso. Nichts ändert sich, aber Sie fühlen sich verantwortlich, weil „Sie wenigstens gewählt haben“."},
-{scelta:"Sie bleiben der Wahl fern",result:"Wahlbeteiligung 38%. Die üblichen Gewählten entscheiden für alle. Die Gesetze verschlechtern sich. Ihnen wird gesagt „Sie sind schuld, weil Sie nicht gewählt haben“."}];
+const scenari=[
+  {scelta:"Sie wählen die Partei, die Veränderung verspricht",result:"Sie gewinnt. Dann verbündet sie sich mit Lobbies. Steuern +10%, Leistungen -20%. Ihre Stimme hat den Verrat legitimiert."},
+  {scelta:"Sie wählen die aktuelle Machtpartei",result:"Sie gewinnt sowieso. Nichts ändert sich, aber Sie fühlen sich verantwortlich, weil „Sie wenigstens gewählt haben“."},
+  {scelta:"Sie bleiben der Wahl fern",result:"Wahlbeteiligung 38%. Die üblichen Gewählten entscheiden für alle. Die Gesetze verschlechtern sich. Ihnen wird gesagt „Sie sind schuld, weil Sie nicht gewählt haben“."}
+];
 let partite=0,tradimenti=0;
-function gioca(){partite++;const scelta=Math.floor(Math.random()*3);tradimenti+=scelta<2?1:0;const perc=(tradimenti/partite*100).toFixed(1);
-document.getElementById("output").innerHTML=`<h2>Runde ${partite}</h2><p>Sie haben gewählt: <strong>${scenari[scelta].scelta}</strong></p><p class="esito">${scenari[scelta].result}</p>
-<p>Verrate bisher: <strong>${tradimenti} von ${partite}</strong> (${perc}%)</p>
-<button onclick="gioca()" style="background:#00aa00">Nochmal spielen</button> <button onclick="reset()" style="background:#666">Zurücksetzen</button>
-${partite>=10?`<div class="conclusione"><strong>Schlussfolgerung nach 10 Runden:</strong> Das System ist so gebaut, dass Sie immer verlieren. Durchschnittlicher Verratsanteil: ${perc}%. Der einzige Ausweg ist die per Los bestimmte Bürgerversammlung.</div>`:''}`;}
+function gioca(){
+  partite++;
+  const scelta=Math.floor(Math.random()*3);
+  tradimenti+=scelta<2?1:0;
+  const perc=(tradimenti/partite*100).toFixed(1);
+  document.getElementById("output").innerHTML=`
+    <h2>Runde ${partite}</h2>
+    <p>Sie haben gewählt: <strong>${scenari[scelta].scelta}</strong></p>
+    <p class="esito">${scenari[scelta].result}</p>
+    <p>Verrate: <strong>${tradimenti} von ${partite}</strong> (${perc}%)</p>
+    <button onclick="gioca()" style="background:#00aa00">Nochmal spielen</button>
+    <button onclick="reset()" style="background:#666">Zurücksetzen</button>
+    ${partite>=10?`<div class="conclusione"><strong>Schlussfolgerung:</strong> Das System ist so gebaut, dass Sie immer verlieren. Durchschnitt: ${perc}%. Der einzige Ausweg → Los-basierte Bürgerversammlung.</div>`:''}
+  `;
+}
 function reset(){partite=0;tradimenti=0;document.getElementById("output").innerHTML='';}
-</script></body></html>
+</script>
+</body></html>
