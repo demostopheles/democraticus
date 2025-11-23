@@ -1,6 +1,6 @@
 <!DOCTYPE html><html lang="de"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>Democraticus – Vom Homo Sapiens zum Homo Democraticus</title>
-<style>/* mismo CSS */</style></head><body>
+<style>/* stesso CSS */</style></head><body>
 
 <div style="position:absolute;top:15px;right:20px;z-index:999;">
 <select onchange="location=this.value;" style="padding:8px 12px 8px 36px;font-size:16px;background:#000 url('/flags/de.png') no-repeat 8px center;background-size:20px;color:#fff;border:2px solid #8B0000;border-radius:8px;cursor:pointer;">
@@ -16,33 +16,49 @@
 <header><h1>Democraticus</h1><p class="slogan">Vom Homo Sapiens zum Homo Democraticus<br><strong>Der evolutionäre Sprung der Souveränität</strong></p></header>
 
 <div class="graphics">
-<div class="graphic">Grafik A:<br>Oligarchie getarnt als Demokratie<br><small>(Macht von Lobbies)</small></div>
+<div class="graphic">Grafik A:<br>Oligarchie getarnt als Demokratie<br><small>(Macht von Lobbies & Schulden)</small></div>
 <div class="arrow">→</div>
 <div class="graphic">Grafik B:<br>Authentische repräsentative Demokratie<br><small>(Macht vom direkten Bürgerkonsens)</small></div>
 </div>
 
 <section class="section"><h2>Lies das Buch – kostenloses PDF</h2>
-<p>660 Seiten · Diagnose · Komplettes Modell · Fertige Gesetze · Globaler Aktionsplan<br>Open-Source-Revolution</p>
+<p>660 Seiten · Diagnose · Vollständiges Modell · Fertige Gesetze · Globaler Aktionsplan<br>Open-Source-Revolution</p>
 <a href="/book/Autopsia-della-democrazia-rappresentativa-2025.pdf" download><button>Vollständiges Buch herunterladen</button></a>
 </section>
 
 <section class="section"><h2>Weltweite Bürgerversammlungen – Bereits aktiv</h2>
 <p>Tritt den sechs bestehenden Proto-Versammlungen bei. Deliberiere in deiner Sprache. Ratifiziere die Zukunft.</p>
 <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:15px;">
-<a href="https://demos2kratia-en.freeforums.net" target="_blank"><button>English</button></a>
-<a href="https://demos2kratia-it.freeforums.net" target="_blank"><button>Italiano</button></a>
-<a href="https://demos2kratia-es.freeforums.net" target="_blank"><button>Español</button></a>
-<a href="https://demos2kratia-fr.freeforums.net" target="_blank"><button>Français</button></a>
+<a href="https://demos2kratia-en.freeforums.net" target="_blank"><button>English Forum</button></a>
+<a href="https://demos2kratia-it.freeforums.net" target="_blank"><button>Forum Italiano</button></a>
+<a href="https://demos2kratia-es.freeforums.net" target="_blank"><button>Foro Español</button></a>
+<a href="https://demos2kratia-fr.freeforums.net" target="_blank"><button>Forum Français</button></a>
 <a href="https://demos2kratia-de.freeforums.net" target="_blank"><button>Deutsches Forum</button></a>
-<a href="https://demos2kratia-pt.freeforums.net" target="_blank"><button>Português</button></a>
+<a href="https://demos2kratia-pt.freeforums.net" target="_blank"><button>Fórum Português</button></a>
 </div></section>
 
-<iframe src="/simulator/index.html" width="100%" height="500" frameborder="0" style="border:2px solid #8B0000;border-radius:10px;"></iframe>
+<section class="section"><h2>Doppelbind-Simulator</h2>
+<p>Spiele 10 Runden und entdecke, warum Wahlen immer in Verrat enden.</p>
+<iframe src="/simulator/de/index.html" width="100%" height="600" frameborder="0" style="border:2px solid #8B0000;border-radius:10px;"></iframe>
+</section>
 
 <section class="section"><h2>Die Infame Liste – Januar 2026</h2>
-<p>Öffentliches Register von Intellektuellen und Influencern, die informiert wurden… und schwiegen.<br>
-<strong>Trage dich in die Ehrenliste ein → vermeide ewige Schande.</strong></p>
-<button onclick="alert('Formular öffnet am 1. Dezember 2025')">Vorregistrierung</button>
+<p>Öffentliches Register der informierten Intellektuellen und Influencer… die das Schweigen wählten.<br>
+<strong>Trage dich jetzt in die Ehrenliste ein → vermeide ewige Schande.</strong></p>
+<button id="honorBtn" style="background:#006400;">In die Ehrenliste eintragen</button>
+<div id="honorForm" style="display:none;margin-top:20px;padding:20px;background:#111;border-radius:10px;">
+<form action="https://formspree.io/f/xblrjwpw" method="POST">
+<input type="text" name="name" placeholder="Vollständiger Name" required style="width:80%;padding:12px;margin:10px;"><br>
+<input type="email" name="email" placeholder="E-Mail (wird nie veröffentlicht)" required style="width:80%;padding:12px;margin:10px;"><br>
+<input type="hidden" name="language" value="Deutsch">
+<button type="submit" style="background:#006400;">Absenden & Ehrenliste beitreten</button>
+</form>
+<p style="font-size:0.9em;margin-top:20px;">Die Infame Liste wird am 1. Januar 2026 veröffentlicht. Wer das Buch erhalten hat und nicht in der Ehrenliste steht, wird darauf erscheinen.</p>
+</div>
+<script>
+document.getElementById('honorBtn').onclick=()=>{document.getElementById('honorForm').style.display='block';}
+const now=new Date(); if(now>=new Date('2025-12-01')) document.getElementById('honorForm').style.display='block';
+</script>
 </section>
 
 <footer>© Democraticus 2025 – Creative Commons BY-SA 4.0</footer>
