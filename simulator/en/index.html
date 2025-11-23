@@ -1,0 +1,15 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><title>Double Bind Simulator – Democraticus</title><style>body{font-family:Arial;background:#000;color:#fff;text-align:center;padding:20px}h1{color:#ff4444;font-size:2.5em}p{font-size:1.2em;line-height:1.4}button{padding:15px 30px;font-size:18px;background:#ff4444;color:white;border:none;cursor:pointer;margin:10px;border-radius:5px;transition:.3s}button:hover{background:#cc0000;transform:scale(1.05)}#output{margin-top:30px;padding:20px;background:#222;border-radius:10px;max-width:600px;margin:30px auto;text-align:left}.esito{color:#ff4444;font-weight:bold}.conclusione{font-style:italic;color:#ccc;margin-top:20px}</style></head><body>
+<h1>Electoral Double Bind Simulator</h1><p>Choose what to do in the next election. Discover where the system really leads you.</p><p><strong>Play 10 rounds and see the betrayal percentage.</strong></p>
+<button onclick="gioca()">START SIMULATION</button><div id="output"></div>
+<script>
+const scenari=[{scelta:"Vote for the party promising change",result:"It wins. Then allies with lobbies. Taxes +10%, services -20%. Your vote legitimized the betrayal."},
+{scelta:"Vote for the current power party",result:"It wins anyway. Nothing changes, but you feel responsible because “at least you voted”."},
+{scelta:"Abstain",result:"Turnout 38%. The usual elected decide for everyone. Laws worsen. They tell you “it’s your fault for not voting”."}];
+let partite=0,tradimenti=0;
+function gioca(){partite++;const scelta=Math.floor(Math.random()*3);tradimenti+=scelta<2?1:0;const perc=(tradimenti/partite*100).toFixed(1);
+document.getElementById("output").innerHTML=`<h2>Round ${partite}</h2><p>You chose: <strong>${scenari[scelta].scelta}</strong></p><p class="esito">${scenari[scelta].result}</p>
+<p>Betrayals so far: <strong>${tradimenti} of ${partite}</strong> (${perc}%)</p>
+<button onclick="gioca()" style="background:#00aa00">Play again</button> <button onclick="reset()" style="background:#666">Reset</button>
+${partite>=10?`<div class="conclusione"><strong>Conclusion after 10 rounds:</strong> the system is built to make you lose every time. Average betrayal: ${perc}%. The only way out is the sortition-based Civic Assembly.</div>`:''}`;}
+function reset(){partite=0;tradimenti=0;document.getElementById("output").innerHTML='';}
+</script></body></html>
