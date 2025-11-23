@@ -1,0 +1,15 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"><title>Simulador Doble Vínculo – Democraticus</title><style>/* stesso CSS di sopra */</style></head><body>
+<h1>Simulador del Doble Vínculo Electoral</h1><p>Elige qué hacer en las próximas elecciones. Descubre adónde te lleva realmente el sistema.</p><p><strong>Juega 10 rondas y ve el porcentaje de traiciones.</strong></p>
+<button onclick="gioca()">INICIAR SIMULACIÓN</button><div id="output"></div>
+<script>
+const scenari=[{scelta:"Votas al partido que promete cambio",result:"Gana. Luego se alía con los lobbies. Impuestos +10%, servicios -20%. Tu voto legitimó la traición."},
+{scelta:"Votas al partido del poder actual",result:"Gana igual. Nada cambia, pero te sientes responsable porque «al menos votaste»."},
+{scelta:"Te abstienes",result:"Participación 38%. Los de siempre deciden por todos. Las leyes empeoran. Te dicen que «es tu culpa por no votar»."}];
+let partite=0,tradimenti=0;
+function gioca(){partite++;const scelta=Math.floor(Math.random()*3);tradimenti+=scelta<2?1:0;const perc=(tradimenti/partite*100).toFixed(1);
+document.getElementById("output").innerHTML=`<h2>Ronda ${partite}</h2><p>Has elegido: <strong>${scenari[scelta].scelta}</strong></p><p class="esito">${scenari[scelta].result}</p>
+<p>Traiciones hasta ahora: <strong>${tradimenti} de ${partite}</strong> (${perc}%)</p>
+<button onclick="gioca()" style="background:#00aa00">Jugar otra vez</button> <button onclick="reset()" style="background:#666">Reiniciar</button>
+${partite>=10?`<div class="conclusione"><strong>Conclusión tras 10 rondas:</strong> el sistema está construido para que pierdas siempre. Media de traición: ${perc}%. La única salida es la Asamblea Cívica por sorteo.</div>`:''}`;}
+function reset(){partite=0;tradimenti=0;document.getElementById("output").innerHTML='';}
+</script></body></html>
