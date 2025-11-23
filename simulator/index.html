@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <title>Simulatore Doppio Legame – Democraticus</title>
+  <style>
+    body { font-family: Arial; background: #000; color: #fff; text-align: center; padding: 20px; }
+    h1 { color: #ff4444; font-size: 2.5em; margin-bottom: 10px; }
+    p { font-size: 1.2em; line-height: 1.4; }
+    button { padding: 15px 30px; font-size: 18px; background: #ff4444; color: white; border: none; cursor: pointer; margin: 10px; border-radius: 5px; transition: 0.3s; }
+    button:hover { background: #cc0000; transform: scale(1.05); }
+    #output { margin-top: 30px; padding: 20px; background: #222; border-radius: 10px; text-align: left; max-width: 600px; margin: 30px auto; }
+    .esito { color: #ff4444; font-size: 1.1em; font-weight: bold; }
+    .conclusione { font-style: italic; color: #ccc; margin-top: 20px; }
+    .grafico { width: 80%; height: 200px; margin: 20px auto; background: linear-gradient(to right, #00ff00 0%, #ff4444 100%); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.2em; }
+  </style>
+</head>
+<body>
+  <h1>Simulatore del Doppio Legame Elettorale</h1>
+  <p>Scegli cosa fare alle prossime elezioni. Scopri dove ti porta davvero il sistema.</p>
+  <p><strong>Gioca 10 round e vedi la percentuale di tradimenti.</strong></p>
+  <button onclick="gioca()">INIZIA LA SIMULAZIONE</button>
+  <div id="output"></div>
+
+  <script>
+    const scenari = [
+      {scelta: "Voti il partito che promette cambiamento", esito: "Vince. Poi si allea con le lobby. Tasse +10%, servizi -20%. Il tuo voto ha legittimato il tradimento."},
+      {scelta: "Voti il partito del potere attuale", esito: "Vince comunque. Niente cambia, ma ti senti responsabile perché 'almeno hai votato'."},
+      {scelta: "Ti astieni", esito: "Affluenza 38%. I soliti eletti decidono per tutti. Le leggi peggiorano. Ti dicono che 'è colpa tua che non hai votato'."}
+    ];
+
+    let partite = 0; let tradimenti = 0;
+
+    function gioca() {
+      partite++;
+      const scelta = Math.floor(Math.random() * 3);
+      tradimenti += scelta < 2 ? 1 : 0;
+      
+      const percentuale = partite > 0 ? (tradimenti / partite * 100).toFixed(1) : 0;
+      
+      document.getElementById("output").innerHTML = `
+        <h2>Round ${partite}</h2>
+        <p>Hai scelto: <strong>${scenari[scelta].scelta}</strong></p>
+        <p class="esito">${scenari[scelta].esito}</p>
+        <p>Tradimenti subiti finora: <strong>${tradimenti} su ${partite}</strong> (${percentuale}%)</p>
+        <button onclick="gioca()" style="background:#00aa00; color: white;">Gioca ancora</button>
+        <button onclick="reset()" style="background:#666;">Reset</button>
+        ${partite >= 10 ? `<div class="conclusione"><strong>Conclusione dopo 10 partite:</strong> il sistema è costruito per farti perdere sempre. Media tradimenti: ${percentuale}%. L'unica via d'uscita è l'Assemblea Civica estratta a sorte.</div>` : ''}
+      `;
+    }
+
+    function reset() {
+      partite = 0;
+      tradimenti = 0;
+      document.getElementById("output").innerHTML = '';
+    }
+  </script>
+</body>
+</html>
