@@ -4,14 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <title>Democraticus – Del Homo Sapiens al Homo Democraticus</title>
-    <style>/* stesso CSS della root */</style> <!-- copia tutto il blocco <style> della root -->
+    <style>/* stesso CSS dell'italiano – copia da sopra fino a </style> */</style>
 </head>
 <body>
-<!-- stesso selettore lingua con bandiera es -->
+
 <div style="position:absolute;top:15px;right:20px;z-index:999;">
-    <select onchange="location=this.value;" style="... background:#000 url('/flags/es.png') ...">
+    <select onchange="location=this.value;" style="padding:8px 12px 8px 36px;font-size:16px;background:#000 url('/flags/es.png') no-repeat 8px center;background-size:20px;color:#fff;border:2px solid #8B0000;border-radius:8px;cursor:pointer;">
         <option value="" selected>Idioma</option>
-        ... (stesse opzioni)
+        <option value="https://democraticus.org/">English</option>
+        <option value="https://democraticus.org/it/">Italiano</option>
+        <option value="https://democraticus.org/es/">Español</option>
+        <option value="https://democraticus.org/fr/">Français</option>
+        <option value="https://democraticus.org/de/">Deutsch</option>
+        <option value="https://democraticus.org/pt/">Português</option>
     </select>
 </div>
 
@@ -20,21 +25,24 @@
     <p class="slogan">Del Homo Sapiens al Homo Democraticus<br><strong>El salto evolutivo de la soberanía</strong></p>
 </header>
 
-<!-- stesso contenuto grafico -->
+<div class="graphics">
+    <div class="graphic">Gráfico A:<br>Oligarquía disfrazada de democracia<br><small>(Poder de lobbies y deuda)</small></div>
+    <div class="arrow">→</div>
+    <div class="graphic">Gráfico B:<br>Democracia representativa auténtica<br><small>(Poder del consentimiento directo ciudadano)</small></div>
+</div>
 
 <section class="section">
     <h2>Descarga el libro – PDF gratuito</h2>
     <p>660 páginas · Diagnóstico · Modelo completo · Leyes listas para usar · Plan de acción global<br>Revolución Open-Source</p>
-    <a href="/book/Autopsia_della_democrazia_rappresentativa_2025_es.pdf" download><button>Descargar libro completo (660 págs)</button></a>
+    <a href="/book/Autopsia_della_democrazia_rappresentativa_2025.pdf" download><button>Descargar libro completo (660 págs)</button></a>
 </section>
 
 <section class="section">
     <h2>Portada + Índice (11 páginas)</h2>
-    <img src="/covers/cover_es.jpg" alt="Portada español">
-    <a href="/covers/Autopsia_de_la_democracia_representativa.pdf" download><button>Descargar PDF español</button></a>
+    <img src="/covers/cover_es.jpg" alt="Portada español" class="cover-img"><br><br>
+    <a href="/covers/autopsia_es.pdf" download><button>Descargar PDF español (11 páginas)</button></a>
 </section>
 
-<!-- resto identico, solo i pulsanti forum in spagnolo se vuoi -->
-<footer>© Democraticus 2025 – Creative Commons BY-SA 4.0</footer>
+<!-- foro e simulatore identici all'italiano ma con bandiera es -->
 </body>
 </html>
