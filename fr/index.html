@@ -15,10 +15,13 @@
         .section{padding:50px 20px;max-width:1100px;margin:0 auto}
         footer{background:#111;padding:30px;font-size:0.9em;margin-top:50px}
         .cover-img{max-width:300px;border:3px solid #8B0000;border-radius:12px}
+        .infami-table{width:90%;max-width:1000px;margin:30px auto;border-collapse:collapse;font-size:1.1em}
+        .infami-table th,.infami-table td{border:2px solid #8B0000;padding:12px;text-align:center;background:#111}
+        .infami-table th{background:#8B0000}
+        .infami-table tr:hover td{background:#222}
     </style>
 </head>
 <body>
-
 <div style="position:absolute;top:15px;right:20px;z-index:999;">
     <select onchange="location=this.value;" style="padding:8px 12px 8px 36px;font-size:16px;background:#000 url('/flags/fr.png') no-repeat 8px center;background-size:20px;color:#fff;border:2px solid #8B0000;border-radius:8px;cursor:pointer;">
         <option value="" selected>Langue</option>
@@ -51,8 +54,7 @@
 <section class="section">
     <h2>Couverture + Table des matières (11 pages)</h2>
     <img src="/covers/cover_fr.jpg" alt="Couverture française" class="cover-img"><br><br>
-    <a href="/covers/autopsie_fr.pdf" download="autopsie_fr.pdf" type="application/pdf">
-    <button>Télécharger le PDF français (11 pages)</button></a>
+    <a href="/covers/autopsie_fr.pdf" download="autopsie_fr.pdf"><button>Télécharger le PDF français (11 pages)</button></a>
 </section>
 
 <section class="section">
@@ -73,6 +75,23 @@
     <p>Jouez 10 tours et découvrez pourquoi le vote finit toujours en trahison.</p>
     <iframe src="/simulator/fr/index.html" width="100%" height="600" frameborder="0" style="border:2px solid #8B0000;border-radius:10px;"></iframe>
 </section>
+
+<!-- ==== NOUVELLE SECTION : Panthéon des grands silencieux ==== -->
+<section class="section">
+    <h2>Panthéon des grands silencieux</h2>
+    <p>Ce ne sont pas les oligarques habituels (ceux-là, on les connaît déjà).  
+    Ce sont les intellectuels, journalistes, universitaires, youtubeurs et personnalités publiques qui <strong>connaissent parfaitement le projet Democraticus</strong> et qui, lorsqu’on les invite publiquement à le soutenir ou même à en débattre, <strong>choisissent le silence</strong>.  
+    Leur mutisme fait le jeu du système. Leur nom reste ici jusqu’à ce qu’ils prennent position.</p>
+
+    <table class="infami-table">
+        <tr><th>Nom</th><th>Pays</th><th>Activité principale</th><th>Date du silence</th></tr>
+        <tr><td>À venir…</td><td>—</td><td>—</td><td>—</td></tr>
+    </table>
+
+    <p><em>La liste est ouverte. Toute personne peut proposer un nom accompagné de la preuve publique de l’invitation restée sans réponse (tweet, e-mail public, vidéo, etc.).  
+    Dès qu’une prise de position claire arrive, le nom est retiré immédiatement.</em></p>
+</section>
+<!-- ==== FIN DE LA SECTION INFÂMES ==== -->
 
 <footer>© Democraticus 2025 – Creative Commons BY-SA 4.0</footer>
 </body>
