@@ -15,10 +15,13 @@
         .section{padding:50px 20px;max-width:1100px;margin:0 auto}
         footer{background:#111;padding:30px;font-size:0.9em;margin-top:50px}
         .cover-img{max-width:300px;border:3px solid #8B0000;border-radius:12px}
+        .schweiger-table{width:90%;max-width:1000px;margin:30px auto;border-collapse:collapse;font-size:1.1em}
+        .schweiger-table th,.schweiger-table td{border:2px solid #8B0000;padding:12px;text-align:center;background:#111}
+        .schweiger-table th{background:#8B0000}
+        .schweiger-table tr:hover td{background:#222}
     </style>
 </head>
 <body>
-
 <div style="position:absolute;top:15px;right:20px;z-index:999;">
     <select onchange="location=this.value;" style="padding:8px 12px 8px 36px;font-size:16px;background:#000 url('/flags/de.png') no-repeat 8px center;background-size:20px;color:#fff;border:2px solid #8B0000;border-radius:8px;cursor:pointer;">
         <option value="" selected>Sprache</option>
@@ -51,8 +54,7 @@
 <section class="section">
     <h2>Titelbild + Inhaltsverzeichnis (11 Seiten)</h2>
     <img src="/covers/cover_de.jpg" alt="Cover Deutsch" class="cover-img"><br><br>
-    <a href="/covers/obduktion_de.pdf" download="obduktion_de.pdf" type="application/pdf">
-    <button>PDF Deutsch herunterladen (11 Seiten)</button></a>
+    <a href="/covers/obduktion_de.pdf" download="obduktion_de.pdf"><button>PDF Deutsch herunterladen (11 Seiten)</button></a>
 </section>
 
 <section class="section">
@@ -73,6 +75,23 @@
     <p>Spiele 10 Runden und entdecke, warum Wahlen immer in Verrat enden.</p>
     <iframe src="/simulator/de/index.html" width="100%" height="600" frameborder="0" style="border:2px solid #8B0000;border-radius:10px;"></iframe>
 </section>
+
+<!-- ==== DIE GALERIE DER BERÜHMTEN SCHWEIGER ==== -->
+<section class="section">
+    <h2>Die Galerie der berühmten Schweiger</h2>
+    <p>Das sind nicht die üblichen Oligarchen (die kennen wir schon).<br>
+    Das sind die Intellektuellen, Journalisten, Professoren, Youtuber und „Dissidenten“, die <strong>das Projekt Democraticus bestens kennen</strong> und die, wenn man sie öffentlich auffordert, es zu unterstützen oder auch nur darüber zu diskutieren, <strong>todschweigen</strong>.<br>
+    Ihr Schweigen schützt das System mehr als jede Repressionsmaßnahme. Ihr Name bleibt hier, bis sie Farbe bekennen.</p>
+
+    <table class="schweiger-table">
+        <tr><th>Name</th><th>Land</th><th>Hauptaktivität</th><th>Datum des Schweigens</th></tr>
+        <tr><td>In Kürze…</td><td>—</td><td>—</td><td>—</td></tr>
+    </table>
+
+    <p><em>Die Liste ist offen. Jeder kann einen Namen vorschlagen – mit öffentlichem Beweis der unbeantworteten Aufforderung (Tweet, öffentliche Mail, Video etc.).  
+    Sobald eine klare Stellungnahme erfolgt, wird der Name sofort entfernt.</em></p>
+</section>
+<!-- ==== ENDE GALERIE ==== -->
 
 <footer>© Democraticus 2025 – Creative Commons BY-SA 4.0</footer>
 </body>
