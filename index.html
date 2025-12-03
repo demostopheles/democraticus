@@ -4,8 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <title>Democraticus – From Homo Sapiens to Homo Democraticus</title>
-
-    <!-- Google Analytics (GA4) + riconoscimento lingua automatico -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y9EPJN1JWT"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -15,7 +13,6 @@
       const lang = window.location.pathname.split('/')[1] || 'en';
       gtag('set', { 'content_group': 'Language: ' + lang.toUpperCase() });
     </script>
-
     <style>
         body{font-family:Arial,sans-serif;background:#000;color:#fff;margin:0;padding:0;text-align:center}
         header{background:#8B0000;padding:60px 20px}
@@ -36,12 +33,10 @@
         .absentees-table{width:90%;max-width:1000px;margin:30px auto;border-collapse:collapse;font-size:1.1em}
         .absentees-table th,.absentees-table td{border:2px solid #8B0000;padding:12px;text-align:center;background:#111}
         .absentees-table th{background:#8B0000}
-        .absentees-table tr:hover td{background:#111}
         .absentees-table tr:hover td{background:#222}
     </style>
 </head>
 <body>
-
 <div style="position:absolute;top:15px;right:20px;z-index:999;">
     <select onchange="location=this.value;" style="padding:8px 12px 8px 36px;font-size:16px;background:#000 url('/flags/en.png') no-repeat 8px center;background-size:20px;color:#fff;border:2px solid #8B0000;border-radius:8px;cursor:pointer;">
         <option value="" selected>Language</option>
@@ -53,57 +48,37 @@
         <option value="https://democraticus.org/pt/">Português</option>
     </select>
 </div>
-
 <header>
     <h1>Democraticus</h1>
     <p class="slogan">From Homo Sapiens to Homo Democraticus<br><strong>The Evolutionary Leap in Sovereignty</strong></p>
 </header>
-
 <div class="graphics">
-    <div class="graphic">Graphic A:<br>Oligarchy Masked as Democracy<br><small>(Power from Lobbies & Debt)</small></small></div>
+    <div class="graphic">Graphic A:<br>Oligarchy Masked as Democracy<br><small>(Power from Lobbies & Debt)</small></div>
     <div class="arrow">→</div>
     <div class="graphic">Graphic B:<br>Authentic Representative Democracy<br><small>(Power from Direct Citizen Consent)</small></div>
 </div>
-
 <section class="section">
     <h2>Read the Book – Free PDF</h2>
     <p>660 pages · Diagnosis · Complete Model · Ready-to-use Laws · Global Action Plan<br>Open-Source Revolution</p>
-    <a href="https://github.com/demostopheles/democraticus/raw/main/book/Autopsia_della_democrazia_rappresentativa_2025.pdf"
-       download="Autopsia_della_democrazia_rappresentativa_2025.pdf">
-       <button>Download Full Book (660 pages)</button>
+    <a href="https://github.com/demostopheles/democraticus/raw/main/book/Autopsia_della_democrazia_rappresentativa_2025.pdf" download>
+        <button>Download Full Book (660 pages)</button>
     </a>
     <br><br>
     <a href="/book/A_modest_proposal_to_humanity.pdf" download>
-       <button>Download “A Modest Proposal to Humanity” (74 pages)</button>
+        <button>Download “A Modest Proposal to Humanity” (74 pages)</button>
     </a>
 </section>
-
+<!-- resto identico per tutte le lingue (covers, forum, simulator, Gallery…) -->
 <section class="section">
     <h2>Cover + Table of Contents (11 pages) – Choose your language</h2>
     <div class="covers">
-        <div class="cover-card">
-            <img src="/covers/cover_es.jpg" alt="Español"><p>Español</p>
-            <a href="/covers/Autopsia_es.pdf" download><button class="small-btn">Download PDF</button></a>
-        </div>
-        <div class="cover-card">
-            <img src="/covers/cover_pt.jpg" alt="Português"><p>Português</p>
-            <a href="/covers/Autopsia_pt.pdf" download><button class="small-btn">Download PDF</button></a>
-        </div>
-        <div class="cover-card">
-            <img src="/covers/cover_fr.jpg" alt="Français"><p>Français</p>
-            <a href="/covers/Autopsie_fr.pdf" download><button class="small-btn">Download PDF</button></a>
-        </div>
-        <div class="cover-card">
-            <img src="/covers/cover_en.jpg" alt="English"><p>English</p>
-            <a href="/covers/Autopsy_en.pdf" download><button class="small-btn">Download PDF</button></a>
-        </div>
-        <div class="cover-card">
-            <img src="/covers/cover_de.jpg" alt="Deutsch"><p>Deutsch – Obduktion</p>
-            <a href="/covers/Obduktion_de.pdf" download><button class="small-btn">Download PDF</button></a>
-        </div>
+        <div class="cover-card"><img src="/covers/cover_es.jpg" alt="Español"><p>Español</p><a href="/covers/Autopsia_es.pdf" download><button class="small-btn">Download PDF</button></a></div>
+        <div class="cover-card"><img src="/covers/cover_pt.jpg" alt="Português"><p>Português</p><a href="/covers/Autopsia_pt.pdf" download><button class="small-btn">Download PDF</button></a></div>
+        <div class="cover-card"><img src="/covers/cover_fr.jpg" alt="Français"><p>Français</p><a href="/covers/Autopsie_fr.pdf" download><button class="small-btn">Download PDF</button></a></div>
+        <div class="cover-card"><img src="/covers/cover_en.jpg" alt="English"><p>English</p><a href="/covers/Autopsy_en.pdf" download><button class="small-btn">Download PDF</button></a></div>
+        <div class="cover-card"><img src="/covers/cover_de.jpg" alt="Deutsch"><p>Deutsch – Obduktion</p><a href="/covers/Obduktion_de.pdf" download><button class="small-btn">Download PDF</button></a></div>
     </div>
 </section>
-
 <section class="section">
     <h2>Global Civic Assemblies – Already Active</h2>
     <p>Join the six existing proto-assemblies. Deliberate in your language. Ratify the future.</p>
@@ -116,28 +91,21 @@
         <a href="https://demos2kratia-pt.freeforums.net" target="_blank"><button>Fórum Português</button></a>
     </div>
 </section>
-
 <section class="section">
     <h2>Double Bind Simulator</h2>
     <p>Play 10 rounds and discover why voting always ends in betrayal.</p>
     <iframe src="/simulator/en/index.html" width="100%" height="600" frameborder="0" style="border:2px solid #8B0000;border-radius:10px;"></iframe>
 </section>
-
-<!-- The Gallery of Famous Absentees (unificato con le altre lingue) -->
 <section class="section">
     <h2>The Gallery of Famous Absentees</h2>
     <p>These are not the usual oligarchs (we already know those).<br>
     These are the intellectuals, journalists, professors, YouTubers and “dissident” public figures who <strong>know the Democraticus project inside out</strong> and who, when publicly invited to support it or even just debate it, <strong>choose deafening silence</strong>.<br>
     Their absence protects the system more than any censorship ever could. Their name stays here until they finally take a stand.</p>
-
     <table class="absentees-table">
         <tr><th>Name</th><th>Country</th><th>Main Activity</th><th>Date of Silence</th></tr>
         <tr><td>Coming soon…</td><td>—</td><td>—</td><td>—</td></tr>
     </table>
-
-    <p><em>The list is open. Anyone can submit a name with public proof of the unanswered invitation.<br>
-    As soon as a clear position is taken, the name is removed immediately.</em></p>
-
+    <p><em>The list is open. Anyone can submit a name with public proof of the unanswered invitation.<br>As soon as a clear position is taken, the name is removed immediately.</em></p>
     <p><strong>Join the Honor List now → avoid eternal shame.</strong></p>
     <button id="honorBtn" style="background:#006400;">Join the Honor List</button>
     <div id="honorForm" style="display:none;margin-top:20px;padding:20px;background:#111;border-radius:10px;">
@@ -150,15 +118,10 @@
         <p style="font-size:0.9em;margin-top:20px;">The Gallery will be published on 1 January 2026.</p>
     </div>
 </section>
-
 <footer>© Democraticus 2025 – Creative Commons BY-SA 4.0</footer>
-
 <script>
-    document.getElementById('honorBtn').onclick = () => {
-        document.getElementById('honorForm').style.display = 'block';
-    };
-    const now = new Date();
-    if (now >= new Date('2025-12-01')) document.getElementById('honorForm').style.display = 'block';
+    document.getElementById('honorBtn').onclick = () => document.getElementById('honorForm').style.display = 'block';
+    if (new Date() >= new Date('2025-12-01')) document.getElementById('honorForm').style.display = 'block';
 </script>
 </body>
 </html>
