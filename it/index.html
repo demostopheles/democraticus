@@ -65,7 +65,7 @@
     <a href="/book/A_modest_proposal_to_humanity.pdf" download><button>Scarica «Una modesta proposta all’umanità» (74 pagine)</button></a>
 </section>
 <section class="section">
-    <h2>Copertine + Indice (11 pagine) + Novità</h2>
+    <h2>Copertine + Indice + Novità</h2>
     <div class="covers">
         <div class="cover-card"><img src="/covers/cover_modest.jpg" alt="Una modesta proposta"><p>Una modesta proposta all’umanità</p><a href="/book/A_modest_proposal_to_humanity.pdf" download><button class="small-btn">PDF (74 pag)</button></a></div>
         <div class="cover-card"><img src="/covers/cover_it.jpg" alt="Italiano"><p>Italiano</p><a href="/covers/Autopsia_it.pdf" download><button class="small-btn">PDF (11 pag)</button></a></div>
@@ -76,12 +76,49 @@
         <div class="cover-card"><img src="/covers/cover_pt.jpg" alt="Português"><p>Português</p><a href="/covers/Autopsia_pt.pdf" download><button class="small-btn">PDF</button></a></div>
     </div>
 </section>
-<!-- Le altre sezioni (assemblee, simulatore, Galleria dei famosi assenti, form) sono identiche a quelle tedesche/inglesi →
-    le copio solo una volta per non riscrivo tutto il codice →
-    basta che copi-incolli le stesse sezioni del file tedesco qui sopra -->
+<section class="section">
+    <h2>Assemblee Civiche Globali – già attive</h2>
+    <p>Unisciti alle sei proto-assemblee già esistenti. Delibera nella tua lingua. Ratifica il futuro.</p>
+    <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:15px;">
+        <a href="https://demos2kratia-it.freeforums.net" target="_blank"><button>Forum Italiano</button></a>
+        <a href="https://demos2kratia-en.freeforums.net" target="_blank"><button>English</button></a>
+        <a href="https://demos2kratia-es.freeforums.net" target="_blank"><button>Español</button></a>
+        <a href="https://demos2kratia-fr.freeforums.net" target="_blank"><button>Français</button></a>
+        <a href="https://demos2kratia-de.freeforums.net" target="_blank"><button>Deutsch</button></a>
+        <a href="https://demos2kratia-pt.freeforums.net" target="_blank"><button>Português</button></a>
+    </div>
+</section>
+<section class="section">
+    <h2>Simulatore Double Bind</h2>
+    <p>Gioca 10 turni e scopri perché il voto finisce sempre in tradimento.</p>
+    <iframe src="/simulator/it/index.html" width="100%" height="600" frameborder="0" style="border:2px solid #8B0000;border-radius:10px;"></iframe>
+</section>
+<section class="section">
+    <h2>La Galleria dei famosi assenti</h2>
+    <p>Non sono i soliti oligarchi (quelli li conosciamo già).<br>
+    Sono gli intellettuali, giornalisti, professori, youtuber e “dissidenti” che <strong>conoscono perfettamente il progetto Democraticus</strong> e che, invitati pubblicamente a sostenerlo o anche solo a discuterlo, <strong>scelgono il silenzio assordante</strong>.<br>
+    Il loro silenzio protegge il sistema più di qualsiasi censura. Il loro nome resta qui finché non prenderanno posizione.</p>
+    <table class="absentees-table">
+        <tr><th>Nome</th><th>Paese</th><th>Attività principale</th><th>Data del silenzio</th></tr>
+        <tr><td>In arrivo…</td><td>—</td><td>—</td><td>—</td></tr>
+    </table>
+    <p><em>La lista è aperta. Chiunque può proporre un nome con prova pubblica dell’invito non risposto.</em></p>
+    <p><strong>Iscriviti ora alla Lista d’Onore → evita la vergogna eterna.</strong></p>
+    <button id="honorBtn" style="background:#006400;">Iscriviti alla Lista d’Onore</button>
+    <div id="honorForm" style="display:none;margin-top:20px;padding:20px;background:#111;border-radius:10px;">
+        <form action="https://formspree.io/f/xblrjwpw" method="POST">
+            <input type="text" name="name" placeholder="Nome e cognome" required style="width:80%;padding:12px;margin:10px;"><br>
+            <input type="email" name="email" placeholder="Email (mai pubblicata)" required style="width:80%;padding:12px;margin:10px;"><br>
+            <input type="hidden" name="language" value="Italiano">
+            <button type="submit" style="background:#006400;">Invia & entra nella Lista d’Onore</button>
+        </form>
+        <p style="font-size:0.9em;margin-top:20px;">La Galleria verrà pubblicata il 1° gennaio 2026.</p>
+    </div>
+</section>
 <footer>© Democraticus 2025 – Creative Commons BY-SA 4.0</footer>
 <script>
-    document.getElementById('honorBtn')?.addEventListener('click', () => document.getElementById('honorForm').style.display = 'block';
+    document.getElementById('honorBtn').onclick = () => document.getElementById('honorForm').style.display = 'block';
+    if (new Date() >= new Date('2025-12-01')) document.getElementById('honorForm').style.display = 'block';
 </script>
 </body>
 </html>
