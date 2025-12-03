@@ -40,9 +40,12 @@
 <div style="position:absolute;top:15px;right:20px;z-index:999;">
     <select onchange="location=this.value;" style="padding:8px 12px 8px 36px;font-size:16px;background:#000 url('/flags/es.png') no-repeat 8px center;background-size:20px;color:#fff;border:2px solid #8B0000;border-radius:8px;cursor:pointer;">
         <option value="" selected>Idioma</option>
-        <option value="https://dem the rest are identical to the other languages
+        <option value="https://democraticus.org/">English</option>
+        <option value="https://democraticus.org/it/">Italiano</option>
         <option value="https://democraticus.org/es/">Español</option>
-        … (the other 5 languages)
+        <option value="https://democraticus.org/fr/">Français</option>
+        <option value="https://democraticus.org/de/">Deutsch</option>
+        <option value="https://democraticus.org/pt/">Português</option>
     </select>
 </div>
 <header>
@@ -62,13 +65,60 @@
     <a href="/book/A_modest_proposal_to_humanity.pdf" download><button>Descargar «Una modesta propuesta a la humanidad» (74 páginas)</button></a>
 </section>
 <section class="section">
-    <h2>Portadas + Índice (11 páginas) + Novedad</h2>
+    <h2>Portadas + Índice + Novedad</h2>
     <div class="covers">
-        <div class="cover-card"><img src="/covers/cover_modest.jpg" alt="A Modest Proposal"><p>A Modest Proposal to Humanity</p><a href="/book/A_modest_proposal_to_humanity.pdf" download><button class="small-btn">PDF (74 pág)</button></a></div>
+        <div class="cover-card"><img src="/covers/cover_modest.jpg" alt="Una modesta propuesta"><p>Una modesta propuesta a la humanidad</p><a href="/book/A_modest_proposal_to_humanity.pdf" download><button class="small-btn">PDF (74 pág)</button></a></div>
         <div class="cover-card"><img src="/covers/cover_es.jpg" alt="Español"><p>Español</p><a href="/covers/Autopsia_es.pdf" download><button class="small-btn">PDF (11 pág)</button></a></div>
-        … (the other 5 languages)
+        <div class="cover-card"><img src="/covers/cover_en.jpg" alt="English"><p>English</p><a href="/covers/Autopsy_en.pdf" download><button class="small-btn">PDF</button></a></div>
+        <div class="cover-card"><img src="/covers/cover_it.jpg" alt="Italiano"><p>Italiano</p><a href="/covers/Autopsia_it.pdf" download><button class="small-btn">PDF</button></a></div>
+        <div class="cover-card"><img src="/covers/cover_fr.jpg" alt="Français"><p>Français</p><a href="/covers/Autopsie_fr.pdf" download><button class="small-btn">PDF</button></a></div>
+        <div class="cover-card"><img src="/covers/cover_de.jpg" alt="Deutsch"><p>Deutsch</p><a href="/covers/Obduktion_de.pdf" download><button class="small-btn">PDF</button></a></div>
+        <div class="cover-card"><img src="/covers/cover_pt.jpg" alt="Português"><p>Português</p><a href="/covers/Autopsia_pt.pdf" download><button class="small-btn">PDF</button></a></div>
     </div>
 </section>
-<!-- The rest of the sections (assemblies, simulator, Gallery of Famous Absentees, form) are identical to the German/English version -->
+<section class="section">
+    <h2>Asambleas Cívicas Globales – ya activas</h2>
+    <p>Únete a las seis proto-asambleas ya existentes. Delibera en tu idioma. Ratifica el futuro.</p>
+    <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:15px;">
+        <a href="https://demos2kratia-es.freeforums.net" target="_blank"><button>Foro Español</button></a>
+        <a href="https://demos2kratia-en.freeforums.net" target="_blank"><button>English</button></a>
+        <a href="https://demos2kratia-it.freeforums.net" target="_blank"><button>Italiano</button></a>
+        <a href="https://demos2kratia-fr.freeforums.net" target="_blank"><button>Français</button></a>
+        <a href="https://demos2kratia-de.freeforums.net" target="_blank"><button>Deutsch</button></a>
+        <a href="https://demos2kratia-pt.freeforums.net" target="_blank"><button>Português</button></a>
+    </div>
+</section>
+<section class="section">
+    <h2>Simulador Double Bind</h2>
+    <p>Juega 10 rondas y descubre por qué el voto siempre termina en traición.</p>
+    <iframe src="/simulator/es/index.html" width="100%" height="600" frameborder="0" style="border:2px solid #8B0000;border-radius:10px;"></iframe>
+</section>
+<section class="section">
+    <h2>La Galería de los famosos ausentes</h2>
+    <p>No son los oligarcas habituales (esos ya los conocemos).<br>
+    Son los intelectuales, periodistas, profesores, youtubers y “disidentes” que <strong>conocen perfectamente el proyecto Democraticus</strong> y que, invitados públicamente a apoyarlo o al menos a debatirlo, <strong>eligen el silencio ensordecedor</strong>.<br>
+    Su silencio protege al sistema más que cualquier censura. Su nombre queda aquí hasta que tomen posición.</p>
+    <table class="absentees-table">
+        <tr><th>Nombre</th><th>País</th><th>Actividad principal</th><th>Fecha del silencio</th></tr>
+        <tr><td>Próximamente…</td><td>—</td><td>—</td><td>—</td></tr>
+    </table>
+    <p><em>La lista está abierta. Cualquiera puede proponer un nombre con prueba pública de la invitación no respondida.</em></p>
+    <p><strong>Inscríbete ahora en la Lista de Honor → evita la vergüenza eterna.</strong></p>
+    <button id="honorBtn" style="background:#006400;">Inscribirse en la Lista de Honor</button>
+    <div id="honorForm" style="display:none;margin-top:20px;padding:20px;background:#111;border-radius:10px;">
+        <form action="https://formspree.io/f/xblrjwpw" method="POST">
+            <input type="text" name="name" placeholder="Nombre completo" required style="width:80%;padding:12px;margin:10px;"><br>
+            <input type="email" name="email" placeholder="Email (nunca publicado)" required style="width:80%;padding:12px;margin:10px;"><br>
+            <input type="hidden" name="language" value="Español">
+            <button type="submit" style="background:#006400;">Enviar & entrar en Lista de Honor</button>
+        </form>
+        <p style="font-size:0.9em;margin-top:20px;">La Galería se publicará el 1 de enero de 2026.</p>
+    </div>
+</section>
+<footer>© Democraticus 2025 – Creative Commons BY-SA 4.0</footer>
+<script>
+    document.getElementById('honorBtn').onclick = () => document.getElementById('honorForm').style.display = 'block';
+    if (new Date() >= new Date('2025-12-01')) document.getElementById('honorForm').style.display = 'block';
+</script>
 </body>
 </html>
