@@ -1,34 +1,23 @@
 <!DOCTYPE html>
 <html lang="pt">
 <head>
-    <!DOCTYPE html>
-<html lang="en">
-<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <title>Democraticus – From Homo Sapiens to Homo Democraticus</title>
-
-    <!-- ==== GOOGLE ANALYTICS (GA4) ==== -->
-    <!-- Google tag (gtag.js) -->
+    <title>Democraticus – Do Homo Sapiens ao Homo Democraticus</title>
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y9EPJN1JWT"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
       gtag('config', 'G-Y9EPJN1JWT');
-        // Rileva automaticamente la lingua dalla cartella
-const lang = window.location.pathname.split('/')[1] || 'en';
-gtag('set', { 'content_group': 'Language: ' + lang.toUpperCase() });
+      const lang = window.location.pathname.split('/')[1] || 'en';
+      gtag('set', { 'content_group': 'Language: ' + lang.toUpperCase() });
     </script>
-    <!-- ==== FINE GOOGLE ANALYTICS ==== -->
-
-    <style>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <title>Democraticus – Do Homo Sapiens ao Homo Democraticus</title>
     <style>
         body{font-family:Arial,sans-serif;background:#000;color:#fff;margin:0;padding:0;text-align:center}
-        header{background:#8B0000;padding:60px 20px}h1{font-size:3.5em;margin:0}.slogan{font-size:1.6em;margin:20px 0;line-height:1.4}
+        header{background:#8B0000;padding:60px 20px}
+        h1{font-size:3.5em;margin:0}
+        .slogan{font-size:1.6em;margin:20px 0;line-height:1.4}
         .graphics{display:flex;justify-content:center;align-items:center;gap:60px;padding:60px 20px;flex-wrap:wrap}
         .graphic{width:340px;height:220px;background:#222;border:3px solid #fff;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.3em;padding:20px;box-sizing:border-box}
         .arrow{font-size:4em;color:#8B0000;font-weight:bold}
@@ -36,11 +25,15 @@ gtag('set', { 'content_group': 'Language: ' + lang.toUpperCase() });
         button:hover{background:#A52A2A;transform:scale(1.05)}
         .section{padding:50px 20px;max-width:1100px;margin:0 auto}
         footer{background:#111;padding:30px;font-size:0.9em;margin-top:50px}
-        .cover-img{max-width:300px;border:3px solid #8B0000;border-radius:12px}
-        .ausentes-table{width:90%;max-width:1000px;margin:30px auto;border-collapse:collapse;font-size:1.1em}
-        .ausentes-table th,.ausentes-table td{border:2px solid #8B0000;padding:12px;text-align:center;background:#111}
-        .ausentes-table th{background:#8B0000}
-        .ausentes-table tr:hover td{background:#222}
+        .covers{display:flex;flex-wrap:wrap;justify-content:center;gap:25px;margin:40px 0}
+        .cover-card{width:220px;text-align:center}
+        .cover-card img{width:100%;border:2px solid #8B0000;border-radius:8px}
+        .cover-card p{margin:10px 0 8px;font-weight:bold}
+        .small-btn{background:#333;padding:10px 20px;font-size:1em}
+        .absentees-table{width:90%;max-width:1000px;margin:30px auto;border-collapse:collapse;font-size:1.1em}
+        .absentees-table th,.absentees-table td{border:2px solid #8B0000;padding:12px;text-align:center;background:#111}
+        .absentees-table th{background:#8B0000}
+        .absentees-table tr:hover td{background:#222}
     </style>
 </head>
 <body>
@@ -55,34 +48,37 @@ gtag('set', { 'content_group': 'Language: ' + lang.toUpperCase() });
         <option value="https://democraticus.org/pt/">Português</option>
     </select>
 </div>
-
 <header>
     <h1>Democraticus</h1>
     <p class="slogan">Do Homo Sapiens ao Homo Democraticus<br><strong>O salto evolutivo da soberania</strong></p>
 </header>
-
 <div class="graphics">
-    <div class="graphic">Gráfico A:<br>Oligarquia mascarada de democracia<br><small>(Poder vindo de lobbies e dívida)</small></div>
+    <div class="graphic">Gráfico A:<br>Oligarquia mascarada de democracia<br><small>(Poder dos lobbies e dívida)</small></div>
     <div class="arrow">→</div>
-    <div class="graphic">Gráfico B:<br>Verdadeira democracia representativa<br><small>(Poder vindo do consentimento direto dos cidadãos)</small></div>
+    <div class="graphic">Gráfico B:<br>Democracia representativa autêntica<br><small>(Poder do consentimento direto do cidadão)</small></div>
 </div>
-
 <section class="section">
-    <h2>Leia o livro – PDF gratuito</h2>
-    <p>660 páginas · Diagnóstico · Modelo completo · Leis prontas para uso · Plano de ação global<br>Revolução Open-Source</p>
-    <a href="/book/Autopsia_della_democrazia_rappresentativa_2025.pdf" download><button>Baixar livro completo (660 páginas)</button></a>
-    <a href="/book/A_modest_proposal_to_humanity.pdf" download><button>Baixar “Uma modesta proposta à humanidade” (74 páginas)</button></a>
+    <h2>Leia o livro – PDF grátis</h2>
+    <p>660 páginas · Diagnóstico · Modelo completo · Leis prontas · Plano de ação global<br>Revolução open-source</p>
+    <a href="https://github.com/demostopheles/democraticus/raw/main/book/Autopsia_della_democrazia_rappresentativa_2025.pdf" download><button>Baixar livro completo (660 páginas)</button></a>
+    <br><br>
+    <a href="/book/A_modest_proposal_to_humanity.pdf" download><button>Baixar «Uma modesta proposta à humanidade» (74 páginas)</button></a>
 </section>
-
 <section class="section">
-    <h2>Capa + Índice (11 páginas)</h2>
-    <img src="/covers/cover_pt.jpg" alt="Capa português" class="cover-img"><br><br>
-    <a href="/covers/autopsia_pt.pdf" download="autopsia_pt.pdf"><button>Baixar PDF em português (11 páginas)</button></a>
+    <h2>Capas + Índice + Novidade</h2>
+    <div class="covers">
+        <div class="cover-card"><img src="/covers/cover_modest.jpg" alt="Uma modesta proposta"><p>Uma modesta proposta à humanidade</p><a href="/book/A_modest_proposal_to_humanity.pdf" download><button class="small-btn">PDF (74 pág)</button></a></div>
+        <div class="cover-card"><img src="/covers/cover_pt.jpg" alt="Português"><p>Português</p><a href="/covers/Autopsia_pt.pdf" download><button class="small-btn">PDF (11 pág)</button></a></div>
+        <div class="cover-card"><img src="/covers/cover_en.jpg" alt="English"><p>English</p><a href="/covers/Autopsy_en.pdf" download><button class="small-btn">PDF</button></a></div>
+        <div class="cover-card"><img src="/covers/cover_it.jpg" alt="Italiano"><p>Italiano</p><a href="/covers/Autopsia_it.pdf" download><button class="small-btn">PDF</button></a></div>
+        <div class="cover-card"><img src="/covers/cover_es.jpg" alt="Español"><p>Español</p><a href="/covers/Autopsia_es.pdf" download><button class="small-btn">PDF</button></a></div>
+        <div class="cover-card"><img src="/covers/cover_fr.jpg" alt="Français"><p>Français</p><a href="/covers/Autopsie_fr.pdf" download><button class="small-btn">PDF</button></a></div>
+        <div class="cover-card"><img src="/covers/cover_de.jpg" alt="Deutsch"><p>Deutsch</p><a href="/covers/Obduktion_de.pdf" download><button class="small-btn">PDF</button></a></div>
+    </div>
 </section>
-
 <section class="section">
-    <h2>Assembleias cívicas globais – já ativas</h2>
-    <p>Junte-se às seis proto-assembleias existentes. Delibere na sua língua. Ratifique o futuro.</p>
+    <h2>Assembleias Cívicas Globais – já ativas</h2>
+    <p>Junte-se às seis proto-assembleias já existentes. Delibere no seu idioma. Ratifique o futuro.</p>
     <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:15px;">
         <a href="https://demos2kratia-pt.freeforums.net" target="_blank"><button>Fórum Português</button></a>
         <a href="https://demos2kratia-en.freeforums.net" target="_blank"><button>English</button></a>
@@ -92,30 +88,37 @@ gtag('set', { 'content_group': 'Language: ' + lang.toUpperCase() });
         <a href="https://demos2kratia-de.freeforums.net" target="_blank"><button>Deutsch</button></a>
     </div>
 </section>
-
 <section class="section">
     <h2>Simulador Double Bind</h2>
-    <p>Jogue 10 rodadas e descubra por que a votação sempre termina em traição.</p>
+    <p>Jogue 10 rodadas e descubra por que o voto sempre termina em traição.</p>
     <iframe src="/simulator/pt/index.html" width="100%" height="600" frameborder="0" style="border:2px solid #8B0000;border-radius:10px;"></iframe>
 </section>
-
-<!-- ==== A GALERIA DOS ILUSTRES AUSENTES ==== -->
 <section class="section">
-    <h2>A galeria dos ilustres ausentes</h2>
-    <p>Não são os oligarcas de sempre (esses já conhecemos).<br>
-    São os intelectuais, jornalistas, académicos, youtubers e figuras públicas “dissidentes” que <strong>conhecem perfeitamente o projeto Democraticus</strong> e que, quando convidados publicamente a apoiá-lo ou sequer a debatê-lo, <strong>escolhem o silêncio ensurdecedor</strong>.<br>
-    A sua ausência protege o sistema mais do que qualquer censura. O nome deles fica aqui até tomarem posição.</p>
-
-    <table class="ausentes-table">
+    <h2>A Galeria dos famosos ausentes</h2>
+    <p>Não são os oligarcas habituais (esses já conhecemos).<br>
+    São os intelectuais, jornalistas, professores, youtubers e “dissidentes” que <strong>conhecem perfeitamente o projeto Democraticus</strong> e que, convidados publicamente a apoiá-lo ou pelo menos a debatê-lo, <strong>escolhem o silêncio ensurdecedor</strong>.<br>
+    O seu silêncio protege o sistema mais do que qualquer censura. O seu nome fica aqui até tomarem posição.</p>
+    <table class="absentees-table">
         <tr><th>Nome</th><th>País</th><th>Atividade principal</th><th>Data do silêncio</th></tr>
         <tr><td>Em breve…</td><td>—</td><td>—</td><td>—</td></tr>
     </table>
-
-    <p><em>A lista está aberta. Qualquer pessoa pode propor um nome com prova pública do convite sem resposta (tweet, e-mail público, vídeo, etc.).  
-    Assim que houver tomada de posição clara, o nome é imediatamente retirado.</em></p>
+    <p><em>A lista está aberta. Qualquer pessoa pode propor um nome com prova pública do convite não respondido.</em></p>
+    <p><strong>Inscreva-se agora na Lista de Honra → evite a vergonha eterna.</strong></p>
+    <button id="honorBtn" style="background:#006400;">Entrar na Lista de Honra</button>
+    <div id="honorForm" style="display:none;margin-top:20px;padding:20px;background:#111;border-radius:10px;">
+        <form action="https://formspree.io/f/xblrjwpw" method="POST">
+            <input type="text" name="name" placeholder="Nome completo" required style="width:80%;padding:12px;margin:10px;"><br>
+            <input type="email" name="email" placeholder="Email (nunca publicado)" required style="width:80%;padding:12px;margin:10px;"><br>
+            <input type="hidden" name="language" value="Português">
+            <button type="submit" style="background:#006400;">Enviar & entrar na Lista de Honra</button>
+        </form>
+        <p style="font-size:0.9em;margin-top:20px;">A Galeria será publicada a 1 de janeiro de 2026.</p>
+    </div>
 </section>
-<!-- ==== FIM DA GALERIA ==== -->
-
 <footer>© Democraticus 2025 – Creative Commons BY-SA 4.0</footer>
+<script>
+    document.getElementById('honorBtn').onclick = () => document.getElementById('honorForm').style.display = 'block';
+    if (new Date() >= new Date('2025-12-01')) document.getElementById('honorForm').style.display = 'block';
+</script>
 </body>
 </html>
