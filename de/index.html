@@ -1,34 +1,26 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-    <!DOCTYPE html>
-<html lang="en">
-<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <title>Democraticus – From Homo Sapiens to Homo Democraticus</title>
+    <title>Democraticus – Vom Homo Sapiens zum Homo Democraticus</title>
 
-    <!-- ==== GOOGLE ANALYTICS (GA4) ==== -->
-    <!-- Google tag (gtag.js) -->
+    <!-- Google Analytics + lingua automatica -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y9EPJN1JWT"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
       gtag('config', 'G-Y9EPJN1JWT');
-        // Rileva automaticamente la lingua dalla cartella
-const lang = window.location.pathname.split('/')[1] || 'en';
-gtag('set', { 'content_group': 'Language: ' + lang.toUpperCase() });
+      const lang = window.location.pathname.split('/')[1] || 'en';
+      gtag('set', { 'content_group': 'Language: ' + lang.toUpperCase() });
     </script>
-    <!-- ==== FINE GOOGLE ANALYTICS ==== -->
 
     <style>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <title>Democraticus – Vom Homo Sapiens zum Homo Democraticus</title>
-    <style>
         body{font-family:Arial,sans-serif;background:#000;color:#fff;margin:0;padding:0;text-align:center}
-        header{background:#8B0000;padding:60px 20px}h1{font-size:3.5em;margin:0}.slogan{font-size:1.6em;margin:20px 0;line-height:1.4}
+        header{background:#8B0000;padding:60px 20px}
+        h1{font-size:3.5em;margin:0}
+        .slogan{font-size:1.6em;margin:20px 0;line-height:1.4}
         .graphics{display:flex;justify-content:center;align-items:center;gap:60px;padding:60px 20px;flex-wrap:wrap}
         .graphic{width:340px;height:220px;background:#222;border:3px solid #fff;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.3em;padding:20px;box-sizing:border-box}
         .arrow{font-size:4em;color:#8B0000;font-weight:bold}
@@ -36,14 +28,19 @@ gtag('set', { 'content_group': 'Language: ' + lang.toUpperCase() });
         button:hover{background:#A52A2A;transform:scale(1.05)}
         .section{padding:50px 20px;max-width:1100px;margin:0 auto}
         footer{background:#111;padding:30px;font-size:0.9em;margin-top:50px}
-        .cover-img{max-width:300px;border:3px solid #8B0000;border-radius:12px}
-        .schweiger-table{width:90%;max-width:1000px;margin:30px auto;border-collapse:collapse;font-size:1.1em}
-        .schweiger-table th,.schweiger-table td{border:2px solid #8B0000;padding:12px;text-align:center;background:#111}
-        .schweiger-table th{background:#8B0000}
-        .schweiger-table tr:hover td{background:#222}
+        .covers{display:flex;flex-wrap:wrap;justify-content:center;gap:25px;margin:40px 0}
+        .cover-card{width:220px;text-align:center}
+        .cover-card img{width:100%;border:2px solid #8B0000;border-radius:8px}
+        .cover-card p{margin:10px 0 8px;font-weight:bold}
+        .small-btn{background:#333;padding:10px 20px;font-size:1em}
+        .absentees-table{width:90%;max-width:1000px;margin:30px auto;border-collapse:collapse;font-size:1.1em}
+        .absentees-table th,.absentees-table td{border:2px solid #8B0000;padding:12px;text-align:center;background:#111}
+        .absentees-table th{background:#8B0000}
+        .absentees-table tr:hover td{background:#222}
     </style>
 </head>
 <body>
+
 <div style="position:absolute;top:15px;right:20px;z-index:999;">
     <select onchange="location=this.value;" style="padding:8px 12px 8px 36px;font-size:16px;background:#000 url('/flags/de.png') no-repeat 8px center;background-size:20px;color:#fff;border:2px solid #8B0000;border-radius:8px;cursor:pointer;">
         <option value="" selected>Sprache</option>
@@ -70,14 +67,41 @@ gtag('set', { 'content_group': 'Language: ' + lang.toUpperCase() });
 <section class="section">
     <h2>Lies das Buch – kostenloses PDF</h2>
     <p>660 Seiten · Diagnose · Komplettes Modell · Einsatzbereite Gesetze · Globaler Aktionsplan<br>Open-Source-Revolution</p>
-    <a href="/book/Autopsia_della_democrazia_rappresentativa_2025.pdf" download><button>Komplettes Buch herunterladen (660 Seiten)</button></a>
-    <a href="/book/A_modest_proposal_to_humanity.pdf" download><button>Download „Ein bescheidener Vorschlag an die Menschheit“ (74 Seiten)</button></a>
+    <a href="https://github.com/demostopheles/democraticus/raw/main/book/Autopsia_della_democrazia_rappresentativa_2025.pdf" download>
+        <button>Komplettes Buch herunterladen (660 Seiten)</button>
+    </a>
+    <br><br>
+    <a href="/book/A_modest_proposal_to_humanity.pdf" download>
+        <button>„Ein bescheidener Vorschlag an die Menschheit“ herunterladen (74 Seiten)</button>
+    </a>
 </section>
 
 <section class="section">
-    <h2>Titelbild + Inhaltsverzeichnis (11 Seiten)</h2>
-    <img src="/covers/cover_de.jpg" alt="Cover Deutsch" class="cover-img"><br><br>
-    <a href="/covers/obduktion_de.pdf" download="obduktion_de.pdf"><button>PDF Deutsch herunterladen (11 Seiten)</button></a>
+    <h2>Titel + Inhaltsverzeichnis (11 Seiten) + Neuerscheinung</h2>
+    <div class="covers">
+        <div class="cover-card">
+            <img src="/covers/cover_modest.jpg" alt="A Modest Proposal">
+            <p>A Modest Proposal to Humanity</p>
+            <a href="/book/A_modest_proposal_to_humanity.pdf" download><button class="small-btn">Download PDF (74 S.)</button></a>
+        </div>
+        <div class="cover-card">
+            <img src="/covers/cover_de.jpg" alt="Deutsch">
+            <p>Deutsch – Obduktion</p>
+            <a href="/covers/Obduktion_de.pdf" download><button class="small-btn">Download PDF (11 S.)</button></a>
+        </div>
+        <div class="cover-card">
+            <img src="/covers/cover_en.jpg" alt="English"><p>English</p><a href="/covers/Autopsy_en.pdf" download><button class="small-btn">Download PDF</button></a>
+        </div>
+        <div class="cover-card">
+            <img src="/covers/cover_es.jpg" alt="Español"><p>Español</p><a href="/covers/Autopsia_es.pdf" download><button class="small-btn">Download PDF</button></a>
+        </div>
+        <div class="cover-card">
+            <img src="/covers/cover_fr.jpg" alt="Français"><p>Français</p><a href="/covers/Autopsie_fr.pdf" download><button class="small-btn">Download PDF</button></a>
+        </div>
+        <div class="cover-card">
+            <img src="/covers/cover_pt.jpg" alt="Português"><p>Português</p><a href="/covers/Autopsia_pt.pdf" download><button class="small-btn">Download PDF</button></a>
+        </div>
+    </div>
 </section>
 
 <section class="section">
@@ -99,23 +123,34 @@ gtag('set', { 'content_group': 'Language: ' + lang.toUpperCase() });
     <iframe src="/simulator/de/index.html" width="100%" height="600" frameborder="0" style="border:2px solid #8B0000;border-radius:10px;"></iframe>
 </section>
 
-<!-- ==== DIE GALERIE DER BERÜHMTEN SCHWEIGER ==== -->
 <section class="section">
     <h2>Die Galerie der berühmten Schweiger</h2>
     <p>Das sind nicht die üblichen Oligarchen (die kennen wir schon).<br>
     Das sind die Intellektuellen, Journalisten, Professoren, Youtuber und „Dissidenten“, die <strong>das Projekt Democraticus bestens kennen</strong> und die, wenn man sie öffentlich auffordert, es zu unterstützen oder auch nur darüber zu diskutieren, <strong>todschweigen</strong>.<br>
     Ihr Schweigen schützt das System mehr als jede Repressionsmaßnahme. Ihr Name bleibt hier, bis sie Farbe bekennen.</p>
-
-    <table class="schweiger-table">
+    <table class="absentees-table">
         <tr><th>Name</th><th>Land</th><th>Hauptaktivität</th><th>Datum des Schweigens</th></tr>
         <tr><td>In Kürze…</td><td>—</td><td>—</td><td>—</td></tr>
     </table>
-
-    <p><em>Die Liste ist offen. Jeder kann einen Namen vorschlagen – mit öffentlichem Beweis der unbeantworteten Aufforderung (Tweet, öffentliche Mail, Video etc.).  
-    Sobald eine klare Stellungnahme erfolgt, wird der Name sofort entfernt.</em></p>
+    <p><em>Die Liste ist offen. Jeder kann einen Namen vorschlagen – mit öffentlichem Beweis der unbeantworteten Aufforderung.</em></p>
+    <p><strong>Jetzt in die Ehrenliste eintragen → ewige Schande vermeiden.</strong></p>
+    <button id="honorBtn" style="background:#006400;">In die Ehrenliste eintragen</button>
+    <div id="honorForm" style="display:none;margin-top:20px;padding:20px;background:#111;border-radius:10px;">
+        <form action="https://formspree.io/f/xblrjwpw" method="POST">
+            <input type="text" name="name" placeholder="Vollständiger Name" required style="width:80%;padding:12px;margin:10px;"><br>
+            <input type="email" name="email" placeholder="E-Mail (wird nie veröffentlicht)" required style="width:80%;padding:12px;margin:10px;"><br>
+            <input type="hidden" name="language" value="Deutsch">
+            <button type="submit" style="background:#006400;">Absenden & Ehrenliste beitreten</button>
+        </form>
+        <p style="font-size:0.9em;margin-top:20px;">Die Galerie wird am 1. Januar 2026 veröffentlicht.</p>
+    </div>
 </section>
-<!-- ==== ENDE GALERIE ==== -->
 
 <footer>© Democraticus 2025 – Creative Commons BY-SA 4.0</footer>
+
+<script>
+    document.getElementById('honorBtn').onclick = () => document.getElementById('honorForm').style.display = 'block';
+    if (new Date() >= new Date('2025-12-01')) document.getElementById('honorForm').style.display = 'block';
+</script>
 </body>
 </html>
