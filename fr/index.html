@@ -16,6 +16,9 @@
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
       gtag('config', 'G-Y9EPJN1JWT');
+        // Rileva automaticamente la lingua dalla cartella
+const lang = window.location.pathname.split('/')[1] || 'en';
+gtag('set', { 'content_group': 'Language: ' + lang.toUpperCase() });
     </script>
     <!-- ==== FINE GOOGLE ANALYTICS ==== -->
 
