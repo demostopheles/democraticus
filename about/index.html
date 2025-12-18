@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>About Democraticus – The Project</title>
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y9EPJN1JWT"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-Y9EPJN1JWT');
+    </script>
+
+    <!-- GTranslate (stesso della home e delle altre pagine) -->
+    <script>
+        window.gtranslateSettings = {
+            "default_language": "en",
+            "native_language_names": true,
+            "detect_browser_language": true,
+            "languages": ["en","fr","it","es","de","pt","el","ne","nl","is","no","sv","da"],
+            "wrapper_selector": ".gtranslate_wrapper",
+            "switcher_horizontal_position": "right",
+            "switcher_vertical_position": "top"
+        };
+    </script>
+    <script src="https://cdn.gtranslate.net/widgets/latest/dwf.js" defer></script>
+
+    <style>
+        body{font-family:Arial,sans-serif;background:#000;color:#fff;margin:0;padding:0;text-align:center}
+        header{background:#8B0000;padding:60px 20px}
+        h1{font-size:3em;margin:0}
+        .slogan{font-size:1.6em;margin:25px 0;line-height:1.4}
+        .container{max-width:1100px;margin:40px auto;padding:0 20px}
+        .pdf-viewer{
+            width:100%;
+            height:80vh;
+            max-width:900px;
+            margin:40px auto;
+            border:3px solid #8B0000;
+            border-radius:12px;
+            overflow:hidden;
+            box-shadow:0 8px 30px rgba(139,0,0,0.6);
+        }
+        .download-btn{
+            background:#8B0000;color:#fff;border:none;padding:16px 40px;font-size:1.3em;
+            cursor:pointer;border-radius:8px;transition:.3s;display:inline-block;margin:20px;
+        }
+        .download-btn:hover{background:#A52A2A;transform:scale(1.05)}
+        footer{background:#111;padding:40px;font-size:0.9em;margin-top:80px}
+    </style>
+</head>
+<body>
+
+    <div class="gtranslate_wrapper"></div>
+
+    <header>
+        <h1>About Democraticus</h1>
+        <p class="slogan">Vision · Diagnosis · Open-Source Revolution</p>
+    </header>
+
+    <div class="container">
+        <p style="font-size:1.2em;max-width:800px;margin:0 auto 40px;">
+            Read the complete presentation of the project.<br>
+            The document explains the diagnosis of current representative systems, the complete model of authentic democracy, and the global action plan.
+        </p>
+
+        <!-- Visualizzazione diretta del PDF -->
+        <iframe src="/about/about.pdf" class="pdf-viewer" title="About Democraticus PDF"></iframe>
+
+        <p style="margin-top:40px;">
+            <a href="/about/about.pdf" download class="download-btn">
+                Download the PDF (if the viewer doesn't work on your device)
+            </a>
+        </p>
+
+        <p style="font-size:1em;color:#aaa;max-width:800px;margin:40px auto;">
+            The text is released under Creative Commons BY-SA 4.0.<br>
+            You are free to share, adapt and redistribute – even commercially – as long as you give appropriate credit.
+        </p>
+    </div>
+
+    <footer>
+        © Democraticus 2025 – Creative Commons BY-SA 4.0
+    </footer>
+
+</body>
+</html>
