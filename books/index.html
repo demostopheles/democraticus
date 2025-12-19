@@ -21,34 +21,105 @@
             "detect_browser_language": true,
             "languages": ["en","fr","it","es","de","pt","el","ne","nl","is","no","sv","da"],
             "wrapper_selector": ".gtranslate_wrapper",
-            "switcher_horizontal_position": "right",
-            "switcher_vertical_position": "top"
+            "horizontal_position": "left",
+            "vertical_position": "top"
         };
     </script>
     <script src="https://cdn.gtranslate.net/widgets/latest/dwf.js" defer></script>
 
     <style>
-        body{font-family:Arial,sans-serif;background:#000;color:#fff;margin:0;padding:0;text-align:center}
+        body{font-family:Arial,sans-serif;background:#000;color:#fff;margin:0;padding:0}
+        .topbar{background:#111;padding:10px 20px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:1000;border-bottom:2px solid #8B0000}
+        .topbar .gtranslate_wrapper{margin:0}
         header{background:#8B0000;padding:60px 20px}
-        h1{font-size:3em;margin:0}
-        .subtitle{font-size:1.6em;margin:25px 0;line-height:1.4}
+        h1{font-size:3em;margin:0;text-align:center}
+        .subtitle{font-size:1.6em;margin:25px 0;text-align:center}
         .container{max-width:1100px;margin:40px auto;padding:0 20px}
         .section{margin:60px 0}
-        .btn{background:#8B0000;color:#fff;border:none;padding:16px 40px;font-size:1.3em;cursor:pointer;border-radius:8px;transition:.3s;display:inline-block;margin:15px}
+        .btn{background:#8B0000;color:#fff;border:none;padding:14px 30px;font-size:1.2em;cursor:pointer;border-radius:8px;transition:.3s;margin:10px}
         .btn:hover{background:#A52A2A;transform:scale(1.05)}
         .covers{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:30px;margin:50px 0}
-        .cover-card{background:#111;border:3px solid #8B0000;border-radius:12px;padding:20px;transition:.3s}
-        .cover-card:hover{transform:translateY(-10px)}
-        .cover-card img{width:100%;border-radius:8px;max-height:300px;object-fit:contain;background:#000}
-        .cover-card p{font-weight:bold;margin:15px 0 10px;font-size:1.2em}
-        .small-btn{background:#333;padding:12px 24px;font-size:1.1em}
+        .cover-card{background:#111;border:3px solid #8B0000;border-radius:12px;padding:25px;transition:.3s;text-align:center}
+        .cover-card:hover{transform:translateY(-10px);box-shadow:0 10px 20px rgba(139,0,0,0.5)}
+        .cover-card img{width:100%;max-height:300px;object-fit:contain;background:#000;border-radius:8px}
+        .cover-card p{font-weight:bold;margin:15px 0;font-size:1.2em}
+        .small-btn{background:#333;padding:10px 20px;font-size:1.1em;border-radius:6px}
+        .small-btn:hover{background:#555}
         footer{background:#111;padding:40px;font-size:0.9em;margin-top:80px}
     </style>
 </head>
 <body>
 
-    <div class="gtranslate_wrapper"></div>
+    <!-- Nuova barra superiore con selettore lingue a sinistra -->
+    <div class="topbar">
+        <div class="gtranslate_wrapper"></div>
+        <!-- Qui in futuro puoi aggiungere altri pulldown, es. per filtrare per lingua -->
+    </div>
 
     <header>
         <h1>Books & Documents</h1>
-        <p class="subtitle">All texts are free · Creative Commons BY-SA 4.0
+        <p class="subtitle">All texts are free · Creative Commons BY-SA 4.0</p>
+    </header>
+
+    <div class="container">
+
+        <div class="section">
+            <h2 style="font-size:2.2em;color:#8B0000;">Main Book (660 pages)</h2>
+            <p style="font-size:1.3em;max-width:800px;margin:0 auto 30px;">Complete diagnosis, model and global action plan – Italian original</p>
+            <a href="Autopsia_della_democrazia_rappresentativa_2025.pdf" download>
+                <button class="btn">Download Full Book (660 pages)</button>
+            </a>
+        </div>
+
+        <div class="section">
+            <h2 style="font-size:2.2em;color:#8B0000;">A Modest Proposal to Humanity (74 pages)</h2>
+            <p style="font-size:1.3em;max-width:800px;margin:0 auto 30px;">English summary and call to action</p>
+            <a href="A_modest_proposal_to_humanity.pdf" download>
+                <button class="btn">Download PDF (74 pages)</button>
+            </a>
+        </div>
+
+        <div class="section">
+            <h2 style="font-size:2.2em;color:#8B0000;">Cover + Table of Contents (11 pages)</h2>
+            <p style="font-size:1.3em;max-width:800px;margin:0 auto 40px;">Choose your language</p>
+
+            <div class="covers">
+                <div class="cover-card">
+                    <img src="/covers/cover_en.jpg" alt="English">
+                    <p>English</p>
+                    <a href="Autopsy_en.pdf" download><button class="small-btn">Download PDF</button></a>
+                </div>
+                <div class="cover-card">
+                    <img src="/covers/cover_es.jpg" alt="Español">
+                    <p>Español</p>
+                    <a href="Autopsia_es.pdf" download><button class="small-btn">Download PDF</button></a>
+                </div>
+                <div class="cover-card">
+                    <img src="/covers/cover_pt.jpg" alt="Português">
+                    <p>Português</p>
+                    <a href="Autopsia_pt.pdf" download><button class="small-btn">Download PDF</button></a>
+                </div>
+                <div class="cover-card">
+                    <img src="/covers/cover_fr.jpg" alt="Français">
+                    <p>Français</p>
+                    <a href="Autopsie_fr.pdf" download><button class="small-btn">Download PDF</button></a>
+                </div>
+                <div class="cover-card">
+                    <img src="/covers/cover_de.jpg" alt="Deutsch">
+                    <p>Deutsch</p>
+                    <a href="Obduktion_de.pdf" download><button class="small-btn">Download PDF</button></a>
+                </div>
+            </div>
+        </div>
+
+        <p style="margin-top:60px;font-size:1.1em;color:#aaa;max-width:800px;margin-left:auto;margin-right:auto;">
+            All documents are open-source. Share, translate, adapt – just attribute the source.
+        </p>
+    </div>
+
+    <footer>
+        © Democraticus 2025 – Creative Commons BY-SA 4.0
+    </footer>
+
+</body>
+</html>
