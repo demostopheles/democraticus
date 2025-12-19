@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <title>About Democraticus – The Project</title>
+    <title>About Democraticus – Authentic Representative Democracy</title>
     
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y9EPJN1JWT"></script>
     <script>
@@ -13,72 +13,107 @@
       gtag('config', 'G-Y9EPJN1JWT');
     </script>
 
-    <!-- GTranslate (stesso della home e delle altre pagine) -->
+    <!-- GTranslate con le tue 15 lingue -->
     <script>
         window.gtranslateSettings = {
-            "default_language": "en",
-            "native_language_names": true,
-            "detect_browser_language": true,
-            "languages": ["en","fr","it","es","de","pt","el","ne","nl","is","no","sv","da"],
-            "wrapper_selector": ".gtranslate_wrapper",
-            "switcher_horizontal_position": "right",
-            "switcher_vertical_position": "top"
+            "default_language":"en",
+            "native_language_names":true,
+            "detect_browser_language":true,
+            "languages":["en","fr","it","es","de","pt","el","ne","nl","is","no","sv","da","fi","bg"],
+            "wrapper_selector":".gtranslate_wrapper",
+            "horizontal_position":"right",
+            "vertical_position":"top"
         };
     </script>
     <script src="https://cdn.gtranslate.net/widgets/latest/dwf.js" defer></script>
 
     <style>
-        body{font-family:Arial,sans-serif;background:#000;color:#fff;margin:0;padding:0;text-align:center}
-        header{background:#8B0000;padding:60px 20px}
-        h1{font-size:3em;margin:0}
-        .slogan{font-size:1.6em;margin:25px 0;line-height:1.4}
-        .container{max-width:1100px;margin:40px auto;padding:0 20px}
-        .pdf-viewer{
-            width:100%;
-            height:80vh;
-            max-width:900px;
-            margin:40px auto;
-            border:3px solid #8B0000;
-            border-radius:12px;
-            overflow:hidden;
-            box-shadow:0 8px 30px rgba(139,0,0,0.6);
+        body{font-family:Arial,sans-serif;background:#000;color:#fff;margin:0;padding:0;line-height:1.6}
+        .fixed-header{position:sticky;top:0;background:#111;border-bottom:3px solid #8B0000;z-index:1000;padding:12px 20px;}
+        .header-container{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;}
+        .logo{font-size:2.2em;font-weight:bold;color:#fff;text-decoration:none;}
+        .logo:hover{color:#8B0000;}
+        .main-menu a{color:#fff;text-decoration:none;margin:0 18px;font-size:1.2em;transition:.3s;}
+        .main-menu a:hover{color:#8B0000;transform:scale(1.1);}
+        .main-menu a.active{color:#8B0000;font-weight:bold;}
+        .content{max-width:900px;margin:40px auto;padding:20px;background:#111;border-radius:12px;box-shadow:0 4px 20px rgba(139,0,0,0.5);}
+        h1{text-align:center;font-size:3em;margin:40px 0;color:#8B0000;}
+        h2{font-size:2em;margin:40px 0 20px;color:#8B0000;border-bottom:2px solid #8B0000;padding-bottom:10px;}
+        p{font-size:1.2em;margin:20px 0;}
+        ul{margin:20px 0;padding-left:40px;}
+        li{font-size:1.2em;margin:15px 0;}
+        strong{color:#ff6666;}
+        footer{background:#111;padding:40px;font-size:0.9em;text-align:center;margin-top:80px;}
+        @media (max-width:900px){
+            .header-container{flex-direction:column;gap:15px;}
+            .main-menu a{margin:0 10px;font-size:1.1em;}
         }
-        .download-btn{
-            background:#8B0000;color:#fff;border:none;padding:16px 40px;font-size:1.3em;
-            cursor:pointer;border-radius:8px;transition:.3s;display:inline-block;margin:20px;
-        }
-        .download-btn:hover{background:#A52A2A;transform:scale(1.05)}
-        footer{background:#111;padding:40px;font-size:0.9em;margin-top:80px}
     </style>
 </head>
 <body>
 
-    <div class="gtranslate_wrapper"></div>
+    <!-- Header fisso uguale a tutte le pagine -->
+    <div class="fixed-header">
+        <div class="header-container">
+            <a href="/" class="logo">Democraticus</a>
+            <nav class="main-menu">
+                <a href="/">Home</a>
+                <a href="/books/">Books</a>
+                <a href="/articles/">Articles</a>
+                <a href="/simulator/">Simulator</a>
+                <a href="/assemblies/">Assemblies</a>
+                <a href="/gallery/">Gallery</a>
+                <a href="/about/" class="active">About</a>
+            </nav>
+            <div class="gtranslate_wrapper"></div>
+        </div>
+    </div>
 
-    <header>
+    <div class="content">
         <h1>About Democraticus</h1>
-        <p class="slogan">Vision · Diagnosis · Open-Source Revolution</p>
-    </header>
 
-    <div class="container">
-        <p style="font-size:1.2em;max-width:800px;margin:0 auto 40px;">
-            Read the complete presentation of the project.<br>
-            The document explains the diagnosis of current representative systems, the complete model of authentic democracy, and the global action plan.
-        </p>
+        <h2>From Homo Sapiens to Homo Democraticus<br>The Evolutionary Leap in Sovereignty</h2>
 
-        <!-- Visualizzazione diretta del PDF -->
-        <iframe src="/about/about.pdf" class="pdf-viewer" title="About Democraticus PDF"></iframe>
+        <h2>Diagnosis</h2>
+        <p>Today’s representative systems are not authentic democracies.<br>
+        They are oligarchies disguised as democracies.</p>
+        <p>Professional politicians, political parties, lobbies, and debt-based finance have captured the sovereignty that constitutionally belongs exclusively to citizens.<br>
+        Elections have become a periodic ritual that legitimizes betrayal: citizens choose who will ignore their interests until the next vote.</p>
+        <p>This is not the fault of individual politicians.<br>
+        It is a structural flaw deliberately embedded in the mechanism of representation without permanent citizen control.</p>
 
-        <p style="margin-top:40px;">
-            <a href="/about/about.pdf" download class="download-btn">
-                Download the PDF (if the viewer doesn't work on your device)
-            </a>
-        </p>
+        <h2>The Solution</h2>
+        <p>Democraticus proposes the first and only model of <strong>authentic representative democracy</strong>.</p>
+        <p>Representatives continue to be elected, but they are placed under the <strong>permanent, direct, and binding supervision</strong> of a supreme <strong>Civic Assembly</strong> composed of ordinary citizens drawn by lot.</p>
+        <p>This Civic Assembly is the highest institution of the State:</p>
+        <ul>
+            <li>It oversees and controls the three powers (executive, legislative, judicial)</li>
+            <li>It has the power to veto laws, revoke mandates, and initiate binding legislation</li>
+            <li>It deliberates publicly and in multiple languages</li>
+            <li>It structurally prevents the capture of power by parties, lobbies, or financial interests</li>
+        </ul>
+        <p>Sovereignty returns fully and permanently to citizens without eliminating the advantages of representation.</p>
 
-        <p style="font-size:1em;color:#aaa;max-width:800px;margin:40px auto;">
-            The text is released under Creative Commons BY-SA 4.0.<br>
-            You are free to share, adapt and redistribute – even commercially – as long as you give appropriate credit.
-        </p>
+        <h2>Open-Source Revolution</h2>
+        <p>The complete model is public and open-source (Creative Commons BY-SA 4.0).<br>
+        Full book (660 pages), summaries, legal texts ready for adoption, simulator, and all documents are freely available to download, translate, adapt, and implement.</p>
+        <p>No leaders. No parties behind the project. No requests for funding.<br>
+        Only a clear invitation to humanity to complete the democratic evolution.</p>
+
+        <h2>Global Action Plan</h2>
+        <p>Six proto-assemblies are already active in different languages.<br>
+        They deliberate, refine the proposals, and prepare the first real Civic Assemblies.</p>
+        <p>The Gallery of Famous Absentees records those public intellectuals and dissidents who, despite knowing the project, have chosen public silence when formally invited to debate or support it.</p>
+
+        <h2>Call to Action</h2>
+        <p>Read the texts.<br>
+        Test the Double Bind Simulator.<br>
+        Join the Civic Assembly in your language.<br>
+        Translate. Share. Implement locally.</p>
+        <p>The current system will not reform itself.<br>
+        The leap from Homo Sapiens to Homo Democraticus begins with aware citizens.</p>
+
+        <p style="text-align:center;font-style:italic;margin-top:50px;">Democraticus – 2025</p>
     </div>
 
     <footer>
