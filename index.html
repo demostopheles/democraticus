@@ -12,7 +12,7 @@
       gtag('config', 'G-Y9EPJN1JWT');
     </script>
 
-    <!-- GTranslate Widget -->
+    <!-- GTranslate -->
     <script>
         window.gtranslateSettings = {
             "default_language": "en",
@@ -20,39 +20,73 @@
             "detect_browser_language": true,
             "languages": ["en","fr","it","es","de","pt","el","ne","nl","is","no","sv","da"],
             "wrapper_selector": ".gtranslate_wrapper",
-            "switcher_horizontal_position": "right",
-            "switcher_vertical_position": "top"
+            "horizontal_position": "right",
+            "vertical_position": "top"
         };
     </script>
     <script src="https://cdn.gtranslate.net/widgets/latest/dwf.js" defer></script>
 
     <style>
         body{font-family:Arial,sans-serif;background:#000;color:#fff;margin:0;padding:0;text-align:center}
-        header{background:#8B0000;padding:80px 20px}
-        h1{font-size:3.8em;margin:0}
-        .slogan{font-size:1.8em;margin:30px 0;line-height:1.4}
-        .container{max-width:1200px;margin:0 auto;padding:20px}
-        .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:30px;margin:50px 0}
-        .card{background:#111;border:3px solid #8B0000;border-radius:12px;padding:30px;transition:.3s;box-shadow:0 4px 15px rgba(139,0,0,0.4)}
-        .card:hover{transform:translateY(-10px);box-shadow:0 10px 25px rgba(139,0,0,0.6)}
-        .card h2{font-size:1.8em;margin-top:0;color:#8B0000}
-        .card p{font-size:1.1em;line-height:1.5;margin:20px 0}
-        .btn{background:#8B0000;color:#fff;border:none;padding:14px 30px;font-size:1.2em;cursor:pointer;border-radius:8px;transition:.3s;display:inline-block;margin:10px}
-        .btn:hover{background:#A52A2A;transform:scale(1.05)}
-        .hero-graphics{display:flex;justify-content:center;align-items:center;gap:60px;padding:60px 20px;flex-wrap:wrap}
-        .graphic{width:340px;height:220px;background:#222;border:3px solid #fff;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.3em;padding:20px;box-sizing:border-box}
-        .arrow{font-size:4em;color:#8B0000;font-weight:bold}
-        footer{background:#111;padding:40px;font-size:0.9em;margin-top:80px}
+        .fixed-header{
+            position:sticky;top:0;background:#111;border-bottom:3px solid #8B0000;z-index:1000;padding:12px 20px;
+        }
+        .header-container{
+            max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;
+        }
+        .logo{
+            font-size:2.2em;font-weight:bold;color:#fff;text-decoration:none;
+        }
+        .logo:hover{color:#8B0000;}
+        .main-menu a{
+            color:#fff;text-decoration:none;margin:0 18px;font-size:1.2em;transition:.3s;
+        }
+        .main-menu a:hover{color:#8B0000;transform:scale(1.1);}
+        .main-menu a.active{color:#8B0000;font-weight:bold;}
+        .hero{background:#8B0000;padding:80px 20px;}
+        h1{font-size:3.8em;margin:0;}
+        .slogan{font-size:1.8em;margin:30px 0;line-height:1.4;}
+        .hero-graphics{display:flex;justify-content:center;align-items:center;gap:60px;padding:60px 20px;flex-wrap:wrap;}
+        .graphic{width:340px;height:220px;background:#222;border:3px solid #fff;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.3em;padding:20px;box-sizing:border-box;}
+        .arrow{font-size:4em;color:#8B0000;font-weight:bold;}
+        .container{max-width:1200px;margin:80px auto;padding:20px;}
+        .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:30px;}
+        .card{background:#111;border:3px solid #8B0000;border-radius:12px;padding:30px;transition:.3s;box-shadow:0 4px 15px rgba(139,0,0,0.4);}
+        .card:hover{transform:translateY(-10px);box-shadow:0 10px 25px rgba(139,0,0,0.6);}
+        .card h2{font-size:1.8em;margin-top:0;color:#8B0000;}
+        .card p{font-size:1.1em;line-height:1.5;margin:20px 0;}
+        .btn{background:#8B0000;color:#fff;border:none;padding:14px 30px;font-size:1.2em;cursor:pointer;border-radius:8px;transition:.3s;display:inline-block;}
+        .btn:hover{background:#A52A2A;transform:scale(1.05);}
+        footer{background:#111;padding:40px;font-size:0.9em;margin-top:80px;}
+        @media (max-width:900px){
+            .header-container{flex-direction:column;gap:15px;}
+            .main-menu a{margin:0 10px;font-size:1.1em;}
+        }
     </style>
 </head>
 <body>
 
-    <div class="gtranslate_wrapper"></div>
+    <!-- Header fisso stile engview.com -->
+    <div class="fixed-header">
+        <div class="header-container">
+            <a href="/" class="logo">Democraticus</a>
+            <nav class="main-menu">
+                <a href="/" class="active">Home</a>
+                <a href="/books/">Books</a>
+                <a href="/articles/">Articles</a>
+                <a href="/simulator/">Simulator</a>
+                <a href="/assemblies/">Assemblies</a>
+                <a href="/gallery/">Gallery</a>
+                <a href="/about/">About</a>
+            </nav>
+            <div class="gtranslate_wrapper"></div>
+        </div>
+    </div>
 
-    <header>
+    <div class="hero">
         <h1>Democraticus</h1>
         <p class="slogan">From Homo Sapiens to Homo Democraticus<br><strong>The Evolutionary Leap in Sovereignty</strong></p>
-    </header>
+    </div>
 
     <div class="hero-graphics">
         <div class="graphic">Graphic A:<br>Oligarchy Masked as Democracy<br><small>(Power from Lobbies & Debt)</small></div>
@@ -62,49 +96,36 @@
 
     <div class="container">
         <div class="grid">
-
-            <!-- Books / Downloads -->
             <div class="card">
                 <h2>Books & Downloads</h2>
                 <p>Full book (660 pages), summary, cover + table of contents in multiple languages – all free PDF.</p>
                 <a href="/books/" class="btn">Go to Downloads</a>
             </div>
-
-            <!-- Articles -->
             <div class="card">
                 <h2>Articles</h2>
                 <p>In-depth analysis, updates, and theoretical developments on the Democraticus model.</p>
                 <a href="/articles/" class="btn">Read Articles</a>
             </div>
-
-            <!-- Gallery -->
             <div class="card">
                 <h2>Gallery of Famous Absentees</h2>
                 <p>Public figures who know the project but choose silence. Join the Honor List to avoid eternal shame.</p>
                 <a href="/gallery/" class="btn">View Gallery & Join</a>
             </div>
-
-            <!-- Simulator -->
             <div class="card">
                 <h2>Double Bind Simulator</h2>
                 <p>Play 10 rounds and discover why voting always ends in betrayal.</p>
                 <a href="/simulator/" class="btn">Play Simulator</a>
             </div>
-
-            <!-- Civic Assemblies -->
             <div class="card">
                 <h2>Global Civic Assemblies</h2>
                 <p>Join the active proto-assemblies in your language. Deliberate and ratify the future.</p>
                 <a href="/assemblies/" class="btn">Join Assemblies</a>
             </div>
-
-            <!-- Future section (optional) -->
             <div class="card">
                 <h2>About the Project</h2>
                 <p>Vision, diagnosis, and open-source revolution behind Democraticus.</p>
                 <a href="/about/" class="btn">Learn More</a>
             </div>
-
         </div>
     </div>
 
@@ -112,5 +133,6 @@
         © Democraticus 2025 – Creative Commons BY-SA 4.0<br>
         An open-source revolution in sovereignty
     </footer>
+
 </body>
 </html>
