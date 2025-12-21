@@ -9,24 +9,28 @@
       font-family: 'Georgia', serif;
       line-height: 1.6;
       max-width: 800px;
-      margin: 40px auto;
+      margin: 60px auto;  /* Increased top/bottom margin for better centering */
       padding: 20px;
-      background: #f9f9f9;
+      background: transparent !important;  /* Force transparent background */
       color: #333;
+      text-align: center;
     }
     h1 {
       text-align: center;
-      margin-bottom: 40px;
-      font-size: 2.2em;
+      margin-bottom: 50px;
+      font-size: 2.4em;
     }
     ol {
       counter-reset: item;
       padding-left: 0;
+      max-width: 700px;
+      margin: 0 auto;
+      text-align: left;  /* List items left-aligned for readability */
     }
     li {
       display: block;
-      margin-bottom: 20px;
-      padding-left: 60px;
+      margin-bottom: 30px;
+      padding-left: 50px;
       position: relative;
       counter-increment: item;
     }
@@ -35,13 +39,13 @@
       position: absolute;
       left: 0;
       font-weight: bold;
-      font-size: 1.4em;
+      font-size: 1.5em;
       color: #555;
     }
     a {
       text-decoration: none;
       color: #1a0dab;
-      font-size: 1.2em;
+      font-size: 1.25em;
       font-weight: bold;
     }
     a:hover {
@@ -49,13 +53,13 @@
     }
     .description {
       display: block;
-      margin-top: 8px;
-      font-size: 0.95em;
+      margin-top: 10px;
+      font-size: 0.98em;
       color: #555;
       font-style: italic;
     }
     footer {
-      margin-top: 60px;
+      margin-top: 80px;
       text-align: center;
       font-size: 0.9em;
       color: #777;
