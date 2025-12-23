@@ -5,32 +5,29 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Articles - Democraticus.org</title>
 
-  <!-- GTranslate script - this makes translation work on static HTML pages (free version) -->
-  <script type="text/javascript">
-    function googleTranslateElementInit() {
-      new google.translate.TranslateElement({
-        pageLanguage: 'en',
-        includedLanguages: 'en,it,es,fr,de,pt,ru,zh-CN,ja',  // Add more if needed
-        layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
-        autoDisplay: false
-      }, 'google_translate_element');
-    }
+  <!-- GTranslate widget config - matching your main index.html -->
+  <script>
+    window.gtranslateSettings = {
+      "default_language":"en",
+      "native_language_names":true,
+      "detect_browser_language":true,
+      "languages":["en","fr","it","es","de","pt","el","ne","nl","is","no","sv","da","fi","bg","et","lv","lt","ro"],
+      "wrapper_selector":".gtranslate_wrapper",
+      "horizontal_position":"right",
+      "vertical_position":"top"
+    };
   </script>
-  <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+  <script src="https://cdn.gtranslate.net/widgets/latest/dwf.js" defer></script>
 
   <style>
     body {
-      background: transparent !important;  /* Inherits site background (red/black) */
-      margin: 0;
-      padding: 0;
+      background: transparent !important;  /* Matches site background */
       font-family: 'Georgia', serif;
       line-height: 1.6;
-      color: #333;  /* Text color - adjust to match your theme if needed */
-    }
-    .container {
       max-width: 800px;
       margin: 60px auto;
       padding: 20px;
+      color: #333;
       text-align: center;
     }
     h1 {
@@ -43,7 +40,7 @@
       padding-left: 0;
       max-width: 700px;
       margin: 0 auto;
-      text-align: left;  /* List items left-aligned for readability */
+      text-align: left;  /* List items left-aligned */
     }
     li {
       display: block;
@@ -82,68 +79,61 @@
       font-size: 0.9em;
       color: #777;
     }
-    /* GTranslate widget styling - placed top right */
-    #google_translate_element {
-      text-align: right;
-      margin: 20px 0;
-    }
-    .goog-te-gadget-simple {
-      background-color: rgba(0,0,0,0.1) !important;
-      border: none !important;
-      padding: 8px !important;
-      border-radius: 4px;
+    /* GTranslate wrapper - top right */
+    .gtranslate_wrapper {
+      text-align: right !important;
+      margin-bottom: 20px !important;
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <!-- GTranslate widget - top right -->
-    <div id="google_translate_element"></div>
+  <!-- GTranslate wrapper div - matches main site -->
+  <div class="gtranslate_wrapper"></div>
 
-    <h1>Articles</h1>
+  <h1>Articles</h1>
 
-    <ol>
-      <li>
-        <a href="001_Why_Voting_Does_Not_Delegate.html">Why Voting Does Not Delegate: The Legal Bug at the Basis of False Representative Democracy</a>
-        <span class="description">The foundational argument: voting is not a legal delegation and cannot transfer sovereign power.</span>
-      </li>
-      <li>
-        <a href="002_Fraud_in_Civil_Law.html">Fraud in Civil Law: Definition and Consequences</a>
-        <span class="description">Applying civil-law fraud to the political system: elements, consequences, and victim rights.</span>
-      </li>
-      <li>
-        <a href="003_The_Rights_of_Victims.html">The Rights of Victims: Why We Are Not Obligated to Obey a Fraudulent System</a>
-        <span class="description">Citizens as victims of collective fraud have the right to refuse illegitimate obligations.</span>
-      </li>
-      <li>
-        <a href="004_No_Army_Is_Needed.html">No Army Is Needed. A Proof Is Needed.</a>
-        <span class="description">Change comes through clear proof and metapolitical clarity, not force or chaos.</span>
-      </li>
-      <li>
-        <a href="005_The_Logic_of_Escalation.html">The Logic of Escalation: A Predictable Trap</a>
-        <span class="description">Why provocation and chaos benefit the system; clarity and disengagement are the smarter path.</span>
-      </li>
-      <li>
-        <a href="006_Representative_Democracy_Is_Possible.html">Representative Democracy Is Possible — And This Is Its Model</a>
-        <span class="description">A concrete, civil-law compliant model of authentic representative democracy.</span>
-      </li>
-      <li>
-        <a href="007_Journal_of_Democracy_Submission_medium.html">Electoral laws and the Double Bind: Reassessing democratic legitimacy through institutional design</a>
-        <span class="description">Academic submission (rejected by Journal of Democracy) proposing reforms and a Civic Assembly.</span>
-      </li>
-      <li>
-        <a href="008_The_Democracy_Experts_who_cannot_say.html">The “Democracy Experts” Who Cannot Say That the USA Is Not a Democracy</a>
-        <span class="description">How funding ties prevent mainstream “democracy scholars” from acknowledging the American oligarchy.</span>
-      </li>
-      <li>
-        <a href="009_The_Electoral_Double_Bind.html">The Electoral Double Bind: Why You Cannot Vote and You Cannot Not Vote</a>
-        <span class="description">The structural trap that makes every electoral choice reinforce the system’s power.</span>
-      </li>
-    </ol>
+  <ol>
+    <li>
+      <a href="001_Why_Voting_Does_Not_Delegate.html">Why Voting Does Not Delegate: The Legal Bug at the Basis of False Representative Democracy</a>
+      <span class="description">The foundational argument: voting is not a legal delegation and cannot transfer sovereign power.</span>
+    </li>
+    <li>
+      <a href="002_Fraud_in_Civil_Law.html">Fraud in Civil Law: Definition and Consequences</a>
+      <span class="description">Applying civil-law fraud to the political system: elements, consequences, and victim rights.</span>
+    </li>
+    <li>
+      <a href="003_The_Rights_of_Victims.html">The Rights of Victims: Why We Are Not Obligated to Obey a Fraudulent System</a>
+      <span class="description">Citizens as victims of collective fraud have the right to refuse illegitimate obligations.</span>
+    </li>
+    <li>
+      <a href="004_No_Army_Is_Needed.html">No Army Is Needed. A Proof Is Needed.</a>
+      <span class="description">Change comes through clear proof and metapolitical clarity, not force or chaos.</span>
+    </li>
+    <li>
+      <a href="005_The_Logic_of_Escalation.html">The Logic of Escalation: A Predictable Trap</a>
+      <span class="description">Why provocation and chaos benefit the system; clarity and disengagement are the smarter path.</span>
+    </li>
+    <li>
+      <a href="006_Representative_Democracy_Is_Possible.html">Representative Democracy Is Possible — And This Is Its Model</a>
+      <span class="description">A concrete, civil-law compliant model of authentic representative democracy.</span>
+    </li>
+    <li>
+      <a href="007_Journal_of_Democracy_Submission_medium.html">Electoral laws and the Double Bind: Reassessing democratic legitimacy through institutional design</a>
+      <span class="description">Academic submission (rejected by Journal of Democracy) proposing reforms and a Civic Assembly.</span>
+    </li>
+    <li>
+      <a href="008_The_Democracy_Experts_who_cannot_say.html">The “Democracy Experts” Who Cannot Say That the USA Is Not a Democracy</a>
+      <span class="description">How funding ties prevent mainstream “democracy scholars” from acknowledging the American oligarchy.</span>
+    </li>
+    <li>
+      <a href="009_The_Electoral_Double_Bind.html">The Electoral Double Bind: Why You Cannot Vote and You Cannot Not Vote</a>
+      <span class="description">The structural trap that makes every electoral choice reinforce the system’s power.</span>
+    </li>
+  </ol>
 
-    <footer>
-      <p>Democraticus.org — Reclaiming the legal foundations of genuine representation</p>
-    </footer>
-  </div>
+  <footer>
+    <p>Democraticus.org — Reclaiming the legal foundations of genuine representation</p>
+  </footer>
+
 </body>
 </html>
