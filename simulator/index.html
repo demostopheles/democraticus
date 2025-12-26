@@ -1,32 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <title>Double Bind Simulator – Democraticus</title>
-    
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y9EPJN1JWT"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-Y9EPJN1JWT');
-    </script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Simulator – Democraticus</title>
 
-    <!-- GTranslate -->
-    <script>
-        window.gtranslateSettings = {
-            "default_language":"en",
-            "native_language_names":true,
-            "detect_browser_language":true,
-            "languages":["en","fr","it","es","de","pt","el","ne","nl","is","no","sv","da","fi","bg"],
-            "wrapper_selector":".gtranslate_wrapper",
-            "horizontal_position":"right",
-            "vertical_position":"top"
-        };
-    </script>
-    <script src="https://cdn.gtranslate.net/widgets/latest/dwf.js" defer></script>
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-Y9EPJN1JWT"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-Y9EPJN1JWT');
+</script>
 
-    <style>
-        body{font-family:Arial,sans-serif;background:#000;color:#fff;margin:0;padding:0;line-height:1.6}
-        .fixed-header{position:sticky;top:0
+<!-- GTranslate -->
+<script>
+window.gtranslateSettings = {
+  "default_language":"en",
+  "native_language_names":true,
+  "detect_browser_language":true,
+  "languages":["en","fr","it","es","de","pt","el","ne","nl","is","no","sv","da"],
+  "wrapper_selector":".gtranslate_wrapper"
+};
+</script>
+<script src="https://cdn.gtranslate.net/widgets/latest/dwf.js" defer></script>
+
+<style>
+body{font-family:Arial,sans-serif;background:#000;color:#fff;margin:0;padding:0;line-height:1.6}
+.fixed-header{position:sticky;top:0;background:#111;border-bottom:3px solid #8B0000;z-index:1000;padding:12px 20px;}
+.header-container{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;}
+.logo{font-size:2.2em;font-weight:bold;color:#fff;text-decoration:none;}
+.logo:hover{color:#8B0000;}
+.main-menu a{color:#fff;text-decoration:none;margin:0 18px;font-size:1.2em;transition:.3s;}
+.main-menu a:hover{color:#8B0000;transform:scale(1.1);}
+.main-menu a.active{color:#8B0000;font-weight:bold;}
+.gtranslate_wrapper{min-width:120px;text-align:right;}
+
+.content{max-width:1100px;margin:40px auto;padding:20px;text-align:center;}
+h1{font-size:3em;color:#8B0000;margin-bottom:10px;}
+p.lead{font-size:1.3em;margin-bottom:30px;}
+
+.simulator-frame{
+  width:100%;
+  max-width:900px;
+  height:700px;
+  border:3px solid #8B0000;
+  border-radius:12px;
+  background:#000;
+}
+
+footer{background:#111;padding:40px;font-size:0.9em;text-align:center;margin-top:80px;}
+
+@media (max-width:900px){
+  .header-container{flex-direction:column;gap:15px;}
+  .main-menu a{margin:0 10px;font-size:1.1em;}
+  .simulator-frame{height:850px;}
+}
+</style>
+</head>
+
+<body>
+
+<div class="fixed-header">
+  <div class="header-container">
+    <a href="/" class="logo">Democraticus</a>
+    <nav class="main-menu">
+      <a href="/">Home</a>
+      <a href="/books/">Books</a>
+      <a href="/articles/">Articles</a>
+      <a href="/simulator/" class="active">Simulator</a>
+      <a href="/assemblies/">Assemblies</a>
+      <a href="/gallery/">Gallery</a>
+      <a href="/about/">About</a>
+    </nav>
+    <div class="gtranslate_wrapper"></div>
+  </div>
+</div>
+
+<div class="content">
+  <h1>Electoral Double Bind Simulator</h1>
+  <p class="lead">
+    A simple model showing why every electoral option structurally reinforces the same system.
+  </p>
+
+  <iframe 
+    src="double_bind_simulator.html"
+    class="simulator-frame"
+    title="Double Bind Simulator">
+  </iframe>
+
+  <p style="margin-top:30px;color:#aaa;font-size:1.1em;">
+    The simulator is illustrative. Its purpose is conceptual clarity, not prediction.
+  </p>
+</div>
+
+<footer>
+  © Democraticus 2025 — Creative Commons BY-SA 4.0
+</footer>
+
+</body>
+</html>
