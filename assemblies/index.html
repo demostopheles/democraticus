@@ -1,111 +1,138 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <title>Global Civic Assemblies – Democraticus</title>
-    
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y9EPJN1JWT"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-Y9EPJN1JWT');
-    </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Global Civic Assemblies – Democraticus</title>
 
-    <!-- GTranslate identico alla home -->
-    <script>
-        window.gtranslateSettings = {
-            "default_language": "en",
-            "native_language_names": true,
-            "detect_browser_language": true,
-            "languages": ["en","fr","it","es","de","pt","el","ne","nl","is","no","sv","da"],
-            "wrapper_selector": ".gtranslate_wrapper",
-            "switcher_horizontal_position": "right",
-            "switcher_vertical_position": "top"
-        };
-    </script>
-    <script src="https://cdn.gtranslate.net/widgets/latest/dwf.js" defer></script>
+  <script>
+    window.gtranslateSettings = {
+      "default_language":"en",
+      "native_language_names":true,
+      "detect_browser_language":true,
+      "languages":["en","fr","it","es","de","pt","el","ne","nl","is","no","sv","da"],
+      "wrapper_selector":".gtranslate_wrapper"
+    };
+  </script>
+  <script src="https://cdn.gtranslate.net/widgets/latest/dwf.js" defer></script>
 
-    <style>
-        body{font-family:Arial,sans-serif;background:#000;color:#fff;margin:0;padding:0;text-align:center}
-        header{background:#8B0000;padding:60px 20px}
-        h1{font-size:3em;margin:0}
-        .slogan{font-size:1.6em;margin:25px 0;line-height:1.4}
-        .container{max-width:1100px;margin:40px auto;padding:0 20px}
-        .btn{background:#8B0000;color:#fff;border:none;padding:16px 40px;font-size:1.3em;cursor:pointer;border-radius:8px;transition:.3s;display:inline-block;margin:12px}
-        .btn:hover{background:#A52A2A;transform:scale(1.05)}
-        .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:30px;margin:50px 0}
-        .card{background:#111;border:3px solid #8B0000;border-radius:12px;padding:30px;transition:.3s}
-        .card:hover{transform:translateY(-10px)}
-        .card h2{font-size:1.7em;margin:0 0 15px 0;color:#8B0000}
-        .card p{font-size:1.1em;line-height:1.6;margin:0 0 20px 0}
-        footer{background:#111;padding:40px;font-size:0.9em;margin-top:80px}
-    </style>
+  <style>
+    body{font-family:Arial,sans-serif;background:#000;color:#fff;margin:0;padding:0;line-height:1.6}
+
+    .fixed-header{position:sticky;top:0;background:#111;border-bottom:3px solid #8B0000;z-index:1000;padding:12px 20px;}
+    .header-container{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;}
+    .logo{font-size:2.2em;font-weight:bold;color:#fff;text-decoration:none;}
+    .logo:hover{color:#8B0000;}
+    .main-menu a{color:#fff;text-decoration:none;margin:0 18px;font-size:1.2em;transition:.3s;}
+    .main-menu a:hover{color:#8B0000;}
+    .main-menu a.active{color:#8B0000;font-weight:bold;}
+
+    .gtranslate_wrapper, .gtranslate_wrapper * {
+      position: static !important;
+      float: none !important;
+    }
+    .gtranslate_wrapper select {
+      background:#000;color:#fff;border:1px solid #8B0000;padding:3px 6px;border-radius:4px;font-size:.9em;
+    }
+
+    .container{max-width:1100px;margin:40px auto;padding:0 20px;text-align:center}
+
+    h1{font-size:3em;margin:40px 0;color:#8B0000}
+    .slogan{font-size:1.5em;margin:20px 0 40px 0;line-height:1.4;color:#ccc}
+
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:30px;margin:50px 0}
+
+    .card{background:#111;border:2px solid #8B0000;border-radius:12px;padding:30px;transition:.3s}
+    .card:hover{transform:translateY(-10px)}
+    .card h2{font-size:1.6em;margin:0 0 15px 0;color:#8B0000}
+    .card p{font-size:1.1em;line-height:1.6;margin:0 0 20px 0;color:#ddd}
+
+    .btn{background:#8B0000;color:#fff;border:none;padding:14px 36px;font-size:1.1em;cursor:pointer;border-radius:8px;transition:.3s;display:inline-block}
+    .btn:hover{background:#A52A2A;transform:scale(1.05)}
+
+    footer{background:#111;padding:40px;font-size:0.9em;margin-top:80px;text-align:center;color:#aaa}
+
+    @media (max-width:900px){
+      .header-container{flex-direction:column;gap:15px;}
+      .main-menu a{margin:0 10px;font-size:1.1em;}
+    }
+  </style>
 </head>
 <body>
 
+<div class="fixed-header">
+  <div class="header-container">
+    <a href="/" class="logo">Democraticus</a>
+    <nav class="main-menu">
+      <a href="/">Home</a>
+      <a href="/books/">Books</a>
+      <a href="/articles/">Articles</a>
+      <a href="/simulator/">Simulator</a>
+      <a href="/assemblies/" class="active">Assemblies</a>
+      <a href="/gallery/">Gallery</a>
+      <a href="/about/">About</a>
+    </nav>
     <div class="gtranslate_wrapper"></div>
+  </div>
+</div>
 
-    <header>
-        <h1>Global Civic Assemblies</h1>
-        <p class="slogan">Already active in 6 languages<br>Deliberate together. Ratify the future.</p>
-    </header>
+<div class="container">
+  <h1>Global Civic Assemblies</h1>
+  <p class="slogan">Already active in six languages. Deliberate together. Shape the future.</p>
 
-    <div class="container">
-        <p style="font-size:1.2em;margin-bottom:50px;">
-            Six proto-assemblies are already running.<br>
-            Choose your language. Join the discussion. Your voice counts.
-        </p>
+  <p style="font-size:1.15em;margin-bottom:50px;color:#ccc;">
+    Six proto-assemblies are currently active.<br>
+    Choose your language and participate in the civic deliberation process.
+  </p>
 
-        <div class="grid">
+  <div class="grid">
 
-            <div class="card">
-                <h2>English Forum</h2>
-                <p>Discuss the Democraticus model in English with global citizens.</p>
-                <a href="https://demos2kratia-en.freeforums.net" target="_blank" class="btn">Join English Assembly</a>
-            </div>
-
-            <div class="card">
-                <h2>Forum Italiano</h2>
-                <p>Assemblea civica in italiano. Discutiamo la democrazia autentica.</p>
-                <a href="https://demos2kratia-it.freeforums.net" target="_blank" class="btn">Entra nell’Assemblea Italiana</a>
-            </div>
-
-            <div class="card">
-                <h2>Foro Español</h2>
-                <p>Asamblea cívica en español. Deliberemos el modelo Democraticus.</p>
-                <a href="https://demos2kratia-es.freeforums.net" target="_blank" class="btn">Únete al Foro Español</a>
-            </div>
-
-            <div class="card">
-                <h2>Forum Français</h2>
-                <p>Assemblée civique en français. Délibérons ensemble.</p>
-                <a href="https://demos2kratia-fr.freeforums.net" target="_blank" class="btn">Rejoindre l’Assemblée Française</a>
-            </div>
-
-            <div class="card">
-                <h2>Deutsches Forum</h2>
-                <p>Bürgerversammlung auf Deutsch. Gemeinsam die Zukunft gestalten.</p>
-                <a href="https://demos2kratia-de.freeforums.net" target="_blank" class="btn">Zum Deutschen Forum</a>
-            </div>
-
-            <div class="card">
-                <h2>Fórum Português</h2>
-                <p>Assembleia cívica em português. Deliberemos o futuro.</p>
-                <a href="https://demos2kratia-pt.freeforums.net" target="_blank" class="btn">Entrar no Fórum Português</a>
-            </div>
-
-        </div>
-
-        <p style="margin-top:60px;font-size:1.1em;">
-            New language? Write to us → we open your assembly in 48 hours.
-        </p>
+    <div class="card">
+      <h2>English</h2>
+      <p>Global discussion of the Democraticus model.</p>
+      <a href="https://demos2kratia-en.freeforums.net" target="_blank" class="btn">Enter Assembly</a>
     </div>
 
-    <footer>
-        © Democraticus 2025 – Creative Commons BY-SA 4.0
-    </footer>
+    <div class="card">
+      <h2>Italiano</h2>
+      <p>Assemblea civica in lingua italiana.</p>
+      <a href="https://demos2kratia-it.freeforums.net" target="_blank" class="btn">Entra nell’Assemblea</a>
+    </div>
+
+    <div class="card">
+      <h2>Español</h2>
+      <p>Asamblea cívica en español.</p>
+      <a href="https://demos2kratia-es.freeforums.net" target="_blank" class="btn">Entrar</a>
+    </div>
+
+    <div class="card">
+      <h2>Français</h2>
+      <p>Assemblée civique en français.</p>
+      <a href="https://demos2kratia-fr.freeforums.net" target="_blank" class="btn">Entrer</a>
+    </div>
+
+    <div class="card">
+      <h2>Deutsch</h2>
+      <p>Bürgerversammlung auf Deutsch.</p>
+      <a href="https://demos2kratia-de.freeforums.net" target="_blank" class="btn">Beitreten</a>
+    </div>
+
+    <div class="card">
+      <h2>Português</h2>
+      <p>Assembleia cívica em português.</p>
+      <a href="https://demos2kratia-pt.freeforums.net" target="_blank" class="btn">Entrar</a>
+    </div>
+
+  </div>
+
+  <p style="margin-top:60px;font-size:1.1em;color:#ccc;">
+    To open a new language assembly, contact us — it will be created within 48 hours.
+  </p>
+</div>
+
+<footer>
+  © Democraticus 2025 – Creative Commons BY-SA 4.0
+</footer>
 
 </body>
 </html>
