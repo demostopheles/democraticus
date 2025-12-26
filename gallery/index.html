@@ -1,66 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <title>Gallery of Famous Absentees – Democraticus</title>
-    
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y9EPJN1JWT"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-Y9EPJN1JWT');
-    </script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Gallery of Public Non-Responses – Democraticus</title>
 
-    <!-- GTranslate con barra superiore -->
-    <script>
-        window.gtranslateSettings = {
-            "default_language": "en",
-            "native_language_names": true,
-            "detect_browser_language": true,
-            "languages": ["en","fr","it","es","de","pt","el","ne","nl","is","no","sv","da"],
-            "wrapper_selector": ".gtranslate_wrapper",
-            "horizontal_position": "left",
-            "vertical_position": "top"
-        };
-    </script>
-    <script src="https://cdn.gtranslate.net/widgets/latest/dwf.js" defer></script>
+<script>
+window.gtranslateSettings={
+"default_language":"en",
+"native_language_names":true,
+"detect_browser_language":true,
+"languages":["en","fr","it","es","de","pt","el","ne","nl","is","no","sv","da"],
+"wrapper_selector":".gtranslate_wrapper"
+};
+</script>
+<script src="https://cdn.gtranslate.net/widgets/latest/dwf.js" defer></script>
 
-    <style>
-        body{font-family:Arial,sans-serif;background:#000;color:#fff;margin:0;padding:0}
-        .topbar{background:#111;padding:10px 20px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:1000;border-bottom:2px solid #8B0000}
-        .topbar .gtranslate_wrapper{margin:0}
-        header{background:#8B0000;padding:60px 20px}
-        h1{font-size:3em;margin:0;text-align:center}
-        .subtitle{font-size:1.6em;margin:25px 0;text-align:center;line-height:1.4}
-        .container{max-width:1100px;margin:40px auto;padding:0 20px}
-        .intro{font-size:1.3em;max-width:900px;margin:0 auto 50px;line-height:1.6}
-        .absentees-table{width:95%;max-width:1000px;margin:40px auto;border-collapse:collapse;font-size:1.2em}
-        .absentees-table th,.absentees-table td{border:3px solid #8B0000;padding:15px;text-align:center;background:#111}
-        .absentees-table th{background:#8B0000;color:#fff}
-        .absentees-table tr:hover td{background:#222}
-        .honor-btn{background:#006400;color:#fff;border:none;padding:16px 40px;font-size:1.4em;cursor:pointer;border-radius:8px;transition:.3s;margin:30px}
-        .honor-btn:hover{background:#008000;transform:scale(1.05)}
-        #honorForm{display:none;margin:40px auto;padding:30px;background:#111;border:3px solid #006400;border-radius:12px;max-width:700px}
-        #honorForm input{width:80%;padding:12px;margin:10px 0;font-size:1.1em}
-        #honorForm button{background:#006400;padding:14px 30px;font-size:1.2em}
-        footer{background:#111;padding:40px;font-size:0.9em;margin-top:80px}
-    </style>
+<style>
+body{font-family:Arial,sans-serif;background:#000;color:#fff;margin:0;padding:0}
+.fixed-header{position:sticky;top:0;background:#111;border-bottom:3px solid #8B0000;z-index:1000;padding:12px 20px;}
+.header-container{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;}
+.logo{font-size:2.2em;font-weight:bold;color:#fff;text-decoration:none;}
+.logo:hover{color:#8B0000;}
+.main-menu a{color:#fff;text-decoration:none;margin:0 18px;font-size:1.2em;}
+.main-menu a.active{color:#8B0000;font-weight:bold;}
+.gtranslate_wrapper select{background:#000;color:#fff;border:1px solid #8B0000;padding:3px 6px;border-radius:4px;font-size:.9em;}
+
+header{text-align:center;padding:60px 20px}
+h1{font-size:3em;margin:0;color:#8B0000}
+.subtitle{font-size:1.4em;margin:25px 0;color:#ccc}
+
+.container{max-width:1100px;margin:40px auto;padding:0 20px}
+.intro{font-size:1.15em;max-width:900px;margin:0 auto 40px;line-height:1.6;color:#ddd}
+
+table{width:100%;border-collapse:collapse;font-size:1.1em;margin:40px 0}
+th,td{border:2px solid #8B0000;padding:12px;text-align:center;background:#111}
+th{background:#8B0000;color:#fff}
+tr:hover td{background:#222}
+
+.note{font-size:0.95em;color:#aaa;margin-top:30px;max-width:900px;margin-left:auto;margin-right:auto}
+
+footer{background:#111;padding:40px;font-size:0.9em;margin-top:80px;text-align:center;color:#aaa}
+</style>
 </head>
 <body>
 
-    <div class="topbar">
-        <div class="gtranslate_wrapper"></div>
-    </div>
+<div class="fixed-header">
+  <div class="header-container">
+    <a href="/" class="logo">Democraticus</a>
+    <nav class="main-menu">
+      <a href="/">Home</a>
+      <a href="/books/">Books</a>
+      <a href="/articles/">Articles</a>
+      <a href="/simulator/">Simulator</a>
+      <a href="/assemblies/">Assemblies</a>
+      <a href="/gallery/" class="active">Gallery</a>
+      <a href="/about/">About</a>
+    </nav>
+    <div class="gtranslate_wrapper"></div>
+  </div>
+</div>
 
-    <header>
-        <h1>The Gallery of Famous Absentees</h1>
-        <p class="subtitle">Silence speaks louder than opposition</p>
-    </header>
+<header>
+  <h1>Gallery of Public Non-Responses</h1>
+  <p class="subtitle">A public record of formal invitations and their outcomes</p>
+</header>
 
-    <div class="container">
-        <p class="intro">
-            These are not the usual oligarchs (we already know those).<br><br>
-            These are the intellectuals, journalists, professors, YouTubers and “dissident” public figures who <strong>know the Democraticus project inside out</strong> and who, when publicly invited to support it or even just debate it, <strong>choose deafening silence</strong>.<br><br>
-            Their absence protects the system more than any censorship ever
+<div class="container">
+
+<p class="intro">
+This page documents public figures who were formally invited to examine, debate, or respond to the Democraticus proposal, and who have not issued any public response within a reasonable timeframe.
+It does not assert motives, intentions, or private communications. It records only observable public facts.
+</p>
+
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Field</th>
+<th>Invited on</th>
+<th>Public response</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr><td>—</td><td>—</td><td>—</td><td>No public reply</td><td>Pending</td></tr>
+<tr><td>—</td><td>—</td><td>—</td><td>No public reply</td><td>Pending</td></tr>
+</tbody>
+</table>
+
+<p class="note">
+Note: Inclusion on this page does not imply endorsement, opposition, or judgment. It simply reflects the presence or absence of a public response following a documented public invitation.
+</p>
+
+</div>
+
+<footer>
+© Democraticus 2025 – Creative Commons BY-SA 4.0
+</footer>
+
+</body>
+</html>
