@@ -21,9 +21,7 @@
             "native_language_names":true,
             "detect_browser_language":true,
             "languages":["en","fr","it","es","de","pt","el","ne","nl","is","no","sv","da","fi","bg","et","lv","lt","ro"],
-            "wrapper_selector":".gtranslate_wrapper",
-            "horizontal_position":"right",
-            "vertical_position":"top"
+            "wrapper_selector":".gtranslate_wrapper"
         };
     </script>
     <script src="https://cdn.gtranslate.net/widgets/latest/dwf.js" defer></script>
@@ -37,7 +35,27 @@
         .main-menu a{color:#fff;text-decoration:none;margin:0 18px;font-size:1.2em;transition:.3s;}
         .main-menu a:hover{color:#8B0000;transform:scale(1.1);}
         .main-menu a.active{color:#8B0000;font-weight:bold;}
-        .gtranslate_wrapper{min-width:120px;text-align:right;}
+        .gtranslate_wrapper{min-width:120px;text-align:right;position:relative !important;}
+
+        /* Force GTranslate into header */
+        #gtranslate_wrapper,
+        .gtranslate_wrapper > div {
+            position: static !important;
+            float: none !important;
+            bottom: auto !important;
+            left: auto !important;
+            right: auto !important;
+            top: auto !important;
+        }
+
+        .gtranslate_wrapper select {
+            font-size: 0.9em;
+            background: #000;
+            color: #fff;
+            border: 1px solid #8B0000;
+            padding: 3px 6px;
+            border-radius: 4px;
+        }
 
         .content{max-width:900px;margin:40px auto;padding:20px;background:#111;border-radius:12px;box-shadow:0 4px 20px rgba(139,0,0,0.5);}
         h1{text-align:center;font-size:3em;margin:40px 0;color:#8B0000;}
