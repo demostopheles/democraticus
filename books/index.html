@@ -1,104 +1,123 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1.0">
-  <title>Books & Documents – Democraticus</title>
-  <script>
-    window.gtranslateSettings = {
-      "default_language":"en",
-      "native_language_names":true,
-      "detect_browser_language":true,
-      "languages":["en","fr","it","es","de","pt","el","ne","nl","is","no","sv","da"],
-      "wrapper_selector":".gtranslate_wrapper"
-    };
-  </script>
-  <script src="https://cdn.gtranslate.net/widgets/latest/dwf.js" defer></script>
-  <style>
-    body{font-family:Arial,sans-serif;background:#000;color:#fff;margin:0;padding:0}
-    .fixed-header{position:sticky;top:0;background:#111;border-bottom:3px solid #8B0000;z-index:1000;padding:12px 20px;}
-    .header-container{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;}
-    .logo{font-size:2.2em;font-weight:bold;color:#fff;text-decoration:none;}
-    .logo:hover{color:#8B0000;}
-    .main-menu a{color:#fff;text-decoration:none;margin:0 18px;font-size:1.2em;transition:.3s;}
-    .main-menu a:hover{color:#8B0000;}
-    .main-menu a.active{color:#8B0000;font-weight:bold;}
-    .gtranslate_wrapper, .gtranslate_wrapper * {position:static!important;float:none!important;}
-    .gtranslate_wrapper select{background:#000;color:#fff;border:1px solid #8B0000;padding:3px 6px;border-radius:4px;font-size:.9em;}
-    header{text-align:center;padding:60px 20px}
-    h1{font-size:3em;margin:0;color:#8B0000}
-    .subtitle{font-size:1.6em;margin:25px 0;color:#ccc}
-    .container{max-width:1100px;margin:40px auto;padding:0 20px}
-    .section{margin:60px 0;text-align:center}
-    .btn{background:#8B0000;color:#fff;border:none;padding:14px 30px;font-size:1.2em;cursor:pointer;border-radius:8px;transition:.3s;margin:10px}
-    .btn:hover{background:#A52A2A;transform:scale(1.05)}
-    .covers{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:30px;margin:50px 0}
-    .cover-card{background:#111;border:2px solid #8B0000;border-radius:12px;padding:25px;transition:.3s;text-align:center}
-    .cover-card:hover{transform:translateY(-10px);box-shadow:0 10px 20px rgba(139,0,0,0.5)}
-    .cover-card img{width:100%;max-height:300px;object-fit:contain;background:#000;border-radius:8px}
-    .cover-card p{font-weight:bold;margin:15px 0;font-size:1.2em;color:#fff}
-    .small-btn{background:#333;padding:10px 20px;font-size:1.1em;border-radius:6px;border:none;color:#fff}
-    .small-btn:hover{background:#555}
-    footer{background:#111;padding:40px;font-size:0.9em;margin-top:80px;text-align:center;color:#aaa}
-    @media (max-width:900px){
-      .header-container{flex-direction:column;gap:15px;}
-      .main-menu a{margin:0 10px;font-size:1.1em;}
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Books & Documents – Democraticus</title>
+<script>
+window.gtranslateSettings = {
+"default_language":"en",
+"native_language_names":true,
+"detect_browser_language":true,
+"languages":["en","fr","it","es","de","pt","el","ne","nl","is","no","sv","da"],
+"wrapper_selector":".gtranslate_wrapper"
+};
+</script>
+<script src="https://cdn.gtranslate.net/widgets/latest/dwf.js" defer></script>
+<style>
+body{font-family:Arial,sans-serif;background:#000;color:#fff;margin:0;padding:0}
+.fixed-header{position:sticky;top:0;background:#111;border-bottom:3px solid #8B0000;z-index:1000;padding:12px 20px;}
+.header-container{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;}
+.logo{font-size:2.2em;font-weight:bold;color:#fff;text-decoration:none;}
+.logo:hover{color:#8B0000;}
+.main-menu a{color:#fff;text-decoration:none;margin:0 18px;font-size:1.2em;transition:.3s;}
+.main-menu a:hover{color:#8B0000;}
+.main-menu a.active{color:#8B0000;font-weight:bold;}
+.gtranslate_wrapper, .gtranslate_wrapper * {position:static!important;float:none!important;}
+.gtranslate_wrapper select{background:#000;color:#fff;border:1px solid #8B0000;padding:3px 6px;border-radius:4px;font-size:.9em;}
+header{text-align:center;padding:60px 20px}
+h1{font-size:3em;margin:0;color:#8B0000}
+.subtitle{font-size:1.6em;margin:25px 0;color:#ccc}
+.container{max-width:1100px;margin:40px auto;padding:0 20px}
+.section{margin:60px 0;text-align:center}
+.btn{background:#8B0000;color:#fff;border:none;padding:14px 30px;font-size:1.2em;cursor:pointer;border-radius:8px;transition:.3s;margin:10px}
+.btn:hover{background:#A52A2A;transform:scale(1.05)}
+.covers{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:30px;margin:50px 0}
+.cover-card{background:#111;border:2px solid #8B0000;border-radius:12px;padding:25px;transition:.3s;text-align:center}
+.cover-card:hover{transform:translateY(-10px);box-shadow:0 10px 20px rgba(139,0,0,0.5)}
+.cover-card img{width:100%;max-height:300px;object-fit:contain;background:#000;border-radius:8px}
+.cover-card p{font-weight:bold;margin:15px 0;font-size:1.2em;color:#fff}
+.small-btn{background:#333;padding:10px 20px;font-size:1.1em;border-radius:6px;border:none;color:#fff}
+.small-btn:hover{background:#555}
+footer{background:#111;padding:40px;font-size:0.9em;margin-top:80px;text-align:center;color:#aaa}
+@media (max-width:900px){
+.header-container{flex-direction:column;gap:15px;}
+.main-menu a{margin:0 10px;font-size:1.1em;}
+}
+</style>
 </head>
 <body>
 <div class="fixed-header">
-  <div class="header-container">
-    <a href="/" class="logo">Democraticus</a>
-    <nav class="main-menu">
-      <a href="/">Home</a>
-      <a href="/books/" class="active">Books</a>
-      <a href="/articles/">Articles</a>
-      <a href="/simulator/">Simulator</a>
-      <a href="/assemblies/">Assemblies</a>
-      <a href="/gallery/">Gallery</a>
-      <a href="/about/">About</a>
-    </nav>
-    <div class="gtranslate_wrapper"></div>
-  </div>
+<div class="header-container">
+<a href="/" class="logo">Democraticus</a>
+<nav class="main-menu">
+<a href="/">Home</a>
+<a href="/books/" class="active">Books</a>
+<a href="/articles/">Articles</a>
+<a href="/simulator/">Simulator</a>
+<a href="/assemblies/">Assemblies</a>
+<a href="/gallery/">Gallery</a>
+<a href="/about/">About</a>
+</nav>
+<div class="gtranslate_wrapper"></div>
+</div>
 </div>
 <header>
-  <h1>Books & Documents</h1>
-  <p class="subtitle">All texts are free · Creative Commons BY-SA 4.0</p>
+<h1>Books & Documents</h1>
+<p class="subtitle">All texts are free · Creative Commons BY-SA 4.0</p>
 </header>
 <div class="container">
-  <div class="section">
-    <h2 style="font-size:2.2em;color:#8B0000;">Main Book (584 pages)</h2>
-    <p style="font-size:1.3em;max-width:800px;margin:0 auto 30px;color:#ccc;">Complete diagnosis, model and global action plan – Italian original</p>
-    <a href="Autopsia_della_democrazia_rappresentativa_2025.pdf" download><button class="btn">Download Full Book</button></a>
-  </div>
-  <div class="section">
-    <h2 style="font-size:2.2em;color:#8B0000;">A Modest Proposal to Humanity (74 pages)</h2>
-    <p style="font-size:1.3em;max-width:800px;margin:0 auto 30px;color:#ccc;">English summary and call to action</p>
-    <a href="A_modest_proposal_to_humanity.pdf" download><button class="btn">Download PDF</button></a>
-  </div>
-  <div class="section">
-    <h2 style="font-size:2.2em;color:#8B0000;">Il nome sbagliato (20 pages)</h2>
-    <p style="font-size:1.3em;max-width:800px;margin:0 auto 30px;color:#ccc;">Versione breve essenziale in italiano – Perché chiamiamo democrazia ciò che non lo è</p>
-    <a href="Il_nome_sbagliato.pdf" download><button class="btn">Download PDF</button></a>
-  </div>
-  <div class="section">
-    <h2 style="font-size:2.2em;color:#8B0000;">Cover + Table of Contents</h2>
-    <p style="font-size:1.3em;max-width:800px;margin:0 auto 40px;color:#ccc;">Choose your language (full book translations in progress)</p>
-    <div class="covers">
-      <div class="cover-card"><img src="/covers/cover_en.jpg"><p>English</p><a href="Autopsy_en.pdf" download><button class="small-btn">Download</button></a></div>
-      <div class="cover-card"><img src="/covers/cover_es.jpg"><p>Español</p><a href="Autopsia_es.pdf" download><button class="small-btn">Download</button></a></div>
-      <div class="cover-card"><img src="/covers/cover_pt.jpg"><p>Português</p><a href="Autopsia_pt.pdf" download><button class="small-btn">Download</button></a></div>
-      <div class="cover-card"><img src="/covers/cover_fr.jpg"><p>Français</p><a href="Autopsie_fr.pdf" download><button class="small-btn">Download</button></a></div>
-      <div class="cover-card"><img src="/covers/cover_de.jpg"><p>Deutsch</p><a href="Obduktion_de.pdf" download><button class="small-btn">Download</button></a></div>
-    </div>
-  </div>
-  <p style="margin-top:60px;font-size:1.1em;color:#aaa;max-width:800px;margin-left:auto;margin-right:auto;">
-    All documents are open-source. Share, translate, adapt — just attribute the source.
-  </p>
+<div class="section">
+<h2 style="font-size:2.2em;color:#8B0000;">Main Book (584 pages)</h2>
+<p style="font-size:1.3em;max-width:800px;margin:0 auto 30px;color:#ccc;">Complete diagnosis, model and global action plan – Italian original</p>
+<a href="Autopsia_della_democrazia_rappresentativa_2025.pdf" download><button class="btn">Download Full Book</button></a>
+</div>
+<div class="section">
+<h2 style="font-size:2.2em;color:#8B0000;">A Modest Proposal to Humanity (74 pages)</h2>
+<p style="font-size:1.3em;max-width:800px;margin:0 auto 30px;color:#ccc;">English summary and call to action</p>
+<a href="A_modest_proposal_to_humanity.pdf" download><button class="btn">Download PDF</button></a>
+</div>
+<div class="section">
+<h2 style="font-size:2.2em;color:#8B0000;">Il nome sbagliato (20 pages)</h2>
+<p style="font-size:1.3em;max-width:800px;margin:0 auto 30px;color:#ccc;">Versione breve essenziale in italiano – Perché chiamiamo democrazia ciò che non lo è</p>
+<a href="Il_nome_sbagliato.pdf" download><button class="btn">Download PDF</button></a>
+</div>
+<div class="section">
+<h2 style="font-size:2.2em;color:#8B0000;">Charta dei diritti della vita</h2>
+<p style="font-size:1.3em;max-width:800px;margin:0 auto 30px;color:#ccc;">A framework for planetary rights and sustainability, inspired by the Earth Charter.</p>
+<a href="Charta_dei_diritti_della_vita.pdf" download><button class="btn">Download PDF</button></a>
+</div>
+<div class="section">
+<h2 style="font-size:2.2em;color:#8B0000;">Manuale di Attuazione</h2>
+<p style="font-size:1.3em;max-width:800px;margin:0 auto 30px;color:#ccc;">Practical guide for implementing participatory democratic assemblies.</p>
+<a href="Manuale_di_Attuazione.pdf" download><button class="btn">Download PDF</button></a>
+</div>
+<div class="section">
+<h2 style="font-size:2.2em;color:#8B0000;">Principi Astratti per una Società Equa e Sostenibile</h2>
+<p style="font-size:1.3em;max-width:800px;margin:0 auto 30px;color:#ccc;">Abstract principles for equitable and sustainable society, as a reflective base for civic decisions.</p>
+<a href="Principi_Astratti_per_una_Società_Equa_e_Sostenibile.pdf" download><button class="btn">Download PDF</button></a>
+</div>
+<div class="section">
+<h2 style="font-size:2.2em;color:#8B0000;">Manuale dell'Elettore</h2>
+<p style="font-size:1.3em;max-width:800px;margin:0 auto 30px;color:#ccc;">An updated guide from 2017 on electoral systems and democratic participation.</p>
+<a href="Manuale_dell'elettore.pdf" download><button class="btn">Download PDF</button></a>
+</div>
+<div class="section">
+<h2 style="font-size:2.2em;color:#8B0000;">Cover + Table of Contents</h2>
+<p style="font-size:1.3em;max-width:800px;margin:0 auto 40px;color:#ccc;">Choose your language (full book translations in progress)</p>
+<div class="covers">
+<div class="cover-card"><img src="/covers/cover_en.jpg"><p>English</p><a href="Autopsy_en.pdf" download><button class="small-btn">Download</button></a></div>
+<div class="cover-card"><img src="/covers/cover_es.jpg"><p>Español</p><a href="Autopsia_es.pdf" download><button class="small-btn">Download</button></a></div>
+<div class="cover-card"><img src="/covers/cover_pt.jpg"><p>Português</p><a href="Autopsia_pt.pdf" download><button class="small-btn">Download</button></a></div>
+<div class="cover-card"><img src="/covers/cover_fr.jpg"><p>Français</p><a href="Autopsie_fr.pdf" download><button class="small-btn">Download</button></a></div>
+<div class="cover-card"><img src="/covers/cover_de.jpg"><p>Deutsch</p><a href="Obduktion_de.pdf" download><button class="small-btn">Download</button></a></div>
+</div>
+</div>
+<p style="margin-top:60px;font-size:1.1em;color:#aaa;max-width:800px;margin-left:auto;margin-right:auto;">
+All documents are open-source. Share, translate, adapt — just attribute the source.
+</p>
 </div>
 <footer>
-  © Democraticus 2025 – Creative Commons BY-SA 4.0
+© Democraticus 2025 – Creative Commons BY-SA 4.0
 </footer>
 </body>
 </html>
