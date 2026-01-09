@@ -1,19 +1,9 @@
-Thank you — this is clear and well-structured.
-
-Below is your **main `index.html` updated with a new “Links” section in the top navigation bar**, pointing to `/links/index.html`, with **no other changes** to layout, logic, or styling.
-
-I have inserted the new menu item in a neutral position (between Gallery and About). You can move it if you prefer.
-
-You can replace your file with the following:
-
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>Democraticus – Authentic Representative Democracy</title>
-
 <script>
 window.gtranslateSettings={
   "default_language":"en",
@@ -24,7 +14,6 @@ window.gtranslateSettings={
 };
 </script>
 <script src="https://cdn.gtranslate.net/widgets/latest/dwf.js" defer></script>
-
 <style>
 body{font-family:Arial,sans-serif;background:#000;color:#fff;margin:0;padding:0;line-height:1.6}
 .fixed-header{position:sticky;top:0;background:#111;border-bottom:3px solid #8B0000;z-index:1000;padding:12px 20px;}
@@ -35,23 +24,22 @@ body{font-family:Arial,sans-serif;background:#000;color:#fff;margin:0;padding:0;
 .main-menu a:hover{color:#8B0000;transform:scale(1.1);}
 .main-menu a.active{color:#8B0000;font-weight:bold;}
 .gtranslate_wrapper select{background:#000;color:#fff;border:1px solid #8B0000;padding:3px 6px;border-radius:4px;font-size:.9em;}
-
 .hero{background:#8B0000;padding:80px 20px;text-align:center;}
 .hero h1{font-size:3.5em;margin:0;}
 .hero p{font-size:1.6em;margin-top:20px;line-height:1.4;}
-
 .content{max-width:1000px;margin:60px auto;padding:20px;}
 .section{margin:60px 0;}
 .section h2{font-size:2.4em;color:#8B0000;border-bottom:2px solid #8B0000;padding-bottom:10px;}
 .section p,li{font-size:1.25em;}
 ul{padding-left:40px;}
-
+.new-docs{margin:60px 0;text-align:center;}
+.new-docs h3{font-size:1.8em;color:#ccc;margin-bottom:20px;}
+.new-docs a{color:#fff;text-decoration:underline;margin:0 15px;font-size:1.1em;}
+.new-docs a:hover{color:#8B0000;}
 .cta{text-align:center;margin:80px 0;}
 .cta a{display:inline-block;margin:10px;padding:16px 40px;background:#8B0000;color:#fff;text-decoration:none;font-size:1.3em;border-radius:8px;transition:.3s;}
 .cta a:hover{background:#A52A2A;transform:scale(1.05);}
-
 footer{background:#111;padding:40px;font-size:0.9em;text-align:center;margin-top:80px;color:#aaa}
-
 @media(max-width:900px){
   .header-container{flex-direction:column;gap:15px;}
   .main-menu a{margin:0 10px;font-size:1.1em;}
@@ -59,7 +47,6 @@ footer{background:#111;padding:40px;font-size:0.9em;text-align:center;margin-top
 </style>
 </head>
 <body>
-
 <div class="fixed-header">
   <div class="header-container">
     <a href="/" class="logo">Democraticus</a>
@@ -76,20 +63,16 @@ footer{background:#111;padding:40px;font-size:0.9em;text-align:center;margin-top
     <div class="gtranslate_wrapper"></div>
   </div>
 </div>
-
 <div class="hero">
   <h1>Authentic Representative Democracy</h1>
   <p>From Homo Sapiens to Homo Democraticus.<br>The evolutionary leap in sovereignty.</p>
 </div>
-
 <div class="content">
-
   <div class="section">
     <h2>Diagnosis</h2>
     <p>Today’s representative systems are not authentic democracies. They are oligarchies disguised as democracies.</p>
     <p>The system is structurally designed to confiscate sovereignty while preserving the illusion of participation.</p>
   </div>
-
   <div class="section">
     <h2>The Solution</h2>
     <ul>
@@ -99,11 +82,19 @@ footer{background:#111;padding:40px;font-size:0.9em;text-align:center;margin-top
       <li>Structural prevention of power capture</li>
     </ul>
   </div>
-
   <div class="section">
     <h2>Open Source & Global</h2>
     <p>The model is public, open-source, legally grounded, and globally applicable.</p>
     <p>No parties. No leaders. No funding requests. Only replication.</p>
+  </div>
+
+  <!-- Nuovo blocco discreto -->
+  <div class="new-docs">
+    <h3>New complementary reflections (2026)</h3>
+    <a href="/books/Charta_dei_diritti_della_vita.pdf">Charta dei diritti della vita</a> • 
+    <a href="/books/Manuale_di_Attuazione.pdf">Manuale di Attuazione</a> • 
+    <a href="/books/Principi_Astratti_per_una_Società_Equa_e_Sostenibile.pdf">Principi Astratti per una Società Equa e Sostenibile</a> • 
+    <a href="/books/Manuale_dell'elettore.pdf">Manuale dell'Elettore (updated)</a>
   </div>
 
   <div class="cta">
@@ -111,13 +102,9 @@ footer{background:#111;padding:40px;font-size:0.9em;text-align:center;margin-top
     <a href="/simulator/">Test the Model</a>
     <a href="/assemblies/">Join an Assembly</a>
   </div>
-
 </div>
-
 <footer>
-© Democraticus 2025 – Creative Commons BY-SA 4.0
+© Democraticus 2025–2026 – Creative Commons BY-SA 4.0
 </footer>
-
 </body>
 </html>
-```
