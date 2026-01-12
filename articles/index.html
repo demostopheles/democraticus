@@ -1,75 +1,46 @@
-Excellent — thank you for pasting the full file.
-
-Below is your **updated `index.html` with the new article added as item 11**, in the same structure, numbering, tone, and style as the others.
-Nothing else is changed.
-
-I have:
-
-* Added a new `<li>` as number 11.
-* Used a filename consistent with your naming scheme.
-* Written a description aligned with the article’s framing (structural exclusion, false explanations, designed disempowerment).
-
-You can replace your current file with this one.
-
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Articles – Democraticus</title>
-
-  <script>
-    window.gtranslateSettings = {
-      "default_language":"en",
-      "native_language_names":true,
-      "detect_browser_language":true,
-      "languages":["en","fr","it","es","de","pt","el","ne","nl","is","no","sv","da","fi","bg"],
-      "wrapper_selector":".gtranslate_wrapper"
-    };
-  </script>
-  <script src="https://cdn.gtranslate.net/widgets/latest/dwf.js" defer></script>
-
-  <style>
-    body{font-family:Arial,sans-serif;background:#000;color:#fff;margin:0;padding:0;line-height:1.6}
-
-    .fixed-header{position:sticky;top:0;background:#111;border-bottom:3px solid #8B0000;z-index:1000;padding:12px 20px;}
-    .header-container{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;}
-    .logo{font-size:2.2em;font-weight:bold;color:#fff;text-decoration:none;}
-    .logo:hover{color:#8B0000;}
-    .main-menu a{color:#fff;text-decoration:none;margin:0 18px;font-size:1.2em;transition:.3s;}
-    .main-menu a:hover{color:#8B0000;}
-    .main-menu a.active{color:#8B0000;font-weight:bold;}
-
-    .gtranslate_wrapper, .gtranslate_wrapper * {
-      position: static !important;
-      float: none !important;
-    }
-    .gtranslate_wrapper select {
-      background:#000;color:#fff;border:1px solid #8B0000;padding:3px 6px;border-radius:4px;font-size:.9em;
-    }
-
-    .content{max-width:900px;margin:40px auto;padding:20px;background:#111;border-radius:12px;box-shadow:0 4px 20px rgba(139,0,0,0.5);}
-
-    h1{text-align:center;font-size:3em;margin:40px 0;color:#8B0000;}
-
-    ol{counter-reset:item;padding-left:0;max-width:700px;margin:0 auto;text-align:left;}
-    li{display:block;margin-bottom:30px;padding-left:50px;position:relative;counter-increment:item;}
-    li:before{content:counter(item,decimal-leading-zero);position:absolute;left:0;font-weight:bold;font-size:1.5em;color:#8B0000;}
-    a{text-decoration:none;color:#ff6666;font-size:1.25em;font-weight:bold;}
-    a:hover{text-decoration:underline;}
-    .description{display:block;margin-top:10px;font-size:0.98em;color:#bbb;font-style:italic;}
-
-    footer{background:#111;padding:40px;font-size:0.9em;text-align:center;margin-top:80px;color:#aaa;}
-
-    @media (max-width:900px){
-      .header-container{flex-direction:column;gap:15px;}
-      .main-menu a{margin:0 10px;font-size:1.1em;}
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Articles – Democraticus</title>
+<script>
+window.gtranslateSettings = {
+  "default_language":"en",
+  "native_language_names":true,
+  "detect_browser_language":true,
+  "languages":["en","fr","it","es","de","pt","el","ne","nl","is","no","sv","da","fi","bg"],
+  "wrapper_selector":".gtranslate_wrapper"
+};
+</script>
+<script src="https://cdn.gtranslate.net/widgets/latest/dwf.js" defer></script>
+<style>
+body{font-family:Arial,sans-serif;background:#000;color:#fff;margin:0;padding:0;line-height:1.6}
+.fixed-header{position:sticky;top:0;background:#111;border-bottom:3px solid #8B0000;z-index:1000;padding:12px 20px;}
+.header-container{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;}
+.logo{font-size:2.2em;font-weight:bold;color:#fff;text-decoration:none;}
+.logo:hover{color:#8B0000;}
+.main-menu a{color:#fff;text-decoration:none;margin:0 18px;font-size:1.2em;transition:.3s;}
+.main-menu a:hover{color:#8B0000;}
+.main-menu a.active{color:#8B0000;font-weight:bold;}
+.gtranslate_wrapper, .gtranslate_wrapper * { position: static !important; float: none !important; }
+.gtranslate_wrapper select { background:#000;color:#fff;border:1px solid #8B0000;padding:3px 6px;border-radius:4px;font-size:.9em; }
+.content{max-width:900px;margin:40px auto;padding:20px;background:#111;border-radius:12px;box-shadow:0 4px 20px rgba(139,0,0,0.5);}
+h1{text-align:center;font-size:3em;margin:40px 0;color:#8B0000;}
+ol{counter-reset:item;padding-left:0;max-width:700px;margin:0 auto;text-align:left;}
+li{display:block;margin-bottom:30px;padding-left:50px;position:relative;counter-increment:item;}
+li:before{content:counter(item,decimal-leading-zero);position:absolute;left:0;font-weight:bold;font-size:1.5em;color:#8B0000;}
+a{text-decoration:none;color:#ff6666;font-size:1.25em;font-weight:bold;}
+a:hover{text-decoration:underline;}
+.description{display:block;margin-top:10px;font-size:0.98em;color:#bbb;font-style:italic;}
+footer{background:#111;padding:40px;font-size:0.9em;text-align:center;margin-top:80px;color:#aaa;}
+@media (max-width:900px){
+  .header-container{flex-direction:column;gap:15px;}
+  .main-menu a{margin:0 10px;font-size:1.1em;}
+}
+</style>
 </head>
 <body>
-
 <div class="fixed-header">
   <div class="header-container">
     <a href="/" class="logo">Democraticus</a>
@@ -80,67 +51,63 @@ You can replace your current file with this one.
       <a href="/simulator/">Simulator</a>
       <a href="/assemblies/">Assemblies</a>
       <a href="/gallery/">Gallery</a>
+      <a href="/about-you/" style="color:#FF4500; font-weight:bold;">About You</a>
       <a href="/about/">About</a>
     </nav>
     <div class="gtranslate_wrapper"></div>
   </div>
 </div>
-
 <div class="content">
-  <h1>Articles</h1>
-
-  <ol>
-    <li>
-      <a href="001_Why_Voting_Does_Not_Delegate.html">Why Voting Does Not Delegate: The Legal Bug at the Basis of False Representative Democracy</a>
-      <span class="description">The foundational argument: voting is not a legal delegation and cannot transfer sovereign power.</span>
-    </li>
-    <li>
-      <a href="002_Fraud_in_Civil_Law.html">Fraud in Civil Law: Definition and Consequences</a>
-      <span class="description">Applying civil-law fraud to the political system: elements, consequences, and victim rights.</span>
-    </li>
-    <li>
-      <a href="003_The_Rights_of_Victims.html">The Rights of Victims: Why We Are Not Obligated to Obey a Fraudulent System</a>
-      <span class="description">Citizens as victims of collective fraud have the right to refuse illegitimate obligations.</span>
-    </li>
-    <li>
-      <a href="004_No_Army_Is_Needed.html">No Army Is Needed. A Proof Is Needed.</a>
-      <span class="description">Change comes through clear proof and metapolitical clarity, not force or chaos.</span>
-    </li>
-    <li>
-      <a href="005_The_Logic_of_Escalation.html">The Logic of Escalation: A Predictable Trap</a>
-      <span class="description">Why provocation and chaos benefit the system; clarity and disengagement are the smarter path.</span>
-    </li>
-    <li>
-      <a href="006_Representative_Democracy_Is_Possible.html">Representative Democracy Is Possible — And This Is Its Model</a>
-      <span class="description">A concrete, civil-law compliant model of authentic representative democracy.</span>
-    </li>
-    <li>
-      <a href="007_Journal_of_Democracy_Submission_medium.html">Electoral laws and the Double Bind</a>
-      <span class="description">Academic submission proposing reforms and a Civic Assembly.</span>
-    </li>
-    <li>
-      <a href="008_The_Democracy_Experts_who_cannot_say.html">The “Democracy Experts” Who Cannot Say That the USA Is Not a Democracy</a>
-      <span class="description">How funding ties prevent mainstream scholars from acknowledging the oligarchy.</span>
-    </li>
-    <li>
-      <a href="009_The_Electoral_Double_Bind.html">The Electoral Double Bind</a>
-      <span class="description">The structural trap that makes every electoral choice reinforce the system.</span>
-    </li>
-    <li>
-      <a href="010_Strategic_Positioning_in_Political_Critique.html">Strategic Positioning in Political Critique</a>
-      <span class="description">How critical voices are neutralized through structural positioning, framing, and institutional absorption.</span>
-    </li>
-    <li>
-      <a href="011_Why_All_Explanations_Are_Wrong.html">Why All the Official Explanations Are Wrong</a>
-      <span class="description">Why the system’s stability proves that mainstream critiques do not touch its structural core: the constitutional exclusion of citizen sovereignty.</span>
-    </li>
-  </ol>
+<h1>Articles</h1>
+<ol>
+  <li>
+    <a href="001_Why_Voting_Does_Not_Delegate.html">Why Voting Does Not Delegate: The Legal Bug at the Basis of False Representative Democracy</a>
+    <span class="description">The foundational argument: voting is not a legal delegation and cannot transfer sovereign power.</span>
+  </li>
+  <li>
+    <a href="002_Fraud_in_Civil_Law.html">Fraud in Civil Law: Definition and Consequences</a>
+    <span class="description">Applying civil-law fraud to the political system: elements, consequences, and victim rights.</span>
+  </li>
+  <li>
+    <a href="003_The_Rights_of_Victims.html">The Rights of Victims: Why We Are Not Obligated to Obey a Fraudulent System</a>
+    <span class="description">Citizens as victims of collective fraud have the right to refuse illegitimate obligations.</span>
+  </li>
+  <li>
+    <a href="004_No_Army_Is_Needed.html">No Army Is Needed. A Proof Is Needed.</a>
+    <span class="description">Change comes through clear proof and metapolitical clarity, not force or chaos.</span>
+  </li>
+  <li>
+    <a href="005_The_Logic_of_Escalation.html">The Logic of Escalation: A Predictable Trap</a>
+    <span class="description">Why provocation and chaos benefit the system; clarity and disengagement are the smarter path.</span>
+  </li>
+  <li>
+    <a href="006_Representative_Democracy_Is_Possible.html">Representative Democracy Is Possible — And This Is Its Model</a>
+    <span class="description">A concrete, civil-law compliant model of authentic representative democracy.</span>
+  </li>
+  <li>
+    <a href="007_Journal_of_Democracy_Submission_medium.html">Electoral laws and the Double Bind</a>
+    <span class="description">Academic submission proposing reforms and a Civic Assembly.</span>
+  </li>
+  <li>
+    <a href="008_The_Democracy_Experts_who_cannot_say.html">The “Democracy Experts” Who Cannot Say That the USA Is Not a Democracy</a>
+    <span class="description">How funding ties prevent mainstream scholars from acknowledging the oligarchy.</span>
+  </li>
+  <li>
+    <a href="009_The_Electoral_Double_Bind.html">The Electoral Double Bind</a>
+    <span class="description">The structural trap that makes every electoral choice reinforce the system.</span>
+  </li>
+  <li>
+    <a href="010_Strategic_Positioning_in_Political_Critique.html">Strategic Positioning in Political Critique</a>
+    <span class="description">How critical voices are neutralized through structural positioning, framing, and institutional absorption.</span>
+  </li>
+  <li>
+    <a href="011_Why_All_Explanations_Are_Wrong.html">Why All the Official Explanations Are Wrong</a>
+    <span class="description">Why the system’s stability proves that mainstream critiques do not touch its structural core: the constitutional exclusion of citizen sovereignty.</span>
+  </li>
+</ol>
 </div>
-
 <footer>
-  © Democraticus 2025 – Creative Commons BY-SA 4.0
+© Democraticus 2025 – Creative Commons BY-SA 4.0
 </footer>
-
 </body>
 </html>
-```
