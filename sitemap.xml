@@ -1,53 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-  
-  <url>
-    <loc>https://democraticus.org/</loc>
-    <lastmod>2026-01-15</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-  </url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
-  <url>
-    <loc>https://democraticus.org/charter</loc>
-    <lastmod>2026-01-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
+  <!-- Homepage -->
+  <url><loc>https://democraticus.org/</loc><priority>1.0</priority><changefreq>weekly</changefreq></url>
 
-  <url>
-    <loc>https://democraticus.org/book</loc>
-    <lastmod>2026-01-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
+  <!-- Pagine principali -->
+  <url><loc>https://democraticus.org/about/</loc><priority>0.9</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://democraticus.org/about-you/</loc><priority>0.9</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://democraticus.org/books/</loc><priority>0.9</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://democraticus.org/assemblies/</loc><priority>0.9</priority><changefreq>weekly</changefreq></url>
+  <url><loc>https://democraticus.org/simulator/</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://democraticus.org/gallery/</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://democraticus.org/links/</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
 
-  <url>
-    <loc>https://democraticus.org/articles</loc>
-    <lastmod>2026-01-15</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
+  <!-- Indice articoli -->
+  <url><loc>https://democraticus.org/articles/</loc><priority>0.8</priority><changefreq>weekly</changefreq></url>
 
-  <url>
-    <loc>https://democraticus.org/fear-of-truth</loc>
-    <lastmod>2026-01-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://democraticus.org/about</loc>
-    <lastmod>2026-01-15</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://democraticus.org/contact</loc>
-    <lastmod>2026-01-15</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.6</priority>
-  </url>
+  <!-- Articoli singoli -->
+  <url><loc>https://democraticus.org/articles/001_Why_Voting_Does_Not_Delegate.html</loc><priority>0.85</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://democraticus.org/articles/002_Fraud_in_Civil_Law.html</loc><priority>0.85</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://democraticus.org/articles/003_The_Rights_of_Victims.html</loc><priority>0.85</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://democraticus.org/articles/004_No_Army_Is_Needed.html</loc><priority>0.85</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://democraticus.org/articles/005_The_Logic_of_Escalation.html</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://democraticus.org/articles/006_Representative_Democracy_Is_Possible.html</loc><priority>0.85</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://democraticus.org/articles/007_Journal_of_Democracy_Submission_medium.html</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://democraticus.org/articles/008_The_Democracy_Experts_who_cannot_say.html</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://democraticus.org/articles/009_The_Electoral_Double_Bind.html</loc><priority>0.85</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://democraticus.org/articles/010_Strategic_Positioning_in_Political_Critique.html</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://democraticus.org/articles/011_Why_All_Explanations_Are_Wrong.html</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://democraticus.org/articles/012_The_election_trap.html</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://democraticus.org/articles/013_The_Grand_Theater_of_Dissent.html</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
 
 </urlset>
