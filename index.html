@@ -1,50 +1,134 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Democraticus – Authentic Representative Democracy</title>
-<script>
-window.gtranslateSettings={
-  "default_language":"en",
-  "native_language_names":true,
-  "detect_browser_language":true,
-  "languages":["en","fr","it","es","de","pt","el","ne","nl","is","no","sv","da","fi","bg","et","lv","lt","ro"],
-  "wrapper_selector":".gtranslate_wrapper"
-};
-</script>
-<script src="https://cdn.gtranslate.net/widgets/latest/dwf.js" defer></script>
-<style>
-body{font-family:Arial,sans-serif;background:#000;color:#fff;margin:0;padding:0;line-height:1.6}
-.fixed-header{position:sticky;top:0;background:#111;border-bottom:3px solid #8B0000;z-index:1000;padding:12px 20px;}
-.header-container{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;}
-.logo{font-size:2.2em;font-weight:bold;color:#fff;text-decoration:none;}
-.logo:hover{color:#8B0000;}
-.main-menu a{color:#fff;text-decoration:none;margin:0 18px;font-size:1.2em;transition:.3s;}
-.main-menu a:hover{color:#8B0000;transform:scale(1.1);}
-.main-menu a.active{color:#8B0000;font-weight:bold;}
-.gtranslate_wrapper select{background:#000;color:#fff;border:1px solid #8B0000;padding:3px 6px;border-radius:4px;font-size:.9em;}
-.hero{background:#8B0000;padding:80px 20px;text-align:center;}
-.hero h1{font-size:3.5em;margin:0;}
-.hero p{font-size:1.6em;margin-top:20px;line-height:1.4;}
-.content{max-width:1000px;margin:60px auto;padding:20px;}
-.section{margin:60px 0;}
-.section h2{font-size:2.4em;color:#8B0000;border-bottom:2px solid #8B0000;padding-bottom:10px;}
-.section p,li{font-size:1.25em;}
-ul{padding-left:40px;}
-.new-docs{margin:60px 0;text-align:center;}
-.new-docs h3{font-size:1.8em;color:#ccc;margin-bottom:20px;}
-.new-docs a{color:#fff;text-decoration:underline;margin:0 15px;font-size:1.1em;}
-.new-docs a:hover{color:#8B0000;}
-.cta{text-align:center;margin:80px 0;}
-.cta a{display:inline-block;margin:10px;padding:16px 40px;background:#8B0000;color:#fff;text-decoration:none;font-size:1.3em;border-radius:8px;transition:.3s;}
-.cta a:hover{background:#A52A2A;transform:scale(1.05);}
-footer{background:#111;padding:40px;font-size:0.9em;text-align:center;margin-top:80px;color:#aaa}
-@media(max-width:900px){
-  .header-container{flex-direction:column;gap:15px;}
-  .main-menu a{margin:0 10px;font-size:1.1em;}
-}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Democraticus – Authentic Representative Democracy</title>
+  <meta name="description" content="From Homo Sapiens to Homo Democraticus. The evolutionary leap in sovereignty through permanent civic assemblies, binding oversight, and real delegation. No parties. No leaders. Just authentic representation.">
+  <!-- JSON-LD per SEO -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Democraticus",
+    "url": "https://democraticus.org/",
+    "description": "Platform for authentic representative democracy: permanent civic assemblies by sortition, binding citizen oversight, legal disengagement from fraudulent delegation.",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Democraticus",
+      "url": "https://democraticus.org/"
+    },
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://democraticus.org/?s={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  }
+  </script>
+
+  <!-- Script per rilevare il paese e impostare la lingua di GTranslate -->
+  <script>
+    // Mappa paese (ISO 3166-1 alpha-2) → lingua (ISO 639-1)
+    const countryToLanguage = {
+      'IT': 'it',     // Italia
+      'FR': 'fr',     // Francia
+      'ES': 'es',     // Spagna
+      'DE': 'de',     // Germania
+      'PT': 'pt',     // Portogallo + Brasile
+      'GR': 'el',     // Grecia
+      'NL': 'nl',     // Paesi Bassi
+      'IS': 'is',     // Islanda
+      'NO': 'no',     // Norvegia
+      'SE': 'sv',     // Svezia
+      'DK': 'da',     // Danimarca
+      'FI': 'fi',     // Finlandia
+      'BG': 'bg',     // Bulgaria
+      'EE': 'et',     // Estonia
+      'LV': 'lv',     // Lettonia
+      'LT': 'lt',     // Lituania
+      'RO': 'ro',     // Romania
+      // Puoi aggiungere altri paesi se necessario
+    };
+
+    // Funzione principale per impostare la lingua
+    function setGTranslateLanguage() {
+      const supportedLanguages = ["en","fr","it","es","de","pt","el","ne","nl","is","no","sv","da","fi","bg","et","lv","lt","ro"];
+
+      // 1. Priorità 1: lingua del browser (più veloce e preciso)
+      let lang = navigator.language?.split('-')[0]?.toLowerCase();
+      if (supportedLanguages.includes(lang)) {
+        applyGTranslateSettings(lang);
+        return;
+      }
+
+      // 2. Fallback: geolocalizzazione IP
+      fetch('https://ipapi.co/json/')
+        .then(response => response.json())
+        .then(data => {
+          const countryCode = data.country_code?.toUpperCase();
+          lang = countryToLanguage[countryCode] || 'en';
+          applyGTranslateSettings(lang);
+        })
+        .catch(() => {
+          // Fallback finale: inglese
+          applyGTranslateSettings('en');
+        });
+    }
+
+    // Applica le impostazioni e carica lo script
+    function applyGTranslateSettings(defaultLang) {
+      window.gtranslateSettings = {
+        "default_language": defaultLang,
+        "native_language_names": true,
+        "languages": ["en","fr","it","es","de","pt","el","ne","nl","is","no","sv","da","fi","bg","et","lv","lt","ro"],
+        "wrapper_selector": ".gtranslate_wrapper"
+      };
+      loadGTranslate();
+    }
+
+    // Carica dinamicamente GTranslate
+    function loadGTranslate() {
+      const script = document.createElement('script');
+      script.src = 'https://cdn.gtranslate.net/widgets/latest/dwf.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    }
+
+    // Avvia tutto all'onload
+    window.addEventListener('load', setGTranslateLanguage);
+  </script>
+
+  <style>
+    body{font-family:Arial,sans-serif;background:#000;color:#fff;margin:0;padding:0;line-height:1.6}
+    .fixed-header{position:sticky;top:0;background:#111;border-bottom:3px solid #8B0000;z-index:1000;padding:12px 20px;}
+    .header-container{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;}
+    .logo{font-size:2.2em;font-weight:bold;color:#fff;text-decoration:none;}
+    .logo:hover{color:#8B0000;}
+    .main-menu a{color:#fff;text-decoration:none;margin:0 18px;font-size:1.2em;transition:.3s;}
+    .main-menu a:hover{color:#8B0000;transform:scale(1.1);}
+    .main-menu a.active{color:#8B0000;font-weight:bold;}
+    .gtranslate_wrapper select{background:#000;color:#fff;border:1px solid #8B0000;padding:3px 6px;border-radius:4px;font-size:.9em;}
+    .hero{background:#8B0000;padding:80px 20px;text-align:center;}
+    .hero h1{font-size:3.5em;margin:0;}
+    .hero p{font-size:1.6em;margin-top:20px;line-height:1.4;}
+    .content{max-width:1000px;margin:60px auto;padding:20px;}
+    .section{margin:60px 0;}
+    .section h2{font-size:2.4em;color:#8B0000;border-bottom:2px solid #8B0000;padding-bottom:10px;}
+    .section p,li{font-size:1.25em;}
+    ul{padding-left:40px;}
+    .new-docs{margin:60px 0;text-align:center;}
+    .new-docs h3{font-size:1.8em;color:#ccc;margin-bottom:20px;}
+    .new-docs a{color:#fff;text-decoration:underline;margin:0 15px;font-size:1.1em;}
+    .new-docs a:hover{color:#8B0000;}
+    .cta{text-align:center;margin:80px 0;}
+    .cta a{display:inline-block;margin:10px;padding:16px 40px;background:#8B0000;color:#fff;text-decoration:none;font-size:1.3em;border-radius:8px;transition:.3s;}
+    .cta a:hover{background:#A52A2A;transform:scale(1.05);}
+    footer{background:#111;padding:40px;font-size:0.9em;text-align:center;margin-top:80px;color:#aaa}
+    @media(max-width:900px){
+      .header-container{flex-direction:column;gap:15px;}
+      .main-menu a{margin:0 10px;font-size:1.1em;}
+    }
+  </style>
 </head>
 <body>
 <div class="fixed-header">
