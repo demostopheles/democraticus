@@ -1,50 +1,112 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Books & Documents – Democraticus</title>
-<script>
-window.gtranslateSettings = {
-"default_language":"en",
-"native_language_names":true,
-"detect_browser_language":true,
-"languages":["en","fr","it","es","de","pt","el","ne","nl","is","no","sv","da"],
-"wrapper_selector":".gtranslate_wrapper"
-};
-</script>
-<script src="https://cdn.gtranslate.net/widgets/latest/dwf.js" defer></script>
-<style>
-body{font-family:Arial,sans-serif;background:#000;color:#fff;margin:0;padding:0}
-.fixed-header{position:sticky;top:0;background:#111;border-bottom:3px solid #8B0000;z-index:1000;padding:12px 20px;}
-.header-container{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;}
-.logo{font-size:2.2em;font-weight:bold;color:#fff;text-decoration:none;}
-.logo:hover{color:#8B0000;}
-.main-menu a{color:#fff;text-decoration:none;margin:0 18px;font-size:1.2em;transition:.3s;}
-.main-menu a:hover{color:#8B0000;}
-.main-menu a.active{color:#8B0000;font-weight:bold;}
-.gtranslate_wrapper, .gtranslate_wrapper * {position:static!important;float:none!important;}
-.gtranslate_wrapper select{background:#000;color:#fff;border:1px solid #8B0000;padding:3px 6px;border-radius:4px;font-size:.9em;}
-header{text-align:center;padding:60px 20px}
-h1{font-size:3em;margin:0;color:#8B0000}
-.subtitle{font-size:1.6em;margin:25px 0;color:#ccc}
-.container{max-width:1100px;margin:40px auto;padding:0 20px}
-.section{margin:60px 0;text-align:center}
-.btn{background:#8B0000;color:#fff;border:none;padding:14px 30px;font-size:1.2em;cursor:pointer;border-radius:8px;transition:.3s;margin:10px}
-.btn:hover{background:#A52A2A;transform:scale(1.05)}
-.covers{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:30px;margin:50px 0}
-.cover-card{background:#111;border:2px solid #8B0000;border-radius:12px;padding:25px;transition:.3s;text-align:center}
-.cover-card:hover{transform:translateY(-10px);box-shadow:0 10px 20px rgba(139,0,0,0.5)}
-.cover-card img{width:100%;max-height:300px;object-fit:contain;background:#000;border-radius:8px}
-.cover-card p{font-weight:bold;margin:15px 0;font-size:1.2em;color:#fff}
-.small-btn{background:#333;padding:10px 20px;font-size:1.1em;border-radius:6px;border:none;color:#fff}
-.small-btn:hover{background:#555}
-footer{background:#111;padding:40px;font-size:0.9em;margin-top:80px;text-align:center;color:#aaa}
-@media (max-width:900px){
-.header-container{flex-direction:column;gap:15px;}
-.main-menu a{margin:0 10px;font-size:1.1em;}
-}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Books & Documents – Democraticus</title>
+  <meta name="description" content="Libri e documenti gratuiti su democrazia rappresentativa autentica, assemblee civiche permanenti per sorteggio, delega legale revocabile, superamento dell'oligarchia elettorale. Testi open-source in italiano, inglese, spagnolo, portoghese, francese, tedesco – Creative Commons BY-SA 4.0.">
+
+  <!-- JSON-LD per SEO (migliora ranking su ricerche relative a democrazia partecipativa, sorteggio, delega civica) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Books & Documents – Democraticus",
+    "description": "Collezione di libri e documenti gratuiti su democrazia rappresentativa autentica, assemblee civiche permanenti per sorteggio, delega legale revocabile e superamento dell'oligarchia elettorale. Testi open-source multilingua.",
+    "url": "https://democraticus.org/books/",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Democraticus",
+      "url": "https://democraticus.org/"
+    },
+    "inLanguage": ["it", "en", "es", "pt", "fr", "de"],
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "Democraticus – Authentic Representative Democracy"
+    }
+  }
+  </script>
+
+  <!-- Script per rilevare lingua/paese e impostare GTranslate dinamicamente -->
+  <script>
+    // Mappa paese (ISO 3166-1 alpha-2) → lingua preferita (ISO 639-1)
+    const countryToLanguage = {
+      'IT': 'it', 'FR': 'fr', 'ES': 'es', 'DE': 'de', 'PT': 'pt',
+      'GR': 'el', 'NL': 'nl', 'IS': 'is', 'NO': 'no', 'SE': 'sv',
+      'DK': 'da', 'FI': 'fi', 'BG': 'bg', 'EE': 'et', 'LV': 'lv',
+      'LT': 'lt', 'RO': 'ro'
+      // Aggiungi altri se necessario, es. 'BR':'pt', 'MX':'es'
+    };
+
+    function setGTranslateLanguage() {
+      const supported = ["en","fr","it","es","de","pt","el","ne","nl","is","no","sv","da","fi","bg","et","lv","lt","ro"];
+
+      // 1. Priorità: lingua del browser (veloce e preciso)
+      let lang = navigator.language?.split('-')[0]?.toLowerCase();
+      if (supported.includes(lang)) {
+        applySettings(lang);
+        return;
+      }
+
+      // 2. Fallback: geolocalizzazione IP
+      fetch('https://ipapi.co/json/')
+        .then(r => r.json())
+        .then(data => {
+          const cc = data.country_code?.toUpperCase();
+          lang = countryToLanguage[cc] || 'en';
+          applySettings(lang);
+        })
+        .catch(() => applySettings('en'));  // fallback finale
+    }
+
+    function applySettings(defaultLang) {
+      window.gtranslateSettings = {
+        "default_language": defaultLang,
+        "native_language_names": true,
+        "languages": ["en","fr","it","es","de","pt","el","ne","nl","is","no","sv","da","fi","bg","et","lv","lt","ro"],
+        "wrapper_selector": ".gtranslate_wrapper"
+      };
+      const script = document.createElement('script');
+      script.src = 'https://cdn.gtranslate.net/widgets/latest/dwf.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    }
+
+    // Esegui all'onload per non bloccare rendering
+    window.addEventListener('load', setGTranslateLanguage);
+  </script>
+
+  <style>
+    body{font-family:Arial,sans-serif;background:#000;color:#fff;margin:0;padding:0}
+    .fixed-header{position:sticky;top:0;background:#111;border-bottom:3px solid #8B0000;z-index:1000;padding:12px 20px;}
+    .header-container{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;}
+    .logo{font-size:2.2em;font-weight:bold;color:#fff;text-decoration:none;}
+    .logo:hover{color:#8B0000;}
+    .main-menu a{color:#fff;text-decoration:none;margin:0 18px;font-size:1.2em;transition:.3s;}
+    .main-menu a:hover{color:#8B0000;}
+    .main-menu a.active{color:#8B0000;font-weight:bold;}
+    .gtranslate_wrapper, .gtranslate_wrapper * {position:static!important;float:none!important;}
+    .gtranslate_wrapper select{background:#000;color:#fff;border:1px solid #8B0000;padding:3px 6px;border-radius:4px;font-size:.9em;}
+    header{text-align:center;padding:60px 20px}
+    h1{font-size:3em;margin:0;color:#8B0000}
+    .subtitle{font-size:1.6em;margin:25px 0;color:#ccc}
+    .container{max-width:1100px;margin:40px auto;padding:0 20px}
+    .section{margin:60px 0;text-align:center}
+    .btn{background:#8B0000;color:#fff;border:none;padding:14px 30px;font-size:1.2em;cursor:pointer;border-radius:8px;transition:.3s;margin:10px}
+    .btn:hover{background:#A52A2A;transform:scale(1.05)}
+    .covers{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:30px;margin:50px 0}
+    .cover-card{background:#111;border:2px solid #8B0000;border-radius:12px;padding:25px;transition:.3s;text-align:center}
+    .cover-card:hover{transform:translateY(-10px);box-shadow:0 10px 20px rgba(139,0,0,0.5)}
+    .cover-card img{width:100%;max-height:300px;object-fit:contain;background:#000;border-radius:8px}
+    .cover-card p{font-weight:bold;margin:15px 0;font-size:1.2em;color:#fff}
+    .small-btn{background:#333;padding:10px 20px;font-size:1.1em;border-radius:6px;border:none;color:#fff}
+    .small-btn:hover{background:#555}
+    footer{background:#111;padding:40px;font-size:0.9em;margin-top:80px;text-align:center;color:#aaa}
+    @media (max-width:900px){
+      .header-container{flex-direction:column;gap:15px;}
+      .main-menu a{margin:0 10px;font-size:1.1em;}
+    }
+  </style>
 </head>
 <body>
 <div class="fixed-header">
