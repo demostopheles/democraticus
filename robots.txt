@@ -2,7 +2,3 @@ User-agent: *
 Allow: /
 
 Sitemap: https://democraticus.org/sitemap.xml
-
-# Disallow crawling of admin or private areas (if any)
-# Disallow: /admin/
-# Disallow: /private/
