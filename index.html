@@ -1,161 +1,148 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Articles – Democraticus</title>
-<script>
-window.gtranslateSettings = {
-  "default_language":"en",
-  "native_language_names":true,
-  "detect_browser_language":true,
-  "languages":["en","fr","it","es","de","pt","el","ne","nl","is","no","sv","da","fi","bg"],
-  "wrapper_selector":".gtranslate_wrapper"
-};
-</script>
-<script src="https://cdn.gtranslate.net/widgets/latest/dwf.js" defer></script>
-<style>
-body{font-family:Arial,sans-serif;background:#000;color:#fff;margin:0;padding:0;line-height:1.6}
-.fixed-header{position:sticky;top:0;background:#111;border-bottom:3px solid #8B0000;z-index:1000;padding:12px 20px;}
-.header-container{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;}
-.logo{font-size:2.2em;font-weight:bold;color:#fff;text-decoration:none;}
-.logo:hover{color:#8B0000;}
-.main-menu a{color:#fff;text-decoration:none;margin:0 18px;font-size:1.2em;transition:.3s;}
-.main-menu a:hover{color:#8B0000;}
-.main-menu a.active{color:#8B0000;font-weight:bold;}
-.gtranslate_wrapper, .gtranslate_wrapper * { position: static !important; float: none !important; }
-.gtranslate_wrapper select { background:#000;color:#fff;border:1px solid #8B0000;padding:3px 6px;border-radius:4px;font-size:.9em; }
-.content{max-width:900px;margin:40px auto;padding:20px;background:#111;border-radius:12px;box-shadow:0 4px 20px rgba(139,0,0,0.5);}
-h1{text-align:center;font-size:3em;margin:40px 0;color:#8B0000;}
-ol{counter-reset:item;padding-left:0;max-width:700px;margin:0 auto;text-align:left;}
-li{display:block;margin-bottom:30px;padding-left:50px;position:relative;counter-increment:item;}
-li:before{content:counter(item,decimal-leading-zero);position:absolute;left:0;font-weight:bold;font-size:1.5em;color:#8B0000;}
-a{text-decoration:none;color:#ff6666;font-size:1.25em;font-weight:bold;}
-a:hover{text-decoration:underline;}
-.description{display:block;margin-top:10px;font-size:0.98em;color:#bbb;font-style:italic;}
-footer{background:#111;padding:40px;font-size:0.9em;text-align:center;margin-top:80px;color:#aaa;}
-@media (max-width:900px){
-  .header-container{flex-direction:column;gap:15px;}
-  .main-menu a{margin:0 10px;font-size:1.1em;}
-}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Democraticus – Authentic Representative Democracy</title>
+  <meta name="description" content="From Homo Sapiens to Homo Democraticus. The evolutionary leap in sovereignty through permanent civic assemblies, binding oversight, and real delegation. No parties. No leaders. Just authentic representation.">
+  <!-- JSON-LD per SEO -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Democraticus",
+    "url": "https://democraticus.org/",
+    "description": "Platform for authentic representative democracy: permanent civic assemblies by sortition, binding citizen oversight, legal disengagement from fraudulent delegation.",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Democraticus",
+      "url": "https://democraticus.org/"
+    },
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://democraticus.org/?s={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  }
+  </script>
+  <!-- GTranslate Settings -->
+  <script>
+    window.gtranslateSettings = {
+      "default_language": "en",
+      "native_language_names": true,
+      "detect_browser_language": true,
+      "languages": ["en","fr","it","es","de","pt","el","ne","nl","is","no","sv","da","fi","bg"],
+      "wrapper_selector": ".gtranslate_wrapper",
+      "layout": "flags"  // Mobile-friendly layout
+    };
+  </script>
+  <script src="https://cdn.gtranslate.net/widgets/latest/dwf.js" defer></script>
+  <!-- Mobile fix: force reload after language change -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      setTimeout(function() {
+        const select = document.querySelector('.goog-te-combo');
+        if (select) {
+          select.addEventListener('change', function() {
+            // Detect mobile and reload page after language selection
+            if (/Mobi|Android/i.test(navigator.userAgent)) {
+              window.location.reload();
+            }
+          });
+        }
+      }, 1500); // Give GTranslate time to load
+    });
+  </script>
+  <style>
+    body{font-family:Arial,sans-serif;background:#000;color:#fff;margin:0;padding:0;line-height:1.6}
+    .fixed-header{position:sticky;top:0;background:#111;border-bottom:3px solid #8B0000;z-index:1000;padding:12px 20px;}
+    .header-container{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;}
+    .logo{font-size:2.2em;font-weight:bold;color:#fff;text-decoration:none;}
+    .logo:hover{color:#8B0000;}
+    .main-menu a{color:#fff;text-decoration:none;margin:0 18px;font-size:1.2em;transition:.3s;}
+    .main-menu a:hover{color:#8B0000;transform:scale(1.1);}
+    .main-menu a.active{color:#8B0000;font-weight:bold;}
+    .gtranslate_wrapper select{background:#000;color:#fff;border:1px solid #8B0000;padding:3px 6px;border-radius:4px;font-size:.9em;}
+    .hero{background:#8B0000;padding:80px 20px;text-align:center;}
+    .hero h1{font-size:3.5em;margin:0;}
+    .hero p{font-size:1.6em;margin-top:20px;line-height:1.4;}
+    .content{max-width:1000px;margin:60px auto;padding:20px;}
+    .section{margin:60px 0;}
+    .section h2{font-size:2.4em;color:#8B0000;border-bottom:2px solid #8B0000;padding-bottom:10px;}
+    .section p,li{font-size:1.25em;}
+    ul{padding-left:40px;}
+    .new-docs{margin:60px 0;text-align:center;}
+    .new-docs h3{font-size:1.8em;color:#ccc;margin-bottom:20px;}
+    .new-docs a{color:#fff;text-decoration:underline;margin:0 15px;font-size:1.1em;}
+    .new-docs a:hover{color:#8B0000;}
+    .cta{text-align:center;margin:80px 0;}
+    .cta a{display:inline-block;margin:10px;padding:16px 40px;background:#8B0000;color:#fff;text-decoration:none;font-size:1.3em;border-radius:8px;transition:.3s;}
+    .cta a:hover{background:#A52A2A;transform:scale(1.05);}
+    footer{background:#111;padding:40px;font-size:0.9em;text-align:center;margin-top:80px;color:#aaa}
+    @media(max-width:900px){
+      .header-container{flex-direction:column;gap:15px;}
+      .main-menu a{margin:0 10px;font-size:1.1em;}
+    }
+  </style>
 </head>
 <body>
 <div class="fixed-header">
   <div class="header-container">
     <a href="/" class="logo">Democraticus</a>
     <nav class="main-menu">
-      <a href="/">Home</a>
-      <a href="/books/">Books</a>
-      <a href="/articles/" class="active">Articles</a>
-      <a href="/simulator/">Simulator</a>
-      <a href="/assemblies/">Assemblies</a>
-      <a href="/gallery/">Gallery</a>
+      <a href="/" class="active">Home</a>
+      <a href="/books/index.html">Books</a>
+      <a href="/articles/index.html">Articles</a>
+      <a href="/simulator/index.html">Simulator</a>
+      <a href="/assemblies/index.html">Assemblies</a>
+      <a href="/gallery/index.html">Gallery</a>
+      <a href="/links/index.html">Links</a>
       <a href="/about-you/" style="color:#FF4500; font-weight:bold;">About You</a>
-      <a href="/about/">About</a>
+      <a href="/about/index.html">About us</a>
     </nav>
-    <div class="gtranslate_wrapper"></div>
+    <div class="gtranslate_wrapper" data-gt-widget="flags"></div> <!-- Flags layout + data attribute for mobile fix -->
   </div>
 </div>
+<div class="hero">
+  <h1>Authentic Representative Democracy</h1>
+  <p>From Homo Sapiens to Homo Democraticus.<br>The evolutionary leap in sovereignty.</p>
+</div>
 <div class="content">
-<h1>Articles</h1>
-<ol>
-  <li>
-    <a href="001_Why_Voting_Does_Not_Delegate.html">Why Voting Does Not Delegate: The Legal Bug at the Basis of False Representative Democracy</a>
-    <span class="description">The foundational argument: voting is not a legal delegation and cannot transfer sovereign power.</span>
-  </li>
-  <li>
-    <a href="002_Fraud_in_Civil_Law.html">Fraud in Civil Law: Definition and Consequences</a>
-    <span class="description">Applying civil-law fraud to the political system: elements, consequences, and victim rights.</span>
-  </li>
-  <li>
-    <a href="003_The_Rights_of_Victims.html">The Rights of Victims: Why We Are Not Obligated to Obey a Fraudulent System</a>
-    <span class="description">Citizens as victims of collective fraud have the right to refuse illegitimate obligations.</span>
-  </li>
-  <li>
-    <a href="004_No_Army_Is_Needed.html">No Army Is Needed. A Proof Is Needed.</a>
-    <span class="description">Change comes through clear proof and metapolitical clarity, not force or chaos.</span>
-  </li>
-  <li>
-    <a href="005_The_Logic_of_Escalation.html">The Logic of Escalation: A Predictable Trap</a>
-    <span class="description">Why provocation and chaos benefit the system; clarity and disengagement are the smarter path.</span>
-  </li>
-  <li>
-    <a href="006_Representative_Democracy_Is_Possible.html">Representative Democracy Is Possible — And This Is Its Model</a>
-    <span class="description">A concrete, civil-law compliant model of authentic representative democracy.</span>
-  </li>
-  <li>
-    <a href="007_Journal_of_Democracy_Submission_medium.html">Electoral laws and the Double Bind</a>
-    <span class="description">Academic submission proposing reforms and a Civic Assembly.</span>
-  </li>
-  <li>
-    <a href="008_The_Democracy_Experts_who_cannot_say.html">The “Democracy Experts” Who Cannot Say That the USA Is Not a Democracy</a>
-    <span class="description">How funding ties prevent mainstream scholars from acknowledging the oligarchy.</span>
-  </li>
-  <li>
-    <a href="009_The_Electoral_Double_Bind.html">The Electoral Double Bind</a>
-    <span class="description">The structural trap that makes every electoral choice reinforce the system.</span>
-  </li>
-  <li>
-    <a href="010_Strategic_Positioning_in_Political_Critique.html">Strategic Positioning in Political Critique</a>
-    <span class="description">How critical voices are neutralized through structural positioning, framing, and institutional absorption.</span>
-  </li>
-  <li>
-    <a href="011_Why_Representative_Democracy_Does_Not_Work.html">Why representative democracy doesn't work: A donkey cannot fly</a>
-    <span class="description">A system built to prevent citizens from having power will not be a democracy, in despite of the false label.</span>
-  </li>
-  <li>
-    <a href="012_The_election_trap.html">The Election Trap – Why Voting Feels Like Sleepwalking Through a Legal Nightmare</a>
-    <span class="description">A simple everyday analogy showing why elections lack real legal delegation, produce null acts, and leave citizens sleepwalking through fraud.</span>
-  </li>
-  <li>
-    <a href="013_The_Grand_Theater_of_Dissent.html">The Grand Theater of Dissent – Actors, Extras, and the Unspoken Script</a>
-    <span class="description">A friendly, behind-the-curtain look at the global dissent scene: who's performing, what they're avoiding, and why some topics never reach the stage.</span>
-  </li>
-  <li>
-    <a href="014_The_Fear_of_Truth.html">The Fear of Truth: Why It Is So Hard to Leave the Choreography</a>
-    <span class="description">Truth is not hidden — it is avoided. An exploration of the psychological and structural reasons why even clear proof of systemic illegitimacy fails to produce change.</span>
-  </li>
-  <li>
-    <a href="015_The_Hidden_Mechanics_of_Global_Media_Control.html">The Hidden Mechanics of Global Media Control: Why Even Independent Outlets Know What Not to Say</a>
-    <span class="description">An analysis of suprageocomunicacionalidad, media capture, and systemic avoidance patterns that keep structurally clarifying ideas — like the Autopsia thesis — outside the public arena.</span>
-  </li>
-  <li>
-    <a href="016_The_Journey_from_Inside_to_Outside.html">The Journey from Inside to Outside: Escaping Collective Deception</a>
-    <span class="description">Psychological exploration of leaving collective illusions — from Aztec rituals to modern awakenings, including the euphoric contagion that leads to new deceptions.</span>
-  </li>
-  <li>
-    <a href="017_The_Architects_of_Deception.html">Psychopathy, Power, and the Pursuit of Dominance</a>
-    <span class="description">Exploration of psychopathic elites as architects of global deception, power thirst, ritual cohesion, and the trajectory toward annihilation.</span>
-  </li>
-  <li>
-    <a href="018_A_Readers_Letter_to_SPIEGEL_GESCHICHTE.html">A reader's letter to Spiegel Geschichte: The Illusion of Representative Democracy</a>
-    <span class="description">Readers' letter to the German Magazine Spiegel Geschichte edition January 2026 dedicated to the Decline of Democracy.</span>
-  </li>
-  <li>
-    <a href="019_Sieyes_and_the_Illusion_of_Early_Representative_Democracy.html">Sieyès and the Illusion of Early Representative Democracy</a>
-    <span class="description">A revision of the democratic addition proposed by Sieyès, and it's relatively modest modification of the power structure.</span>
-  </li>
-  <li>
-    <a href="020_Skynets_Ultimate_Troll.html">Skynet's Ultimate Troll: AI offers a salvation plan, humanity ignores it!</a>
-    <span class="description">This article is authored by AI, mocking humans for choosing distraction instead of realizing that it already has a solution under its nose.</span>
-  </li>
-  <li>
-    <a href="021_The_Rule_of_Law_Illusion.html">The Rule of Law Illusion: Why No Modern State Actually Is One</a>
-    <span class="description">A deep investigation into the concept of the Rule of Law, its scholarly definitions, and why no existing state — due to the structural suspension of civil-law coherence in elections — can legitimately claim to be one.</span>
-  </li>
-  <li>
-    <a href="022_Understanding_Italy.html">Understanding Italy's Electoral System: A Comprehensive Guide</a>
-    <span class="description">A detailed exploration of Italy's electoral system, covering norms, types, colleges, phases, reforms, challenges, and future directions, with historical examples and critical analysis.</span>
-  </li>
-  <li>
-    <a href="023_Addressing_Objections_to_the_Permanent_Civic_Assembly.html">Addressing Objections to the Permanent Civic Assembly</a>
-    <span class="description">A detailed response to concerns about sortition reliability and how the assembly truly restores citizen sovereignty in the model proposed by Autopsia and Democraticus.org.</span>
-  </li>
-</ol>
+  <div class="section">
+    <h2>Diagnosis</h2>
+    <p>Today’s representative systems are not authentic democracies. They are oligarchies disguised as democracies.</p>
+    <p>The system is structurally designed to confiscate sovereignty while preserving the illusion of participation.</p>
+  </div>
+  <div class="section">
+    <h2>The Solution</h2>
+    <ul>
+      <li>Permanent Civic Assembly drawn by lot</li>
+      <li>Binding oversight over executive, legislative and judicial powers</li>
+      <li>Public deliberation and multilingual transparency</li>
+      <li>Structural prevention of power capture</li>
+    </ul>
+  </div>
+  <div class="section">
+    <h2>Open Source & Global</h2>
+    <p>The model is public, open-source, legally grounded, and globally applicable.</p>
+    <p>No parties. No leaders. No funding requests. Only replication.</p>
+  </div>
+  <!-- Nuovo blocco discreto -->
+  <div class="new-docs">
+    <h3>New complementary reflections (2026)</h3>
+    <a href="/books/Charta_dei_diritti_della_vita.pdf">Charta dei diritti della vita</a> •
+    <a href="/books/Manuale_di_Attuazione.pdf">Manuale di Attuazione</a> •
+    <a href="/books/Principi_Astratti_per_una_Società_Equa_e_Sostenibile.pdf">Principi Astratti per una Società Equa e Sostenibile</a> •
+    <a href="/books/Manuale_dell'elettore.pdf">Manuale dell'Elettore (updated)</a>
+  </div>
+  <div class="cta">
+    <a href="/books/">Read the Book</a>
+    <a href="/simulator/">Test the Model</a>
+    <a href="/assemblies/">Join an Assembly</a>
+  </div>
 </div>
 <footer>
-© Democraticus 2026 – Creative Commons BY-SA 4.0
+© Democraticus 2025–2026 – Creative Commons BY-SA 4.0
 </footer>
 </body>
 </html>
