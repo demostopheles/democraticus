@@ -1,14 +1,233 @@
-<div class="container">
-  <div class="section">
-    <h2 style="font-size:2.2em;color:#8B0000;">Main Book - Autopsia della democrazia rappresentativa (584 pages)</h2>
-    <p style="font-size:1.3em;max-width:800px;margin:0 auto 30px;color:#ccc;">Complete diagnosis, model and global action plan – Italian original</p>
-    <a href="Autopsia_della_democrazia_rappresentativa_2025.pdf" download><button class="btn">Download Full Book</button></a>
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Books & Documents – Democraticus</title>
+  <meta name="description" content="Libri e documenti gratuiti su democrazia rappresentativa autentica, assemblee civiche permanenti per sorteggio, delega legale revocabile, superamento dell'oligarchia elettorale. Include Autopsia della democrazia rappresentativa, Democraticus 2.0 model, Architetture della Democrazia e Democrazia a misura di bambino. Testi open-source multilingua – CC BY-SA 4.0.">
+  
+  <!-- JSON-LD per SEO -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Books & Documents – Democraticus",
+    "description": "Collezione di libri e documenti gratuiti su democrazia rappresentativa autentica, assemblee civiche permanenti per sorteggio, delega legale revocabile e superamento dell'oligarchia elettorale. Include Autopsia della democrazia rappresentativa, Democraticus 2.0 model, Architetture della Democrazia e manuale educativo Democrazia a misura di bambino.",
+    "url": "https://democraticus.org/books/",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Democraticus",
+      "url": "https://democraticus.org/"
+    },
+    "inLanguage": ["it", "en", "es", "pt", "fr", "de"],
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "Democraticus – Authentic Representative Democracy"
+    }
+  }
+  </script>
+
+  <!-- GTranslate -->
+  <script>
+    window.gtranslateSettings = {
+      "default_language": "it",
+      "native_language_names": true,
+      "languages": ["en","fr","it","es","de","pt","el","nl","is","no","sv","da","fi","bg","et","lv","lt","ro"],
+      "wrapper_selector": ".gtranslate_wrapper",
+      "detect_language_from": "browser",
+      "alt_flags": {"en":"usa"}
+    };
+    (function(){
+      var gt = document.createElement('script');
+      gt.src = 'https://cdn.gtranslate.net/widgets/latest/dwf.js';
+      gt.defer = true;
+      document.head.appendChild(gt);
+    })();
+  </script>
+
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: Arial, sans-serif;
+      background: #000 !important;
+      color: #fff;
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      line-height: 1.6;
+    }
+    .fixed-header {
+      position: sticky;
+      top: 0;
+      background: #111;
+      border-bottom: 3px solid #8B0000;
+      z-index: 1000;
+      padding: 12px 20px;
+    }
+    .header-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+    .logo {
+      font-size: 2.2em;
+      font-weight: bold;
+      color: #fff;
+      text-decoration: none;
+    }
+    .logo:hover { color: #8B0000; }
+    .main-menu a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 16px;
+      font-size: 1.15em;
+      transition: .3s;
+    }
+    .main-menu a:hover, .main-menu a.active {
+      color: #8B0000;
+    }
+    .gtranslate_wrapper {
+      min-width: 160px;
+      margin-left: auto;
+    }
+    .gtranslate_wrapper select {
+      background: #222;
+      color: #fff;
+      border: 1px solid #8B0000;
+      padding: 8px 12px;
+      border-radius: 6px;
+      font-size: 1em;
+      cursor: pointer;
+    }
+    header {
+      text-align: center;
+      padding: 60px 20px 40px;
+      background: #000;
+    }
+    h1 { font-size: 3em; margin: 0; color: #8B0000; }
+    .subtitle { font-size: 1.6em; margin: 20px 0; color: #ccc; }
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 20px 40px;
+      background: #000;
+    }
+    .section {
+      margin: 50px 0;
+      padding: 30px;
+      background: #111;
+      border-radius: 12px;
+      border: 1px solid #333;
+      text-align: center;
+    }
+    .btn {
+      background: #8B0000;
+      color: #fff;
+      border: none;
+      padding: 14px 32px;
+      font-size: 1.2em;
+      cursor: pointer;
+      border-radius: 8px;
+      transition: all .3s;
+      margin: 12px;
+    }
+    .btn:hover {
+      background: #A52A2A;
+      transform: scale(1.05);
+    }
+    .covers {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 30px;
+      margin: 40px 0;
+    }
+    .cover-card {
+      background: #111;
+      border: 2px solid #8B0000;
+      border-radius: 12px;
+      padding: 20px;
+      transition: .3s;
+      text-align: center;
+    }
+    .cover-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 8px 16px rgba(139,0,0,0.4);
+    }
+    .cover-card img {
+      width: 100%;
+      max-height: 280px;
+      object-fit: contain;
+      background: #000;
+      border-radius: 8px;
+      margin-bottom: 12px;
+    }
+    .cover-card p {
+      font-weight: bold;
+      margin: 12px 0;
+      font-size: 1.15em;
+    }
+    .small-btn {
+      background: #333;
+      padding: 10px 20px;
+      font-size: 1em;
+      border-radius: 6px;
+      border: none;
+      color: #fff;
+      cursor: pointer;
+    }
+    .small-btn:hover { background: #555; }
+    footer {
+      background: #111;
+      padding: 40px 20px;
+      font-size: 0.9em;
+      text-align: center;
+      color: #aaa;
+      border-top: 1px solid #333;
+    }
+    @media (max-width: 900px) {
+      .header-container { flex-direction: column; gap: 20px; padding: 15px; }
+      .main-menu { text-align: center; }
+      .main-menu a { margin: 8px 12px; font-size: 1.1em; }
+      .gtranslate_wrapper { margin: 15px auto; }
+      header { padding: 40px 15px; }
+      h1 { font-size: 2.4em; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="fixed-header">
+  <div class="header-container">
+    <a href="/" class="logo">Democraticus</a>
+    <nav class="main-menu">
+      <a href="/">Home</a>
+      <a href="/books/" class="active">Books</a>
+      <a href="/articles/">Articles</a>
+      <a href="/simulator/">Simulator</a>
+      <a href="/assemblies/">Assemblies</a>
+      <a href="/gallery/">Gallery</a>
+      <a href="/about-you/" style="color:#FF4500; font-weight:bold;">About You</a>
+      <a href="/about/">About</a>
+    </nav>
+    <div class="gtranslate_wrapper" data-gt-widget="flags"></div>
   </div>
+</div>
+
+<header>
+  <h1>Books & Documents</h1>
+  <p class="subtitle">Tutti i testi sono gratuiti · Creative Commons BY-SA 4.0</p>
+</header>
+
+<div class="container">
 
   <div class="section">
-    <h2 style="font-size:2.2em;color:#8B0000;">Architetture della Democrazia (full book)</h2>
-    <p style="font-size:1.3em;max-width:800px;margin:0 auto 30px;color:#ccc;">Storia, teoria e modelli istituzionali del potere dei cittadini – Versione completa in italiano</p>
-    <a href="Architetture_della_Democrazia.pdf" download><button class="btn">Download PDF</button></a>
+    <h2 style="font-size:2.2em;color:#8B0000;">Main Book - Autopsia della democrazia rappresentativa (584 pagine)</h2>
+    <p style="font-size:1.3em;max-width:800px;margin:0 auto 30px;color:#ccc;">Diagnosi completa, modello e piano d'azione globale – Originale italiano</p>
+    <a href="Autopsia_della_democrazia_rappresentativa_2025.pdf" download><button class="btn">Scarica il libro completo</button></a>
   </div>
 
   <div class="section">
@@ -18,9 +237,15 @@
   </div>
 
   <div class="section">
+    <h2 style="font-size:2.2em;color:#8B0000;">Architetture della Democrazia (libro completo)</h2>
+    <p style="font-size:1.3em;max-width:800px;margin:0 auto 30px;color:#ccc;">Storia, teoria e modelli istituzionali del potere dei cittadini – Versione completa in italiano</p>
+    <a href="Architetture_della_Democrazia.pdf" download><button class="btn">Scarica PDF</button></a>
+  </div>
+
+  <div class="section">
     <h2 style="font-size:2.2em;color:#8B0000;">Democrazia a misura di bambino (e di adulto)</h2>
     <p style="font-size:1.3em;max-width:800px;margin:0 auto 30px;color:#ccc;">Manuale operativo di educazione civica e democratica verticale (asilo → università) – Allineato a Legge 92/2019, Linee guida DM 183/2024 e Indicazioni Nazionali DM 221/2025. Open-source, forkabile (CC BY-SA 4.0)</p>
-    <a href="Democrazia_a_misura_di_bambino.pdf" download><button class="btn">Download PDF</button></a>
+    <a href="Democrazia_a_misura_di_bambino.pdf" download><button class="btn">Scarica PDF</button></a>
   </div>
 
   <div class="section">
@@ -32,46 +257,74 @@
   <div class="section">
     <h2 style="font-size:2.2em;color:#8B0000;">Il nome sbagliato (20 pages)</h2>
     <p style="font-size:1.3em;max-width:800px;margin:0 auto 30px;color:#ccc;">Versione breve essenziale in italiano – Perché chiamiamo democrazia ciò che non lo è</p>
-    <a href="Il_nome_sbagliato.pdf" download><button class="btn">Download PDF</button></a>
+    <a href="Il_nome_sbagliato.pdf" download><button class="btn">Scarica PDF</button></a>
   </div>
 
   <div class="section">
     <h2 style="font-size:2.2em;color:#8B0000;">Charta dei diritti della vita</h2>
-    <p style="font-size:1.3em;max-width:800px;margin:0 auto 30px;color:#ccc;">A framework for planetary rights and sustainability, inspired by the Earth Charter.</p>
-    <a href="Charta_dei_diritti_della_vita.pdf" download><button class="btn">Download PDF</button></a>
+    <p style="font-size:1.3em;max-width:800px;margin:0 auto 30px;color:#ccc;">Framework per i diritti planetari e la sostenibilità, ispirato alla Earth Charter.</p>
+    <a href="Charta_dei_diritti_della_vita.pdf" download><button class="btn">Scarica PDF</button></a>
   </div>
 
   <div class="section">
     <h2 style="font-size:2.2em;color:#8B0000;">Manuale di Attuazione</h2>
-    <p style="font-size:1.3em;max-width:800px;margin:0 auto 30px;color:#ccc;">Practical guide for implementing participatory democratic assemblies.</p>
-    <a href="Manuale_di_Attuazione.pdf" download><button class="btn">Download PDF</button></a>
+    <p style="font-size:1.3em;max-width:800px;margin:0 auto 30px;color:#ccc;">Guida pratica per implementare assemblee democratiche partecipative.</p>
+    <a href="Manuale_di_Attuazione.pdf" download><button class="btn">Scarica PDF</button></a>
   </div>
 
   <div class="section">
     <h2 style="font-size:2.2em;color:#8B0000;">Principi Astratti per una Società Equa e Sostenibile</h2>
-    <p style="font-size:1.3em;max-width:800px;margin:0 auto 30px;color:#ccc;">Abstract principles for equitable and sustainable society, as a reflective base for civic decisions.</p>
-    <a href="Principi_Astratti_per_una_Società_Equa_e_Sostenibile.pdf" download><button class="btn">Download PDF</button></a>
+    <p style="font-size:1.3em;max-width:800px;margin:0 auto 30px;color:#ccc;">Principi astratti per una società equa e sostenibile, base riflessiva per decisioni civiche.</p>
+    <a href="Principi_Astratti_per_una_Società_Equa_e_Sostenibile.pdf" download><button class="btn">Scarica PDF</button></a>
   </div>
 
   <div class="section">
     <h2 style="font-size:2.2em;color:#8B0000;">Manuale dell'Elettore</h2>
-    <p style="font-size:1.3em;max-width:800px;margin:0 auto 30px;color:#ccc;">An updated guide from 2017 on electoral systems and democratic participation.</p>
-    <a href="Manuale_dell'elettore.pdf" download><button class="btn">Download PDF</button></a>
+    <p style="font-size:1.3em;max-width:800px;margin:0 auto 30px;color:#ccc;">Guida aggiornata dal 2017 su sistemi elettorali e partecipazione democratica.</p>
+    <a href="Manuale_dell'elettore.pdf" download><button class="btn">Scarica PDF</button></a>
   </div>
 
   <div class="section">
-    <h2 style="font-size:2.2em;color:#8B0000;">Cover + Table of Contents</h2>
-    <p style="font-size:1.3em;max-width:800px;margin:0 auto 40px;color:#ccc;">Choose your language (full book translations in progress)</p>
+    <h2 style="font-size:2.2em;color:#8B0000;">Copertine + Indici (scegli la lingua)</h2>
+    <p style="font-size:1.3em;max-width:800px;margin:0 auto 40px;color:#ccc;">Traduzioni complete in corso</p>
     <div class="covers">
-      <div class="cover-card"><img src="/covers/cover_en.jpg"><p>English</p><a href="Autopsy_en.pdf" download><button class="small-btn">Download</button></a></div>
-      <div class="cover-card"><img src="/covers/cover_es.jpg"><p>Español</p><a href="Autopsia_es.pdf" download><button class="small-btn">Download</button></a></div>
-      <div class="cover-card"><img src="/covers/cover_pt.jpg"><p>Português</p><a href="Autopsia_pt.pdf" download><button class="small-btn">Download</button></a></div>
-      <div class="cover-card"><img src="/covers/cover_fr.jpg"><p>Français</p><a href="Autopsie_fr.pdf" download><button class="small-btn">Download</button></a></div>
-      <div class="cover-card"><img src="/covers/cover_de.jpg"><p>Deutsch</p><a href="Obduktion_de.pdf" download><button class="small-btn">Download</button></a></div>
+      <div class="cover-card">
+        <img src="/covers/cover_en.jpg" alt="English cover">
+        <p>English</p>
+        <a href="Autopsy_en.pdf" download><button class="small-btn">Download</button></a>
+      </div>
+      <div class="cover-card">
+        <img src="/covers/cover_es.jpg" alt="Español cover">
+        <p>Español</p>
+        <a href="Autopsia_es.pdf" download><button class="small-btn">Download</button></a>
+      </div>
+      <div class="cover-card">
+        <img src="/covers/cover_pt.jpg" alt="Português cover">
+        <p>Português</p>
+        <a href="Autopsia_pt.pdf" download><button class="small-btn">Download</button></a>
+      </div>
+      <div class="cover-card">
+        <img src="/covers/cover_fr.jpg" alt="Français cover">
+        <p>Français</p>
+        <a href="Autopsie_fr.pdf" download><button class="small-btn">Download</button></a>
+      </div>
+      <div class="cover-card">
+        <img src="/covers/cover_de.jpg" alt="Deutsch cover">
+        <p>Deutsch</p>
+        <a href="Obduktion_de.pdf" download><button class="small-btn">Download</button></a>
+      </div>
     </div>
   </div>
 
-  <p style="margin-top:60px;font-size:1.1em;color:#aaa;max-width:800px;margin-left:auto;margin-right:auto;">
-    All documents are open-source. Share, translate, adapt — just attribute the source.
+  <p style="margin-top:60px;font-size:1.1em;color:#aaa;text-align:center;max-width:800px;margin-left:auto;margin-right:auto;">
+    Tutti i documenti sono open-source. Condividi, traduci, adatta — basta attribuire la fonte.
   </p>
+
 </div>
+
+<footer>
+  © Democraticus 2026 – Creative Commons BY-SA 4.0
+</footer>
+
+</body>
+</html>
