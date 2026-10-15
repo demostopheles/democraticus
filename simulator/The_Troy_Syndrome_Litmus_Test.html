@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>The Troy Syndrome Litmus Test – Democraticus</title>
+  <title>Simulators & Litmus Tests – Democraticus</title>
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
@@ -15,11 +15,80 @@
       min-height: 100vh;
       line-height: 1.6;
     }
+    .fixed-header {
+      position: sticky;
+      top: 0;
+      background: #111;
+      border-bottom: 3px solid #8B0000;
+      z-index: 1000;
+      padding: 12px 20px;
+    }
+    .header-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+    .logo {
+      font-size: 2.2em;
+      font-weight: bold;
+      color: #fff;
+      text-decoration: none;
+    }
+    .logo:hover { color: #8B0000; }
+    .main-menu a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 16px;
+      font-size: 1.15em;
+      transition: .3s;
+    }
+    .main-menu a:hover, .main-menu a.active {
+      color: #8B0000;
+    }
+    
+    /* Selector Nav Tabs */
+    .simulator-nav {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      padding: 30px 20px 10px;
+      background: #000;
+    }
+    .nav-tab {
+      background: #111;
+      border: 2px solid #444;
+      color: #fff;
+      padding: 12px 24px;
+      font-size: 1.1em;
+      font-weight: bold;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+    .nav-tab:hover {
+      border-color: #8B0000;
+    }
+    .nav-tab.active-tab {
+      background: #8B0000;
+      border-color: #ff4d4d;
+    }
+
     .container {
       max-width: 900px;
       margin: 0 auto;
-      padding: 40px 20px;
+      padding: 20px 20px 40px;
     }
+    .tool-section {
+      display: none;
+    }
+    .tool-section.active-section {
+      display: block;
+    }
+
     h1 {
       font-size: 2.5em;
       color: #8B0000;
@@ -93,7 +162,7 @@
     }
     
     /* Result Container */
-    #result-container {
+    .result-container {
       display: none;
       background: #111;
       border: 3px solid #8B0000;
@@ -104,12 +173,12 @@
       position: relative;
       overflow: hidden;
     }
-    #result-container h2 {
+    .result-container h2 {
       font-size: 2.2em;
       color: #ff4d4d;
       margin-bottom: 20px;
     }
-    #result-container p {
+    .result-container p {
       font-size: 1.4em;
       line-height: 1.8;
       color: #ddd;
@@ -135,80 +204,149 @@
       0% { transform: translate(0, 0) scale(1); opacity: 1; }
       100% { transform: translate(var(--x), var(--y)) scale(0); opacity: 0; }
     }
+
+    footer {
+      background: #111;
+      padding: 40px 20px;
+      font-size: 0.9em;
+      text-align: center;
+      color: #aaa;
+      border-top: 1px solid #333;
+      margin-top: 60px;
+    }
   </style>
 </head>
 <body>
 
+<div class="fixed-header">
+  <div class="header-container">
+    <a href="/" class="logo">Democraticus</a>
+    <nav class="main-menu">
+      <a href="/">Home</a>
+      <a href="/books/">Books</a>
+      <a href="/articles/">Articles</a>
+      <a href="/simulator/" class="active">Simulator</a>
+      <a href="/assemblies/">Assemblies</a>
+      <a href="/gallery/">Gallery</a>
+      <a href="/about/">About</a>
+    </nav>
+  </div>
+</div>
+
+<!-- Switcher per scegliere quale simulatore visualizzare -->
+<div class="simulator-nav">
+  <button class="nav-tab active-tab" onclick="switchTool('doublebind')">Double Bind Simulator</button>
+  <button class="nav-tab" onclick="switchTool('litmustest')">The Troy Syndrome Litmus Test</button>
+</div>
+
 <div class="container">
-  <h1>The Troy Syndrome Litmus Test</h1>
-  <p class="subtitle">Check your immunity level against cognitive capture and manufactured consent.</p>
 
-  <div id="quiz-form">
-
-    <!-- Question 1 -->
-    <div class="quiz-card" id="q1">
-      <div class="question-number">Symptom 01</div>
-      <div class="question-text">Do you passively accept that every systemic crisis (economic, health, or geopolitical) requires the immediate suspension of constitutional rights and the centralization of power?</div>
-      <div class="explanation">
-        The <em>Troy Syndrome</em> thrives on the permanent state of exception. When political architectures exploit fear to condition citizens into trading away sovereignty for illusory protection, democracy is hollowed out from within without firing a single shot.
-      </div>
-      <div class="options">
-        <button class="opt-btn" onclick="answer(1, 'yes')">Yes</button>
-        <button class="opt-btn" onclick="answer(1, 'no')">No</button>
-      </div>
+  <!-- TOOL 1: Double Bind Simulator (Inserisci qui il codice del tuo simulatore esistente) -->
+  <div id="section-doublebind" class="tool-section active-section">
+    <h1>Double Bind Simulator</h1>
+    <p class="subtitle">Experience how institutional double binds trap civic agency.</p>
+    <div style="background: #111; border: 1px solid #333; border-radius: 12px; padding: 40px; text-align: center;">
+      <p style="font-size: 1.2em; color: #ccc;">[Il tuo codice attuale del Double Bind Simulator va inserito qui dentro]</p>
     </div>
-
-    <!-- Question 2 -->
-    <div class="quiz-card" id="q2">
-      <div class="question-number">Symptom 02</div>
-      <div class="question-text">Do you find yourself feeling automatic distrust or hostility toward anyone questioning the official mainstream media narrative, instantly labeling them as a "conspiracy theorist"?</div>
-      <div class="explanation">
-        This is the triumph of conformism and induced polarization. The system divides the field into opposing factions to prevent structural critical analysis, turning legitimate doubt into an ideological crime.
-      </div>
-      <div class="options">
-        <button class="opt-btn" onclick="answer(2, 'yes')">Yes</button>
-        <button class="opt-btn" onclick="answer(2, 'no')">No</button>
-      </div>
-    </div>
-
-    <!-- Question 3 -->
-    <div class="quiz-card" id="q3">
-      <div class="question-number">Symptom 03</div>
-      <div class="question-text">Do you believe democracy is entirely exhausted by the ritual of delegating a leader or a party every few years, remaining an impotent spectator to decisions made behind closed doors?</div>
-      <div class="explanation">
-        This is the trap of elective oligarchy. Confusing blank-check delegation with popular sovereignty hands the keys of the city to the Trojan horse of the day, forgetting that without permanent oversight and civic sortition, representation degrades into a ruling caste.
-      </div>
-      <div class="options">
-        <button class="opt-btn" onclick="answer(3, 'yes')">Yes</button>
-        <button class="opt-btn" onclick="answer(3, 'no')">No</button>
-      </div>
-    </div>
-
-    <!-- Question 4 -->
-    <div class="quiz-card" id="q4">
-      <div class="question-number">Symptom 04</div>
-      <div class="question-text">Have you ever caught yourself justifying or desiring military interventions or devastating sanctions because they were packaged as a moral crusade, without analyzing the hidden geopolitical and economic interests behind the scenes?</div>
-      <div class="explanation">
-        The manufacturing of war consent always requires an emotional framework built on manichean division (absolute good versus absolute evil). Modern warfare is fought not just with weapons, but by inoculating the desire for destruction deep into the heart of the civilian population.
-      </div>
-      <div class="options">
-        <button class="opt-btn" onclick="answer(4, 'yes')">Yes</button>
-        <button class="opt-btn" onclick="answer(4, 'no')">No</button>
-      </div>
-    </div>
-
   </div>
 
-  <!-- Result Box -->
-  <div id="result-container">
-    <div class="fireworks-container" id="fireworks"></div>
-    <h2>Assessment Complete</h2>
-    <p id="result-text"></p>
+  <!-- TOOL 2: The Troy Syndrome Litmus Test -->
+  <div id="section-litmustest" class="tool-section">
+    <h1>The Troy Syndrome Litmus Test</h1>
+    <p class="subtitle">Check your immunity level against cognitive capture and manufactured consent.</p>
+
+    <div id="quiz-form">
+
+      <!-- Question 1 -->
+      <div class="quiz-card" id="q1">
+        <div class="question-number">Symptom 01</div>
+        <div class="question-text">Do you passively accept that every systemic crisis (economic, health, or geopolitical) requires the immediate suspension of constitutional rights and the centralization of power?</div>
+        <div class="explanation">
+          The <em>Troy Syndrome</em> thrives on the permanent state of exception. When political architectures exploit fear to condition citizens into trading away sovereignty for illusory protection, democracy is hollowed out from within without firing a single shot.
+        </div>
+        <div class="options">
+          <button class="opt-btn" onclick="answer(1, 'yes')">Yes</button>
+          <button class="opt-btn" onclick="answer(1, 'no')">No</button>
+        </div>
+      </div>
+
+      <!-- Question 2 -->
+      <div class="quiz-card" id="q2">
+        <div class="question-number">Symptom 02</div>
+        <div class="question-text">Do you find yourself feeling automatic distrust or hostility toward anyone questioning the official mainstream media narrative, instantly labeling them as a "conspiracy theorist"?</div>
+        <div class="explanation">
+          This is the triumph of conformism and induced polarization. The system divides the field into opposing factions to prevent structural critical analysis, turning legitimate doubt into an ideological crime.
+        </div>
+        <div class="options">
+          <button class="opt-btn" onclick="answer(2, 'yes')">Yes</button>
+          <button class="opt-btn" onclick="answer(2, 'no')">No</button>
+        </div>
+      </div>
+
+      <!-- Question 3 -->
+      <div class="quiz-card" id="q3">
+        <div class="question-number">Symptom 03</div>
+        <div class="question-text">Do you believe democracy is entirely exhausted by the ritual of delegating a leader or a party every few years, remaining an impotent spectator to decisions made behind closed doors?</div>
+        <div class="explanation">
+          This is the trap of elective oligarchy. Confusing blank-check delegation with popular sovereignty hands the keys of the city to the Trojan horse of the day, forgetting that without permanent oversight and civic sortition, representation degrades into a ruling caste.
+        </div>
+        <div class="options">
+          <button class="opt-btn" onclick="answer(3, 'yes')">Yes</button>
+          <button class="opt-btn" onclick="answer(3, 'no')">No</button>
+        </div>
+      </div>
+
+      <!-- Question 4 -->
+      <div class="quiz-card" id="q4">
+        <div class="question-number">Symptom 04</div>
+        <div class="question-text">Have you ever caught yourself justifying or desiring military interventions or devastating sanctions because they were packaged as a moral crusade, without analyzing the hidden geopolitical and economic interests behind the scenes?</div>
+        <div class="explanation">
+          The manufacturing of war consent always requires an emotional framework built on manichean division (absolute good versus absolute evil). Modern warfare is fought not just with weapons, but by inoculating the desire for destruction deep into the heart of the civilian population.
+        </div>
+        <div class="options">
+          <button class="opt-btn" onclick="answer(4, 'yes')">Yes</button>
+          <button class="opt-btn" onclick="answer(4, 'no')">No</button>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Result Box -->
+    <div id="result-container" class="result-container">
+      <div class="fireworks-container" id="fireworks"></div>
+      <h2>Assessment Complete</h2>
+      <p id="result-text"></p>
+    </div>
+
   </div>
 
 </div>
 
+<footer>
+  © Democraticus 2026 – Creative Commons BY-SA 4.0
+</footer>
+
 <script>
+  // Funzione per commutare tra i due simulatori
+  function switchTool(toolName) {
+    const doubleBindSec = document.getElementById('section-doublebind');
+    const litmusSec = document.getElementById('section-litmustest');
+    const tabs = document.querySelectorAll('.nav-tab');
+
+    tabs.forEach(tab => tab.classList.remove('active-tab'));
+
+    if (toolName === 'doublebind') {
+      doubleBindSec.classList.add('active-section');
+      litmusSec.classList.remove('active-section');
+      tabs[0].classList.add('active-tab');
+    } else {
+      litmusSec.classList.add('active-section');
+      doubleBindSec.classList.remove('active-section');
+      tabs[1].classList.add('active-tab');
+    }
+  }
+
+  // Logica del Litmus Test
   const totalQuestions = 4;
   let answersState = {};
 
@@ -229,7 +367,6 @@
 
     card.classList.add('answered');
 
-    // Check if all questions are answered
     if (Object.keys(answersState).length === totalQuestions) {
       showResult();
     }
