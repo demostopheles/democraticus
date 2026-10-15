@@ -1,58 +1,223 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Simulator – Democraticus</title>
-<!-- Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-Y9EPJN1JWT"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-Y9EPJN1JWT');
-</script>
-<!-- GTranslate -->
-<script>
-window.gtranslateSettings = {
-  "default_language":"en",
-  "native_language_names":true,
-  "detect_browser_language":true,
-  "languages":["en","fr","it","es","de","pt","el","ne","nl","is","no","sv","da"],
-  "wrapper_selector":".gtranslate_wrapper"
-};
-</script>
-<script src="https://cdn.gtranslate.net/widgets/latest/dwf.js" defer></script>
-<style>
-body{font-family:Arial,sans-serif;background:#000;color:#fff;margin:0;padding:0;line-height:1.6}
-.fixed-header{position:sticky;top:0;background:#111;border-bottom:3px solid #8B0000;z-index:1000;padding:12px 20px;}
-.header-container{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;}
-.logo{font-size:2.2em;font-weight:bold;color:#fff;text-decoration:none;}
-.logo:hover{color:#8B0000;}
-.main-menu a{color:#fff;text-decoration:none;margin:0 18px;font-size:1.2em;transition:.3s;}
-.main-menu a:hover{color:#8B0000;transform:scale(1.1);}
-.main-menu a.active{color:#8B0000;font-weight:bold;}
-.gtranslate_wrapper{min-width:120px;text-align:right;}
-.content{max-width:1100px;margin:40px auto;padding:20px;text-align:center;}
-h1{font-size:3em;color:#8B0000;margin-bottom:10px;}
-p.lead{font-size:1.3em;margin-bottom:30px;}
-.simulator-frame{
-  width:100%;
-  max-width:900px;
-  height:700px;
-  border:3px solid #8B0000;
-  border-radius:12px;
-  background:#000;
-}
-footer{background:#111;padding:40px;font-size:0.9em;text-align:center;margin-top:80px;}
-@media (max-width:900px){
-  .header-container{flex-direction:column;gap:15px;}
-  .main-menu a{margin:0 10px;font-size:1.1em;}
-  .simulator-frame{height:850px;}
-}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simulators & Litmus Tests – Democraticus</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: Arial, sans-serif;
+      background: #000;
+      color: #fff;
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      line-height: 1.6;
+    }
+    .fixed-header {
+      position: sticky;
+      top: 0;
+      background: #111;
+      border-bottom: 3px solid #8B0000;
+      z-index: 1000;
+      padding: 12px 20px;
+    }
+    .header-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+    .logo {
+      font-size: 2.2em;
+      font-weight: bold;
+      color: #fff;
+      text-decoration: none;
+    }
+    .logo:hover { color: #8B0000; }
+    .main-menu a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 16px;
+      font-size: 1.15em;
+      transition: .3s;
+    }
+    .main-menu a:hover, .main-menu a.active {
+      color: #8B0000;
+    }
+    
+    /* Selector Nav Tabs */
+    .simulator-nav {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      padding: 30px 20px 10px;
+      background: #000;
+    }
+    .nav-tab {
+      background: #111;
+      border: 2px solid #444;
+      color: #fff;
+      padding: 12px 24px;
+      font-size: 1.1em;
+      font-weight: bold;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+    .nav-tab:hover {
+      border-color: #8B0000;
+    }
+    .nav-tab.active-tab {
+      background: #8B0000;
+      border-color: #ff4d4d;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 20px 20px 40px;
+    }
+    .tool-section {
+      display: none;
+    }
+    .tool-section.active-section {
+      display: block;
+    }
+
+    h1 {
+      font-size: 2.5em;
+      color: #8B0000;
+      text-align: center;
+      margin-bottom: 10px;
+    }
+    .subtitle {
+      text-align: center;
+      font-size: 1.2em;
+      color: #ccc;
+      margin-bottom: 40px;
+    }
+    .quiz-card {
+      background: #111;
+      border: 1px solid #333;
+      border-radius: 12px;
+      padding: 30px;
+      margin-bottom: 30px;
+      transition: all 0.3s ease;
+    }
+    .quiz-card.answered {
+      border-color: #555;
+      opacity: 0.85;
+    }
+    .question-number {
+      font-size: 0.9em;
+      color: #8B0000;
+      font-weight: bold;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+    .question-text {
+      font-size: 1.25em;
+      font-weight: bold;
+      margin-bottom: 15px;
+      color: #fff;
+    }
+    .explanation {
+      font-size: 1.05em;
+      color: #bbb;
+      margin-bottom: 20px;
+      line-height: 1.7;
+    }
+    .options {
+      display: flex;
+      gap: 15px;
+    }
+    .opt-btn {
+      flex: 1;
+      padding: 12px 20px;
+      font-size: 1.1em;
+      font-weight: bold;
+      border: 2px solid #444;
+      background: #222;
+      color: #fff;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .opt-btn:hover {
+      border-color: #8B0000;
+      background: #333;
+    }
+    .opt-btn.selected-yes {
+      background: #8B0000;
+      border-color: #ff4d4d;
+    }
+    .opt-btn.selected-no {
+      background: #2b3e50;
+      border-color: #3498db;
+    }
+    
+    /* Result Container */
+    .result-container {
+      display: none;
+      background: #111;
+      border: 3px solid #8B0000;
+      border-radius: 16px;
+      padding: 40px;
+      text-align: center;
+      margin-top: 50px;
+      position: relative;
+      overflow: hidden;
+    }
+    .result-container h2 {
+      font-size: 2.2em;
+      color: #ff4d4d;
+      margin-bottom: 20px;
+    }
+    .result-container p {
+      font-size: 1.4em;
+      line-height: 1.8;
+      color: #ddd;
+    }
+    
+    /* Fireworks / Sparks CSS Animation */
+    .fireworks-container {
+      position: absolute;
+      top: 0; left: 0; width: 100%; height: 100%;
+      pointer-events: none;
+      overflow: hidden;
+      display: none;
+    }
+    .spark {
+      position: absolute;
+      width: 6px;
+      height: 6px;
+      background: #ff4d4d;
+      border-radius: 50%;
+      animation: explode 1.2s infinite ease-out;
+    }
+    @keyframes explode {
+      0% { transform: translate(0, 0) scale(1); opacity: 1; }
+      100% { transform: translate(var(--x), var(--y)) scale(0); opacity: 0; }
+    }
+
+    footer {
+      background: #111;
+      padding: 40px 20px;
+      font-size: 0.9em;
+      text-align: center;
+      color: #aaa;
+      border-top: 1px solid #333;
+      margin-top: 60px;
+    }
+  </style>
 </head>
 <body>
+
 <div class="fixed-header">
   <div class="header-container">
     <a href="/" class="logo">Democraticus</a>
@@ -63,29 +228,188 @@ footer{background:#111;padding:40px;font-size:0.9em;text-align:center;margin-top
       <a href="/simulator/" class="active">Simulator</a>
       <a href="/assemblies/">Assemblies</a>
       <a href="/gallery/">Gallery</a>
-      <a href="/links/">Links</a>
-      <a href="/about-you/" style="color:#FF4500; font-weight:bold;">About You</a>
       <a href="/about/">About</a>
     </nav>
-    <div class="gtranslate_wrapper"></div>
   </div>
 </div>
-<div class="content">
-  <h1>Electoral Double Bind Simulator</h1>
-  <p class="lead">
-    A simple model showing why every electoral option structurally reinforces the same system.
-  </p>
-  <iframe
-    src="double_bind_simulator.html"
-    class="simulator-frame"
-    title="Double Bind Simulator">
-  </iframe>
-  <p style="margin-top:30px;color:#aaa;font-size:1.1em;">
-    The simulator is illustrative. Its purpose is conceptual clarity, not prediction.
-  </p>
+
+<!-- Switcher per scegliere quale simulatore visualizzare -->
+<div class="simulator-nav">
+  <button class="nav-tab active-tab" onclick="switchTool('doublebind')">Double Bind Simulator</button>
+  <button class="nav-tab" onclick="switchTool('litmustest')">The Troy Syndrome Litmus Test</button>
 </div>
+
+<div class="container">
+
+  <!-- TOOL 1: Double Bind Simulator (Inserisci qui il codice del tuo simulatore esistente) -->
+  <div id="section-doublebind" class="tool-section active-section">
+    <h1>Double Bind Simulator</h1>
+    <p class="subtitle">Experience how institutional double binds trap civic agency.</p>
+    <div style="background: #111; border: 1px solid #333; border-radius: 12px; padding: 40px; text-align: center;">
+      <p style="font-size: 1.2em; color: #ccc;">[Il tuo codice attuale del Double Bind Simulator va inserito qui dentro]</p>
+    </div>
+  </div>
+
+  <!-- TOOL 2: The Troy Syndrome Litmus Test -->
+  <div id="section-litmustest" class="tool-section">
+    <h1>The Troy Syndrome Litmus Test</h1>
+    <p class="subtitle">Check your immunity level against cognitive capture and manufactured consent.</p>
+
+    <div id="quiz-form">
+
+      <!-- Question 1 -->
+      <div class="quiz-card" id="q1">
+        <div class="question-number">Symptom 01</div>
+        <div class="question-text">Do you passively accept that every systemic crisis (economic, health, or geopolitical) requires the immediate suspension of constitutional rights and the centralization of power?</div>
+        <div class="explanation">
+          The <em>Troy Syndrome</em> thrives on the permanent state of exception. When political architectures exploit fear to condition citizens into trading away sovereignty for illusory protection, democracy is hollowed out from within without firing a single shot.
+        </div>
+        <div class="options">
+          <button class="opt-btn" onclick="answer(1, 'yes')">Yes</button>
+          <button class="opt-btn" onclick="answer(1, 'no')">No</button>
+        </div>
+      </div>
+
+      <!-- Question 2 -->
+      <div class="quiz-card" id="q2">
+        <div class="question-number">Symptom 02</div>
+        <div class="question-text">Do you find yourself feeling automatic distrust or hostility toward anyone questioning the official mainstream media narrative, instantly labeling them as a "conspiracy theorist"?</div>
+        <div class="explanation">
+          This is the triumph of conformism and induced polarization. The system divides the field into opposing factions to prevent structural critical analysis, turning legitimate doubt into an ideological crime.
+        </div>
+        <div class="options">
+          <button class="opt-btn" onclick="answer(2, 'yes')">Yes</button>
+          <button class="opt-btn" onclick="answer(2, 'no')">No</button>
+        </div>
+      </div>
+
+      <!-- Question 3 -->
+      <div class="quiz-card" id="q3">
+        <div class="question-number">Symptom 03</div>
+        <div class="question-text">Do you believe democracy is entirely exhausted by the ritual of delegating a leader or a party every few years, remaining an impotent spectator to decisions made behind closed doors?</div>
+        <div class="explanation">
+          This is the trap of elective oligarchy. Confusing blank-check delegation with popular sovereignty hands the keys of the city to the Trojan horse of the day, forgetting that without permanent oversight and civic sortition, representation degrades into a ruling caste.
+        </div>
+        <div class="options">
+          <button class="opt-btn" onclick="answer(3, 'yes')">Yes</button>
+          <button class="opt-btn" onclick="answer(3, 'no')">No</button>
+        </div>
+      </div>
+
+      <!-- Question 4 -->
+      <div class="quiz-card" id="q4">
+        <div class="question-number">Symptom 04</div>
+        <div class="question-text">Have you ever caught yourself justifying or desiring military interventions or devastating sanctions because they were packaged as a moral crusade, without analyzing the hidden geopolitical and economic interests behind the scenes?</div>
+        <div class="explanation">
+          The manufacturing of war consent always requires an emotional framework built on manichean division (absolute good versus absolute evil). Modern warfare is fought not just with weapons, but by inoculating the desire for destruction deep into the heart of the civilian population.
+        </div>
+        <div class="options">
+          <button class="opt-btn" onclick="answer(4, 'yes')">Yes</button>
+          <button class="opt-btn" onclick="answer(4, 'no')">No</button>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Result Box -->
+    <div id="result-container" class="result-container">
+      <div class="fireworks-container" id="fireworks"></div>
+      <h2>Assessment Complete</h2>
+      <p id="result-text"></p>
+    </div>
+
+  </div>
+
+</div>
+
 <footer>
-  © Democraticus 2025 — Creative Commons BY-SA 4.0
+  © Democraticus 2026 – Creative Commons BY-SA 4.0
 </footer>
+
+<script>
+  // Funzione per commutare tra i due simulatori
+  function switchTool(toolName) {
+    const doubleBindSec = document.getElementById('section-doublebind');
+    const litmusSec = document.getElementById('section-litmustest');
+    const tabs = document.querySelectorAll('.nav-tab');
+
+    tabs.forEach(tab => tab.classList.remove('active-tab'));
+
+    if (toolName === 'doublebind') {
+      doubleBindSec.classList.add('active-section');
+      litmusSec.classList.remove('active-section');
+      tabs[0].classList.add('active-tab');
+    } else {
+      litmusSec.classList.add('active-section');
+      doubleBindSec.classList.remove('active-section');
+      tabs[1].classList.add('active-tab');
+    }
+  }
+
+  // Logica del Litmus Test
+  const totalQuestions = 4;
+  let answersState = {};
+
+  function answer(qNumber, choice) {
+    answersState[qNumber] = choice;
+    const card = document.getElementById('q' + qNumber);
+    const buttons = card.querySelectorAll('.opt-btn');
+    
+    buttons.forEach(btn => {
+      btn.classList.remove('selected-yes', 'selected-no');
+    });
+
+    if (choice === 'yes') {
+      buttons[0].classList.add('selected-yes');
+    } else {
+      buttons[1].classList.add('selected-no');
+    }
+
+    card.classList.add('answered');
+
+    if (Object.keys(answersState).length === totalQuestions) {
+      showResult();
+    }
+  }
+
+  function showResult() {
+    let yesCount = Object.values(answersState).filter(val => val === 'yes').length;
+    const resultContainer = document.getElementById('result-container');
+    const resultText = document.getElementById('result-text');
+    const fireworks = document.getElementById('fireworks');
+
+    resultContainer.style.display = 'block';
+
+    if (yesCount >= 2) {
+      fireworks.style.display = 'block';
+      createFireworks();
+      resultText.innerHTML = "<strong>Congratulations! They are preparing you for a fine war, and the goal is to make you desire it!</strong><br><small>(Because unless many people desire it, it is hard to wage it!)</small>";
+    } else {
+      resultText.innerHTML = "<strong>Excellent cognitive immune resistance!</strong><br>It appears you have unmasked the Trojan horse and the mechanics of manufactured consent. Keep cultivating critical doubt and civic sovereignty.";
+    }
+
+    resultContainer.scrollIntoView({ behavior: 'smooth' });
+  }
+
+  function createFireworks() {
+    const fw = document.getElementById('fireworks');
+    fw.innerHTML = '';
+    for (let i = 0; i < 40; i++) {
+      const spark = document.createElement('div');
+      spark.classList.add('spark');
+      spark.style.left = Math.random() * 100 + '%';
+      spark.style.top = Math.random() * 100 + '%';
+      
+      const angle = Math.random() * Math.PI * 2;
+      const distance = 50 + Math.random() * 100;
+      spark.style.setProperty('--x', Math.cos(angle) * distance + 'px');
+      spark.style.setProperty('--y', Math.sin(angle) * distance + 'px');
+      
+      spark.style.animationDelay = Math.random() * 0.5 + 's';
+      fw.appendChild(spark);
+    }
+  }
+</script>
+
 </body>
 </html>
