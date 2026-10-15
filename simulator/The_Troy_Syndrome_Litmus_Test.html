@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Troy Syndrome Litmus Test – Democraticus</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: Arial, sans-serif;
+      background: #000;
+      color: #fff;
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      line-height: 1.6;
+    }
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+    h1 {
+      font-size: 2.5em;
+      color: #8B0000;
+      text-align: center;
+      margin-bottom: 10px;
+    }
+    .subtitle {
+      text-align: center;
+      font-size: 1.2em;
+      color: #ccc;
+      margin-bottom: 40px;
+    }
+    .quiz-card {
+      background: #111;
+      border: 1px solid #333;
+      border-radius: 12px;
+      padding: 30px;
+      margin-bottom: 30px;
+      transition: all 0.3s ease;
+    }
+    .quiz-card.answered {
+      border-color: #555;
+      opacity: 0.85;
+    }
+    .question-number {
+      font-size: 0.9em;
+      color: #8B0000;
+      font-weight: bold;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+    .question-text {
+      font-size: 1.25em;
+      font-weight: bold;
+      margin-bottom: 15px;
+      color: #fff;
+    }
+    .explanation {
+      font-size: 1.05em;
+      color: #bbb;
+      margin-bottom: 20px;
+      line-height: 1.7;
+    }
+    .options {
+      display: flex;
+      gap: 15px;
+    }
+    .opt-btn {
+      flex: 1;
+      padding: 12px 20px;
+      font-size: 1.1em;
+      font-weight: bold;
+      border: 2px solid #444;
+      background: #222;
+      color: #fff;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .opt-btn:hover {
+      border-color: #8B0000;
+      background: #333;
+    }
+    .opt-btn.selected-yes {
+      background: #8B0000;
+      border-color: #ff4d4d;
+    }
+    .opt-btn.selected-no {
+      background: #2b3e50;
+      border-color: #3498db;
+    }
+    
+    /* Result Container */
+    #result-container {
+      display: none;
+      background: #111;
+      border: 3px solid #8B0000;
+      border-radius: 16px;
+      padding: 40px;
+      text-align: center;
+      margin-top: 50px;
+      position: relative;
+      overflow: hidden;
+    }
+    #result-container h2 {
+      font-size: 2.2em;
+      color: #ff4d4d;
+      margin-bottom: 20px;
+    }
+    #result-container p {
+      font-size: 1.4em;
+      line-height: 1.8;
+      color: #ddd;
+    }
+    
+    /* Fireworks / Sparks CSS Animation */
+    .fireworks-container {
+      position: absolute;
+      top: 0; left: 0; width: 100%; height: 100%;
+      pointer-events: none;
+      overflow: hidden;
+      display: none;
+    }
+    .spark {
+      position: absolute;
+      width: 6px;
+      height: 6px;
+      background: #ff4d4d;
+      border-radius: 50%;
+      animation: explode 1.2s infinite ease-out;
+    }
+    @keyframes explode {
+      0% { transform: translate(0, 0) scale(1); opacity: 1; }
+      100% { transform: translate(var(--x), var(--y)) scale(0); opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h1>The Troy Syndrome Litmus Test</h1>
+  <p class="subtitle">Check your immunity level against cognitive capture and manufactured consent.</p>
+
+  <div id="quiz-form">
+
+    <!-- Question 1 -->
+    <div class="quiz-card" id="q1">
+      <div class="question-number">Symptom 01</div>
+      <div class="question-text">Do you passively accept that every systemic crisis (economic, health, or geopolitical) requires the immediate suspension of constitutional rights and the centralization of power?</div>
+      <div class="explanation">
+        The <em>Troy Syndrome</em> thrives on the permanent state of exception. When political architectures exploit fear to condition citizens into trading away sovereignty for illusory protection, democracy is hollowed out from within without firing a single shot.
+      </div>
+      <div class="options">
+        <button class="opt-btn" onclick="answer(1, 'yes')">Yes</button>
+        <button class="opt-btn" onclick="answer(1, 'no')">No</button>
+      </div>
+    </div>
+
+    <!-- Question 2 -->
+    <div class="quiz-card" id="q2">
+      <div class="question-number">Symptom 02</div>
+      <div class="question-text">Do you find yourself feeling automatic distrust or hostility toward anyone questioning the official mainstream media narrative, instantly labeling them as a "conspiracy theorist"?</div>
+      <div class="explanation">
+        This is the triumph of conformism and induced polarization. The system divides the field into opposing factions to prevent structural critical analysis, turning legitimate doubt into an ideological crime.
+      </div>
+      <div class="options">
+        <button class="opt-btn" onclick="answer(2, 'yes')">Yes</button>
+        <button class="opt-btn" onclick="answer(2, 'no')">No</button>
+      </div>
+    </div>
+
+    <!-- Question 3 -->
+    <div class="quiz-card" id="q3">
+      <div class="question-number">Symptom 03</div>
+      <div class="question-text">Do you believe democracy is entirely exhausted by the ritual of delegating a leader or a party every few years, remaining an impotent spectator to decisions made behind closed doors?</div>
+      <div class="explanation">
+        This is the trap of elective oligarchy. Confusing blank-check delegation with popular sovereignty hands the keys of the city to the Trojan horse of the day, forgetting that without permanent oversight and civic sortition, representation degrades into a ruling caste.
+      </div>
+      <div class="options">
+        <button class="opt-btn" onclick="answer(3, 'yes')">Yes</button>
+        <button class="opt-btn" onclick="answer(3, 'no')">No</button>
+      </div>
+    </div>
+
+    <!-- Question 4 -->
+    <div class="quiz-card" id="q4">
+      <div class="question-number">Symptom 04</div>
+      <div class="question-text">Have you ever caught yourself justifying or desiring military interventions or devastating sanctions because they were packaged as a moral crusade, without analyzing the hidden geopolitical and economic interests behind the scenes?</div>
+      <div class="explanation">
+        The manufacturing of war consent always requires an emotional framework built on manichean division (absolute good versus absolute evil). Modern warfare is fought not just with weapons, but by inoculating the desire for destruction deep into the heart of the civilian population.
+      </div>
+      <div class="options">
+        <button class="opt-btn" onclick="answer(4, 'yes')">Yes</button>
+        <button class="opt-btn" onclick="answer(4, 'no')">No</button>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Result Box -->
+  <div id="result-container">
+    <div class="fireworks-container" id="fireworks"></div>
+    <h2>Assessment Complete</h2>
+    <p id="result-text"></p>
+  </div>
+
+</div>
+
+<script>
+  const totalQuestions = 4;
+  let answersState = {};
+
+  function answer(qNumber, choice) {
+    answersState[qNumber] = choice;
+    const card = document.getElementById('q' + qNumber);
+    const buttons = card.querySelectorAll('.opt-btn');
+    
+    buttons.forEach(btn => {
+      btn.classList.remove('selected-yes', 'selected-no');
+    });
+
+    if (choice === 'yes') {
+      buttons[0].classList.add('selected-yes');
+    } else {
+      buttons[1].classList.add('selected-no');
+    }
+
+    card.classList.add('answered');
+
+    // Check if all questions are answered
+    if (Object.keys(answersState).length === totalQuestions) {
+      showResult();
+    }
+  }
+
+  function showResult() {
+    let yesCount = Object.values(answersState).filter(val => val === 'yes').length;
+    const resultContainer = document.getElementById('result-container');
+    const resultText = document.getElementById('result-text');
+    const fireworks = document.getElementById('fireworks');
+
+    resultContainer.style.display = 'block';
+
+    if (yesCount >= 2) {
+      fireworks.style.display = 'block';
+      createFireworks();
+      resultText.innerHTML = "<strong>Congratulations! They are preparing you for a fine war, and the goal is to make you desire it!</strong><br><small>(Because unless many people desire it, it is hard to wage it!)</small>";
+    } else {
+      resultText.innerHTML = "<strong>Excellent cognitive immune resistance!</strong><br>It appears you have unmasked the Trojan horse and the mechanics of manufactured consent. Keep cultivating critical doubt and civic sovereignty.";
+    }
+
+    resultContainer.scrollIntoView({ behavior: 'smooth' });
+  }
+
+  function createFireworks() {
+    const fw = document.getElementById('fireworks');
+    fw.innerHTML = '';
+    for (let i = 0; i < 40; i++) {
+      const spark = document.createElement('div');
+      spark.classList.add('spark');
+      spark.style.left = Math.random() * 100 + '%';
+      spark.style.top = Math.random() * 100 + '%';
+      
+      const angle = Math.random() * Math.PI * 2;
+      const distance = 50 + Math.random() * 100;
+      spark.style.setProperty('--x', Math.cos(angle) * distance + 'px');
+      spark.style.setProperty('--y', Math.sin(angle) * distance + 'px');
+      
+      spark.style.animationDelay = Math.random() * 0.5 + 's';
+      fw.appendChild(spark);
+    }
+  }
+</script>
+
+</body>
+</html>
