@@ -235,14 +235,14 @@
 
 <!-- Switcher per scegliere quale simulatore visualizzare -->
 <div class="simulator-nav">
-  <button class="nav-tab active-tab" onclick="switchTool('doublebind')">Double Bind Simulator</button>
-  <button class="nav-tab" onclick="switchTool('litmustest')">The Troy Syndrome Litmus Test</button>
+  <button class="nav-tab" onclick="switchTool('doublebind')">Double Bind Simulator</button>
+  <button class="nav-tab active-tab" onclick="switchTool('litmustest')">The Troy Syndrome Litmus Test</button>
 </div>
 
 <div class="container">
 
-  <!-- TOOL 1: Double Bind Simulator (Inserisci qui il codice del tuo simulatore esistente) -->
-  <div id="section-doublebind" class="tool-section active-section">
+  <!-- TOOL 1: Double Bind Simulator -->
+  <div id="section-doublebind" class="tool-section">
     <h1>Double Bind Simulator</h1>
     <p class="subtitle">Experience how institutional double binds trap civic agency.</p>
     <div style="background: #111; border: 1px solid #333; border-radius: 12px; padding: 40px; text-align: center;">
@@ -250,8 +250,8 @@
     </div>
   </div>
 
-  <!-- TOOL 2: The Troy Syndrome Litmus Test -->
-  <div id="section-litmustest" class="tool-section">
+  <!-- TOOL 2: The Troy Syndrome Litmus Test (20 Questions) -->
+  <div id="section-litmustest" class="tool-section active-section">
     <h1>The Troy Syndrome Litmus Test</h1>
     <p class="subtitle">Check your immunity level against cognitive capture and manufactured consent.</p>
 
@@ -260,9 +260,9 @@
       <!-- Question 1 -->
       <div class="quiz-card" id="q1">
         <div class="question-number">Symptom 01</div>
-        <div class="question-text">Do you passively accept that every systemic crisis (economic, health, or geopolitical) requires the immediate suspension of constitutional rights and the centralization of power?</div>
+        <div class="question-text">Do you hear about the exact same crisis or conflict every single day across mainstream media and social media platforms?</div>
         <div class="explanation">
-          The <em>Troy Syndrome</em> thrives on the permanent state of exception. When political architectures exploit fear to condition citizens into trading away sovereignty for illusory protection, democracy is hollowed out from within without firing a single shot.
+          Constant repetition and total media saturation are the primary tools of epistemic capture. When a narrative is blasted 24/7 into your daily life, it ceases to be information and becomes psychological conditioning.
         </div>
         <div class="options">
           <button class="opt-btn" onclick="answer(1, 'yes')">Yes</button>
@@ -273,9 +273,9 @@
       <!-- Question 2 -->
       <div class="quiz-card" id="q2">
         <div class="question-number">Symptom 02</div>
-        <div class="question-text">Do you find yourself feeling automatic distrust or hostility toward anyone questioning the official mainstream media narrative, instantly labeling them as a "conspiracy theorist"?</div>
+        <div class="question-text">Does what you hear constantly spell out in black and white who is right and who is evil, leaving no room for complexity or neutral analysis?</div>
         <div class="explanation">
-          This is the triumph of conformism and induced polarization. The system divides the field into opposing factions to prevent structural critical analysis, turning legitimate doubt into an ideological crime.
+          This is the classic manichean framework of manufactured consent. By dividing the world into absolute heroes and absolute villains, the system bypasses rational critique and triggers an emotional, tribal reflex.
         </div>
         <div class="options">
           <button class="opt-btn" onclick="answer(2, 'yes')">Yes</button>
@@ -286,9 +286,9 @@
       <!-- Question 3 -->
       <div class="quiz-card" id="q3">
         <div class="question-number">Symptom 03</div>
-        <div class="question-text">Do you believe democracy is entirely exhausted by the ritual of delegating a leader or a party every few years, remaining an impotent spectator to decisions made behind closed doors?</div>
+        <div class="question-text">Do you find yourself emotionally invested in the outcome of conflicts that have no direct impact on your daily survival, rooting for one side as if it were a sports team?</div>
         <div class="explanation">
-          This is the trap of elective oligarchy. Confusing blank-check delegation with popular sovereignty hands the keys of the city to the Trojan horse of the day, forgetting that without permanent oversight and civic sortition, representation degrades into a ruling caste.
+          The <em>Troy Syndrome</em> converts geopolitical engineering into spectator entertainment, binding the citizen's identity to distant power struggles.
         </div>
         <div class="options">
           <button class="opt-btn" onclick="answer(3, 'yes')">Yes</button>
@@ -299,13 +299,221 @@
       <!-- Question 4 -->
       <div class="quiz-card" id="q4">
         <div class="question-number">Symptom 04</div>
-        <div class="question-text">Have you ever caught yourself justifying or desiring military interventions or devastating sanctions because they were packaged as a moral crusade, without analyzing the hidden geopolitical and economic interests behind the scenes?</div>
+        <div class="question-text">Have you noticed a systematic insistence on starting the story of a conflict from a specific "Day Zero", ignoring all prior historical events, treaties, or geopolitical provocations?</div>
         <div class="explanation">
-          The manufacturing of war consent always requires an emotional framework built on manichean division (absolute good versus absolute evil). Modern warfare is fought not just with weapons, but by inoculating the desire for destruction deep into the heart of the civilian population.
+          Truncating the timeline prevents people from understanding structural causes, transforming the immediate spark of a conflict into an unprovoked act of pure malice.
         </div>
         <div class="options">
           <button class="opt-btn" onclick="answer(4, 'yes')">Yes</button>
           <button class="opt-btn" onclick="answer(4, 'no')">No</button>
+        </div>
+      </div>
+
+      <!-- Question 5 -->
+      <div class="quiz-card" id="q5">
+        <div class="question-number">Symptom 05</div>
+        <div class="question-text">Have you observed the gradual, silent re-narration of past events and details to fit the current ideological narrative without public acknowledgment?</div>
+        <div class="explanation">
+          History is rewritten in real time so that past agreements and warnings fade away, aligning collective memory smoothly with current mobilization needs.
+        </div>
+        <div class="options">
+          <button class="opt-btn" onclick="answer(5, 'yes')">Yes</button>
+          <button class="opt-btn" onclick="answer(5, 'no')">No</button>
+        </div>
+      </div>
+
+      <!-- Question 6 -->
+      <div class="quiz-card" id="q6">
+        <div class="question-number">Symptom 06</div>
+        <div class="question-text">Are athletes, musicians, intellectuals, and historical figures from the adversary's culture routinely banned, canceled, or boycotted solely based on their nationality?</div>
+        <div class="explanation">
+          Collective punishment and cultural cancellation enforce ideological conformity through social fear and isolate populations from human empathy.
+        </div>
+        <div class="options">
+          <button class="opt-btn" onclick="answer(6, 'yes')">Yes</button>
+          <button class="opt-btn" onclick="answer(6, 'no')">No</button>
+        </div>
+      </div>
+
+      <!-- Question 7 -->
+      <div class="quiz-card" id="q7">
+        <div class="question-number">Symptom 07</div>
+        <div class="question-text">Is every proposal for diplomatic negotiation, truce, or dialogue routinely dismissed by authorities and media as "appeasement" or "weakness"?</div>
+        <div class="explanation">
+          Semantic inversion rebrands diplomacy as a moral failing, ensuring that military escalation remains the only acceptable path on the table.
+        </div>
+        <div class="options">
+          <button class="opt-btn" onclick="answer(7, 'yes')">Yes</button>
+          <button class="opt-btn" onclick="answer(7, 'no')">No</button>
+        </div>
+      </div>
+
+      <!-- Question 8 -->
+      <div class="quiz-card" id="q8">
+        <div class="question-number">Symptom 08</div>
+        <div class="question-text">Is there a total refusal to examine or understand at least some of the security concerns or historical reasons driving the opposing side's actions?</div>
+        <div class="explanation">
+          Refusing to understand an adversary's logic is strategic blindness enforced intentionally to make compromise structurally impossible.
+        </div>
+        <div class="options">
+          <button class="opt-btn" onclick="answer(8, 'yes')">Yes</button>
+          <button class="opt-btn" onclick="answer(8, 'no')">No</button>
+        </div>
+      </div>
+
+      <!-- Question 9 -->
+      <div class="quiz-card" id="q9">
+        <div class="question-number">Symptom 09</div>
+        <div class="question-text">Does public discourse completely omit any serious, sober analysis of the catastrophic existential risks (such as nuclear escalation) that your own nation is running?</div>
+        <div class="explanation">
+          Musil's Horse operates through an anesthetic silence: extreme existential dangers are quietly removed from public debate while minor provocations are amplified.
+        </div>
+        <div class="options">
+          <button class="opt-btn" onclick="answer(9, 'yes')">Yes</button>
+          <button class="opt-btn" onclick="answer(9, 'no')">No</button>
+        </div>
+      </div>
+
+      <!-- Question 10 -->
+      <div class="quiz-card" id="q10">
+        <div class="question-number">Symptom 10</div>
+        <div class="question-text">Does any action taken by your own side get automatically justified as a "necessary mistake" or defense, while identical actions by the adversary are branded as proof of pure evil?</div>
+        <div class="explanation">
+          Double standards and moral bipolarity ensure that critical self-reflection is completely suspended within the domestic populace.
+        </div>
+        <div class="options">
+          <button class="opt-btn" onclick="answer(10, 'yes')">Yes</button>
+          <button class="opt-btn" onclick="answer(10, 'no')">No</button>
+        </div>
+      </div>
+
+      <!-- Question 11 -->
+      <div class="quiz-card" id="q11">
+        <div class="question-number">Symptom 11</div>
+        <div class="question-text">Do you find that questioning the official narrative or asking for verification is immediately treated as a sign of betrayal or sympathy for the enemy?</div>
+        <div class="explanation">
+          When skepticism is criminalized as treason, dissent is neutralized before it can organize or influence public policy.
+        </div>
+        <div class="options">
+          <button class="opt-btn" onclick="answer(11, 'yes')">Yes</button>
+          <button class="opt-btn" onclick="answer(11, 'no')">No</button>
+        </div>
+      </div>
+
+      <!-- Question 12 -->
+      <div class="quiz-card" id="q12">
+        <div class="question-number">Symptom 12</div>
+        <div class="question-text">Are emergency powers, military budget surges, and exceptional legislative measures normalized as permanent features of governance under the constant shadow of crisis?</div>
+        <div class="explanation">
+          The permanent state of exception bypasses normal democratic accountability and re-aligns society toward a permanent wartime posture.
+        </div>
+        <div class="options">
+          <button class="opt-btn" onclick="answer(12, 'yes')">Yes</button>
+          <button class="opt-btn" onclick="answer(12, 'no')">No</button>
+        </div>
+      </div>
+
+      <!-- Question 13 -->
+      <div class="quiz-card" id="q13">
+        <div class="question-number">Symptom 13</div>
+        <div class="question-text">Do you feel that independent analysts, peace advocates, or contextual voices are systematically excluded, de-platformed, or smeared in mainstream media?</div>
+        <div class="explanation">
+          Phase 5 of the Litmus Protocol seals the exit ramps of public debate by choking off alternative perspectives and punishing non-conformity.
+        </div>
+        <div class="options">
+          <button class="opt-btn" onclick="answer(13, 'yes')">Yes</button>
+          <button class="opt-btn" onclick="answer(13, 'no')">No</button>
+        </div>
+      </div>
+
+      <!-- Question 14 -->
+      <div class="quiz-card" id="q14">
+        <div class="question-number">Symptom 14</div>
+        <div class="question-text">Have you caught yourself accepting that war or total confrontation is ultimately inevitable, resigning yourself to the clash as if it were weather rather than a political choice?</div>
+        <div class="explanation">
+          Cognitive normalization achieves its final victory when citizens stop imagining peace and begin viewing catastrophic conflict as a natural law.
+        </div>
+        <div class="options">
+          <button class="opt-btn" onclick="answer(14, 'yes')">Yes</button>
+          <button class="opt-btn" onclick="answer(14, 'no')">No</button>
+        </div>
+      </div>
+
+      <!-- Question 15 -->
+      <div class="quiz-card" id="q15">
+        <div class="question-number">Symptom 15</div>
+        <div class="question-text">Have you experienced the "doublethink" trap where the adversary is portrayed simultaneously as weak, failing, and incompetent, yet also as an overwhelming existential threat capable of destroying civilization?</div>
+        <div class="explanation">
+          This contradiction keeps the public arrogant enough to reject negotiation, yet frightened enough to accept unlimited military spending and emergency rule.
+        </div>
+        <div class="options">
+          <button class="opt-btn" onclick="answer(15, 'yes')">Yes</button>
+          <button class="opt-btn" onclick="answer(15, 'no')">No</button>
+        </div>
+      </div>
+
+      <!-- Question 16 -->
+      <div class="quiz-card" id="q16">
+        <div class="question-number">Symptom 16</div>
+        <div class="question-text">Have you heard large-scale conflict justified through biological alibis, claiming it is an inevitable pressure valve driven by human density or resource scarcity rather than political management?</div>
+        <div class="explanation">
+          Elites use flawed models (like Universe 25) to disguise structured inequality and resource monopolies as laws of nature, removing accountability from power.
+        </div>
+        <div class="options">
+          <button class="opt-btn" onclick="answer(16, 'yes')">Yes</button>
+          <button class="opt-btn" onclick="answer(16, 'no')">No</button>
+        </div>
+      </div>
+
+      <!-- Question 17 -->
+      <div class="quiz-card" id="q17">
+        <div class="question-number">Symptom 17</div>
+        <div class="question-text">Have you noticed how society is urged to form a tight, uncritical in-group (a crowd) unified by the projected threat of an opposing collective (the Gegenmasse) designed to trigger aggressive self-defense?</div>
+        <div class="explanation">
+          As Elias Canetti demonstrated, power maintains control by manufacturing an external counter-crowd, transforming domestic fear into unthinking collective hostility.
+        </div>
+        <div class="options">
+          <button class="opt-btn" onclick="answer(17, 'yes')">Yes</button>
+          <button class="opt-btn" onclick="answer(17, 'no')">No</button>
+        </div>
+      </div>
+
+      <!-- Question 18 -->
+      <div class="quiz-card" id="q18">
+        <div class="question-number">Symptom 18</div>
+        <div class="question-text">Have you observed how material economic drivers (such as resource control, trade corridors, or strategic power shifts) are systematically masked behind pure moral crusades and values?</div>
+        <div class="explanation">
+          Following the timeless Trojan model, populations are given a chivalric cover story because no one would willingly march for raw corporate or geopolitical balance sheets.
+        </div>
+        <div class="options">
+          <button class="opt-btn" onclick="answer(18, 'yes')">Yes</button>
+          <button class="opt-btn" onclick="answer(18, 'no')">No</button>
+        </div>
+      </div>
+
+      <!-- Question 19 -->
+      <div class="quiz-card" id="q19">
+        <div class="question-number">Symptom 19</div>
+        <div class="question-text">Have you noticed how the concrete, horrifying human memory of past disasters—such as nuclear destruction—has been replaced by abstract technical jargon and normalized as a manageable risk?</div>
+        <div class="explanation">
+          Anesthetic silence strips away the visceral reality of cataclysm, making unthinkable destruction seem like an acceptable gamble in a strategic game.
+        </div>
+        <div class="options">
+          <button class="opt-btn" onclick="answer(19, 'yes')">Yes</button>
+          <button class="opt-btn" onclick="answer(19, 'no')">No</button>
+        </div>
+      </div>
+
+      <!-- Question 20 -->
+      <div class="quiz-card" id="q20">
+        <div class="question-number">Symptom 20</div>
+        <div class="question-text">Deep down, do you sense that the relentless wave of emotional conditioning is quietly molding you to desire or accept a final escalation?</div>
+        <div class="explanation">
+          The ultimate objective of the <em>Troy Syndrome</em>: to manufacture consent so deeply that the public actively desires the conflict designed by elites.
+        </div>
+        <div class="options">
+          <button class="opt-btn" onclick="answer(20, 'yes')">Yes</button>
+          <button class="opt-btn" onclick="answer(20, 'no')">No</button>
         </div>
       </div>
 
@@ -327,7 +535,6 @@
 </footer>
 
 <script>
-  // Funzione per commutare tra i due simulatori
   function switchTool(toolName) {
     const doubleBindSec = document.getElementById('section-doublebind');
     const litmusSec = document.getElementById('section-litmustest');
@@ -346,8 +553,7 @@
     }
   }
 
-  // Logica del Litmus Test
-  const totalQuestions = 4;
+  const totalQuestions = 20;
   let answersState = {};
 
   function answer(qNumber, choice) {
@@ -380,7 +586,7 @@
 
     resultContainer.style.display = 'block';
 
-    if (yesCount >= 2) {
+    if (yesCount >= 6) {
       fireworks.style.display = 'block';
       createFireworks();
       resultText.innerHTML = "<strong>Congratulations! They are preparing you for a fine war, and the goal is to make you desire it!</strong><br><small>(Because unless many people desire it, it is hard to wage it!)</small>";
